@@ -1,0 +1,793 @@
+\chapter{Cấu trúc dữ liệu}
+
+\index{cấu trúc dữ liệu}
+
+\key{Cấu trúc dữ liệu} là cách để lưu trữ
+dữ liệu trong bộ nhớ của máy tính.
+Việc chọn một cấu trúc dữ liệu phù hợp cho một bài toán
+là rất quan trọng,
+bởi vì mỗi cấu trúc dữ liệu có những
+ưu điểm và nhược điểm riêng.
+Câu hỏi quan trọng là: những thao tác nào
+hiệu quả trong cấu trúc dữ liệu đã chọn?
+
+Chương này giới thiệu những cấu trúc dữ liệu
+quan trọng nhất trong thư viện chuẩn C++.
+Sử dụng thư viện chuẩn bất cứ khi nào có thể
+là một ý tưởng tốt,
+bởi vì nó sẽ tiết kiệm rất nhiều thời gian.
+Sau này trong cuốn sách chúng ta sẽ học về các cấu trúc
+dữ liệu phức tạp hơn mà không có sẵn
+trong thư viện chuẩn.
+
+\section{Mảng động}
+
+\index{mảng động}
+\index{vector}
+
+\key{Mảng động} là một mảng có kích thước
+có thể thay đổi trong quá trình thực thi
+chương trình.
+Mảng động phổ biến nhất trong C++ là
+cấu trúc \texttt{vector},
+có thể được sử dụng gần như một mảng thông thường.
+
+Đoạn code sau tạo một vector rỗng và
+thêm ba phần tử vào nó:
+
+\begin{lstlisting}
+vector<int> v;
+v.push_back(3); // [3]
+v.push_back(2); // [3,2]
+v.push_back(5); // [3,2,5]
+\end{lstlisting}
+
+Sau đó, các phần tử có thể được truy cập như trong một mảng thông thường:
+
+\begin{lstlisting}
+cout << v[0] << "\n"; // 3
+cout << v[1] << "\n"; // 2
+cout << v[2] << "\n"; // 5
+\end{lstlisting}
+
+Hàm \texttt{size} trả về số phần tử trong vector.
+Đoạn code sau duyệt qua
+vector và in tất cả các phần tử trong đó:
+
+\begin{lstlisting}
+for (int i = 0; i < v.size(); i++) {
+    cout << v[i] << "\n";
+}
+\end{lstlisting}
+
+\begin{samepage}
+Một cách ngắn gọn hơn để duyệt qua vector như sau:
+
+\begin{lstlisting}
+for (auto x : v) {
+    cout << x << "\n";
+}
+\end{lstlisting}
+\end{samepage}
+
+Hàm \texttt{back} trả về phần tử cuối cùng
+trong vector, và
+hàm \texttt{pop\_back} xóa phần tử cuối cùng:
+
+\begin{lstlisting}
+vector<int> v;
+v.push_back(5);
+v.push_back(2);
+cout << v.back() << "\n"; // 2
+v.pop_back();
+cout << v.back() << "\n"; // 5
+\end{lstlisting}
+
+Đoạn code sau tạo một vector với năm phần tử:
+
+\begin{lstlisting}
+vector<int> v = {2,4,2,5,1};
+\end{lstlisting}
+
+Một cách khác để tạo vector là chỉ định số lượng
+phần tử và giá trị ban đầu cho mỗi phần tử:
+
+\begin{lstlisting}
+// kich thuoc 10, gia tri ban dau 0
+vector<int> v(10);
+\end{lstlisting}
+\begin{lstlisting}
+// kich thuoc 10, gia tri ban dau 5
+vector<int> v(10, 5);
+\end{lstlisting}
+
+Cách cài đặt bên trong của một vector
+sử dụng một mảng thông thường.
+Nếu kích thước của vector tăng lên và
+mảng trở nên quá nhỏ,
+một mảng mới sẽ được cấp phát và tất cả các
+phần tử được chuyển sang mảng mới.
+Tuy nhiên, điều này không xảy ra thường xuyên và
+độ phức tạp trung bình của
+\texttt{push\_back} là $O(1)$.
+
+\index{string}
+
+Cấu trúc \texttt{string}
+cũng là một mảng động có thể được sử dụng gần như một vector.
+Ngoài ra, có cú pháp đặc biệt cho chuỗi
+mà không có trong các cấu trúc dữ liệu khác.
+Các chuỗi có thể được kết hợp bằng ký hiệu \texttt{+}.
+Hàm $\texttt{substr}(k,x)$ trả về chuỗi con
+bắt đầu từ vị trí $k$ và có độ dài $x$,
+và hàm $\texttt{find}(\texttt{t})$ tìm vị trí
+xuất hiện đầu tiên của chuỗi con \texttt{t}.
+
+Đoạn code sau trình bày một số thao tác với chuỗi:
+
+\begin{lstlisting}
+string a = "hatti";
+string b = a+a;
+cout << b << "\n"; // hattihatti
+b[5] = 'v';
+cout << b << "\n"; // hattivatti
+string c = b.substr(3,4);
+cout << c << "\n"; // tiva
+\end{lstlisting}
+
+\section{Cấu trúc tập hợp}
+
+\index{tập hợp}
+
+\key{Tập hợp} là một cấu trúc dữ liệu
+duy trì một tập các phần tử.
+Các thao tác cơ bản của tập hợp là chèn phần tử,
+tìm kiếm và xóa.
+
+Thư viện chuẩn C++ chứa hai cách cài đặt
+tập hợp:
+Cấu trúc \texttt{set} được dựa trên cây nhị phân cân bằng
+và các thao tác của nó hoạt động trong thời gian $O(\log n)$.
+Cấu trúc \texttt{unordered\_set} sử dụng bảng băm,
+và các thao tác của nó hoạt động trong thời gian trung bình $O(1)$.
+
+Việc chọn cài đặt tập hợp nào để sử dụng
+thường là vấn đề sở thích.
+Lợi ích của cấu trúc \texttt{set}
+là nó duy trì thứ tự của các phần tử
+và cung cấp các hàm không có sẵn
+trong \texttt{unordered\_set}.
+Mặt khác, \texttt{unordered\_set}
+có thể hiệu quả hơn.
+
+Đoạn code sau tạo một tập hợp
+chứa các số nguyên,
+và cho thấy một số thao tác.
+Hàm \texttt{insert} thêm một phần tử vào tập hợp,
+hàm \texttt{count} trả về số lần xuất hiện
+của một phần tử trong tập hợp,
+và hàm \texttt{erase} xóa một phần tử khỏi tập hợp.
+
+\begin{lstlisting}
+set<int> s;
+s.insert(3);
+s.insert(2);
+s.insert(5);
+cout << s.count(3) << "\n"; // 1
+cout << s.count(4) << "\n"; // 0
+s.erase(3);
+s.insert(4);
+cout << s.count(3) << "\n"; // 0
+cout << s.count(4) << "\n"; // 1
+\end{lstlisting}
+
+Một tập hợp có thể được sử dụng gần như một vector,
+nhưng không thể truy cập
+các phần tử bằng ký hiệu \texttt{[]}.
+Đoạn code sau tạo một tập hợp,
+in số lượng phần tử trong nó, và sau đó
+duyệt qua tất cả các phần tử:
+\begin{lstlisting}
+set<int> s = {2,5,6,8};
+cout << s.size() << "\n"; // 4
+for (auto x : s) {
+    cout << x << "\n";
+}
+\end{lstlisting}
+
+Một tính chất quan trọng của tập hợp là
+tất cả các phần tử của chúng đều \emph{khác nhau}.
+Do đó, hàm \texttt{count} luôn trả về
+hoặc 0 (phần tử không có trong tập hợp)
+hoặc 1 (phần tử có trong tập hợp),
+và hàm \texttt{insert} không bao giờ thêm
+một phần tử vào tập hợp nếu nó đã
+có ở đó.
+Đoạn code sau minh họa điều này:
+
+\begin{lstlisting}
+set<int> s;
+s.insert(5);
+s.insert(5);
+s.insert(5);
+cout << s.count(5) << "\n"; // 1
+\end{lstlisting}
+
+C++ cũng chứa các cấu trúc
+\texttt{multiset} và \texttt{unordered\_multiset}
+hoạt động giống như \texttt{set}
+và \texttt{unordered\_set}
+nhưng chúng có thể chứa nhiều phiên bản của một phần tử.
+Ví dụ, trong đoạn code sau, cả ba phiên bản
+của số 5 được thêm vào một multiset:
+
+\begin{lstlisting}
+multiset<int> s;
+s.insert(5);
+s.insert(5);
+s.insert(5);
+cout << s.count(5) << "\n"; // 3
+\end{lstlisting}
+Hàm \texttt{erase} xóa
+tất cả các phiên bản của một phần tử
+khỏi multiset:
+\begin{lstlisting}
+s.erase(5);
+cout << s.count(5) << "\n"; // 0
+\end{lstlisting}
+Thường thì, chỉ một phiên bản cần được xóa,
+điều này có thể được thực hiện như sau:
+\begin{lstlisting}
+s.erase(s.find(5));
+cout << s.count(5) << "\n"; // 2
+\end{lstlisting}
+
+\section{Cấu trúc map}
+
+\index{map}
+
+\key{Map} là một mảng tổng quát
+gồm các cặp khóa-giá trị.
+Trong khi các khóa trong một mảng thông thường luôn là
+các số nguyên liên tiếp $0,1,\ldots,n-1$,
+với $n$ là kích thước của mảng,
+thì các khóa trong map có thể thuộc bất kỳ kiểu dữ liệu nào và
+không cần phải là các giá trị liên tiếp.
+
+Thư viện chuẩn C++ chứa hai cách cài đặt map
+tương ứng với các cài đặt tập hợp:
+cấu trúc \texttt{map} được dựa trên cây
+nhị phân cân bằng và việc truy cập các phần tử
+mất thời gian $O(\log n)$,
+trong khi cấu trúc \texttt{unordered\_map}
+sử dụng bảng băm và việc truy cập các phần tử
+mất thời gian trung bình $O(1)$.
+
+Đoạn code sau tạo một map
+trong đó các khóa là các chuỗi và các giá trị là các số nguyên:
+
+\begin{lstlisting}
+map<string,int> m;
+m["monkey"] = 4;
+m["banana"] = 3;
+m["harpsichord"] = 9;
+cout << m["banana"] << "\n"; // 3
+\end{lstlisting}
+
+Nếu giá trị của một khóa được yêu cầu
+nhưng map không chứa nó,
+khóa sẽ tự động được thêm vào map với
+một giá trị mặc định.
+Ví dụ, trong đoạn code sau,
+khóa ''aybabtu'' với giá trị 0
+được thêm vào map.
+
+\begin{lstlisting}
+map<string,int> m;
+cout << m["aybabtu"] << "\n"; // 0
+\end{lstlisting}
+Hàm \texttt{count} kiểm tra
+xem một khóa có tồn tại trong map hay không:
+\begin{lstlisting}
+if (m.count("aybabtu")) {
+    // khoa ton tai
+}
+\end{lstlisting}
+Đoạn code sau in tất cả các khóa và giá trị
+trong một map:
+\begin{lstlisting}
+for (auto x : m) {
+    cout << x.first << " " << x.second << "\n";
+}
+\end{lstlisting}
+
+\section{Iterator và khoảng}
+
+\index{iterator}
+
+Nhiều hàm trong thư viện chuẩn C++
+hoạt động với iterator.
+\key{Iterator} là một biến trỏ đến
+một phần tử trong cấu trúc dữ liệu.
+
+Các iterator thường được sử dụng \texttt{begin}
+và \texttt{end} định nghĩa một khoảng chứa
+tất cả các phần tử trong một cấu trúc dữ liệu.
+Iterator \texttt{begin} trỏ đến
+phần tử đầu tiên trong cấu trúc dữ liệu,
+và iterator \texttt{end} trỏ đến
+vị trí \emph{sau} phần tử cuối cùng.
+Tình huống như sau:
+
+\begin{center}
+\begin{tabular}{llllllllll}
+\{ & 3, & 4, & 6, & 8, & 12, & 13, & 14, & 17 & \} \\
+& $\uparrow$ & & & & & & & & $\uparrow$ \\
+& \multicolumn{3}{l}{\texttt{s.begin()}} & & & & & & \texttt{s.end()} \\
+\end{tabular}
+\end{center}
+
+Lưu ý sự bất đối xứng trong các iterator:
+\texttt{s.begin()} trỏ đến một phần tử trong cấu trúc dữ liệu,
+trong khi \texttt{s.end()} trỏ ra ngoài cấu trúc dữ liệu.
+Do đó, khoảng được định nghĩa bởi các iterator là \emph{nửa mở}.
+
+\subsubsection{Làm việc với khoảng}
+
+Iterator được sử dụng trong các hàm thư viện chuẩn C++
+nhận một khoảng các phần tử trong một cấu trúc dữ liệu.
+Thường thì, chúng ta muốn xử lý tất cả các phần tử trong một
+cấu trúc dữ liệu, nên các iterator
+\texttt{begin} và \texttt{end} được truyền cho hàm.
+
+Ví dụ, đoạn code sau sắp xếp một vector
+bằng hàm \texttt{sort},
+sau đó đảo ngược thứ tự các phần tử bằng hàm
+\texttt{reverse}, và cuối cùng xáo trộn thứ tự
+các phần tử bằng hàm \texttt{random\_shuffle}.
+
+\index{sort@\texttt{sort}}
+\index{reverse@\texttt{reverse}}
+\index{random\_shuffle@\texttt{random\_shuffle}}
+
+\begin{lstlisting}
+sort(v.begin(), v.end());
+reverse(v.begin(), v.end());
+random_shuffle(v.begin(), v.end());
+\end{lstlisting}
+
+Các hàm này cũng có thể được sử dụng với một mảng thông thường.
+Trong trường hợp này, các hàm nhận các con trỏ đến mảng
+thay vì iterator:
+
+\newpage
+\begin{lstlisting}
+sort(a, a+n);
+reverse(a, a+n);
+random_shuffle(a, a+n);
+\end{lstlisting}
+
+\subsubsection{Iterator trong tập hợp}
+
+Iterator thường được sử dụng để truy cập
+các phần tử của một tập hợp.
+Đoạn code sau tạo một iterator
+\texttt{it} trỏ đến phần tử nhỏ nhất trong một tập hợp:
+\begin{lstlisting}
+set<int>::iterator it = s.begin();
+\end{lstlisting}
+Một cách ngắn gọn hơn để viết code như sau:
+\begin{lstlisting}
+auto it = s.begin();
+\end{lstlisting}
+Phần tử mà iterator trỏ đến
+có thể được truy cập bằng ký hiệu \texttt{*}.
+Ví dụ, đoạn code sau in
+phần tử đầu tiên trong tập hợp:
+
+\begin{lstlisting}
+auto it = s.begin();
+cout << *it << "\n";
+\end{lstlisting}
+
+Iterator có thể được di chuyển bằng các toán tử
+\texttt{++} (tiến) và \texttt{--} (lùi),
+có nghĩa là iterator di chuyển đến phần tử
+tiếp theo hoặc trước đó trong tập hợp.
+
+Đoạn code sau in tất cả các phần tử
+theo thứ tự tăng dần:
+\begin{lstlisting}
+for (auto it = s.begin(); it != s.end(); it++) {
+    cout << *it << "\n";
+}
+\end{lstlisting}
+Đoạn code sau in phần tử lớn nhất trong tập hợp:
+\begin{lstlisting}
+auto it = s.end(); it--;
+cout << *it << "\n";
+\end{lstlisting}
+
+Hàm $\texttt{find}(x)$ trả về một iterator
+trỏ đến phần tử có giá trị là $x$.
+Tuy nhiên, nếu tập hợp không chứa $x$,
+iterator sẽ là \texttt{end}.
+
+\begin{lstlisting}
+auto it = s.find(x);
+if (it == s.end()) {
+    // khong tim thay x
+}
+\end{lstlisting}
+
+Hàm $\texttt{lower\_bound}(x)$ trả về
+một iterator đến phần tử nhỏ nhất trong tập hợp
+có giá trị \emph{ít nhất là} $x$, và
+hàm $\texttt{upper\_bound}(x)$
+trả về một iterator đến phần tử nhỏ nhất trong tập hợp
+có giá trị \emph{lớn hơn} $x$.
+Trong cả hai hàm, nếu phần tử như vậy không tồn tại,
+giá trị trả về là \texttt{end}.
+Các hàm này không được hỗ trợ bởi cấu trúc
+\texttt{unordered\_set} vì nó
+không duy trì thứ tự của các phần tử.
+
+\begin{samepage}
+Ví dụ, đoạn code sau tìm phần tử
+gần nhất với $x$:
+
+\begin{lstlisting}
+auto it = s.lower_bound(x);
+if (it == s.begin()) {
+    cout << *it << "\n";
+} else if (it == s.end()) {
+    it--;
+    cout << *it << "\n";
+} else {
+    int a = *it; it--;
+    int b = *it;
+    if (x-b < a-x) cout << b << "\n";
+    else cout << a << "\n";
+}
+\end{lstlisting}
+
+Đoạn code giả định rằng tập hợp không rỗng,
+và xử lý tất cả các trường hợp có thể
+bằng cách sử dụng một iterator \texttt{it}.
+Đầu tiên, iterator trỏ đến phần tử nhỏ nhất
+có giá trị ít nhất là $x$.
+Nếu \texttt{it} bằng \texttt{begin},
+phần tử tương ứng là gần nhất với $x$.
+Nếu \texttt{it} bằng \texttt{end},
+phần tử lớn nhất trong tập hợp là gần nhất với $x$.
+Nếu không phải các trường hợp trên,
+phần tử gần nhất với $x$ là
+phần tử tương ứng với \texttt{it} hoặc phần tử trước đó.
+\end{samepage}
+
+\section{Các cấu trúc khác}
+
+\subsubsection{Bitset}
+
+\index{bitset}
+
+\key{Bitset} là một mảng
+mà mỗi giá trị của nó là 0 hoặc 1.
+Ví dụ, đoạn code sau tạo
+một bitset chứa 10 phần tử:
+\begin{lstlisting}
+bitset<10> s;
+s[1] = 1;
+s[3] = 1;
+s[4] = 1;
+s[7] = 1;
+cout << s[4] << "\n"; // 1
+cout << s[5] << "\n"; // 0
+\end{lstlisting}
+
+Lợi ích của việc sử dụng bitset là
+chúng yêu cầu ít bộ nhớ hơn các mảng thông thường,
+bởi vì mỗi phần tử trong một bitset chỉ
+sử dụng một bit bộ nhớ.
+Ví dụ,
+nếu $n$ bit được lưu trữ trong một mảng \texttt{int},
+$32n$ bit bộ nhớ sẽ được sử dụng,
+nhưng một bitset tương ứng chỉ cần $n$ bit bộ nhớ.
+Ngoài ra, các giá trị của một bitset
+có thể được thao tác hiệu quả bằng cách sử dụng
+các toán tử bit, điều này làm cho việc
+tối ưu hóa các thuật toán sử dụng bitset trở nên khả thi.
+
+Đoạn code sau cho thấy một cách khác để tạo bitset trên:
+\begin{lstlisting}
+bitset<10> s(string("0010011010")); // tu phai sang trai
+cout << s[4] << "\n"; // 1
+cout << s[5] << "\n"; // 0
+\end{lstlisting}
+
+Hàm \texttt{count} trả về số lượng
+số một trong bitset:
+
+\begin{lstlisting}
+bitset<10> s(string("0010011010"));
+cout << s.count() << "\n"; // 4
+\end{lstlisting}
+
+Đoạn code sau cho thấy ví dụ về việc sử dụng các phép toán bit:
+\begin{lstlisting}
+bitset<10> a(string("0010110110"));
+bitset<10> b(string("1011011000"));
+cout << (a&b) << "\n"; // 0010010000
+cout << (a|b) << "\n"; // 1011111110
+cout << (a^b) << "\n"; // 1001101110
+\end{lstlisting}
+
+\subsubsection{Deque}
+
+\index{deque}
+
+\key{Deque} là một mảng động
+có kích thước có thể được thay đổi hiệu quả
+ở cả hai đầu của mảng.
+Giống như vector, deque cung cấp các hàm
+\texttt{push\_back} và \texttt{pop\_back}, nhưng
+nó cũng bao gồm các hàm
+\texttt{push\_front} và \texttt{pop\_front}
+không có sẵn trong vector.
+
+Một deque có thể được sử dụng như sau:
+\begin{lstlisting}
+deque<int> d;
+d.push_back(5); // [5]
+d.push_back(2); // [5,2]
+d.push_front(3); // [3,5,2]
+d.pop_back(); // [3,5]
+d.pop_front(); // [5]
+\end{lstlisting}
+
+Cài đặt bên trong của một deque
+phức tạp hơn so với vector,
+và vì lý do này, deque chậm hơn vector.
+Tuy nhiên, cả việc thêm và xóa
+phần tử đều mất thời gian trung bình $O(1)$ ở cả hai đầu.
+
+\subsubsection{Stack}
+
+\index{stack}
+
+\key{Stack}
+là một cấu trúc dữ liệu cung cấp hai
+thao tác thời gian $O(1)$:
+thêm một phần tử vào đỉnh,
+và xóa một phần tử từ đỉnh.
+Chỉ có thể truy cập phần tử ở
+đỉnh của stack.
+
+Đoạn code sau cho thấy cách sử dụng stack:
+\begin{lstlisting}
+stack<int> s;
+s.push(3);
+s.push(2);
+s.push(5);
+cout << s.top(); // 5
+s.pop();
+cout << s.top(); // 2
+\end{lstlisting}
+\subsubsection{Queue}
+
+\index{queue}
+
+\key{Queue} cũng
+cung cấp hai thao tác thời gian $O(1)$:
+thêm một phần tử vào cuối hàng đợi,
+và xóa phần tử đầu tiên trong hàng đợi.
+Chỉ có thể truy cập phần tử đầu tiên
+và phần tử cuối cùng của hàng đợi.
+
+Đoạn code sau cho thấy cách sử dụng hàng đợi:
+\begin{lstlisting}
+queue<int> q;
+q.push(3);
+q.push(2);
+q.push(5);
+cout << q.front(); // 3
+q.pop();
+cout << q.front(); // 2
+\end{lstlisting}
+
+\subsubsection{Priority queue}
+
+\index{priority queue}
+\index{heap}
+
+\key{Priority queue}
+duy trì một tập các phần tử.
+Các thao tác được hỗ trợ là chèn và,
+tùy thuộc vào loại hàng đợi,
+truy xuất và xóa
+hoặc phần tử nhỏ nhất hoặc lớn nhất.
+Chèn và xóa mất thời gian $O(\log n)$,
+và truy xuất mất thời gian $O(1)$.
+
+Mặc dù một tập hợp có thứ tự hỗ trợ hiệu quả
+tất cả các thao tác của priority queue,
+lợi ích của việc sử dụng priority queue là
+nó có các hằng số nhỏ hơn.
+Priority queue thường được cài đặt bằng
+cấu trúc heap đơn giản hơn nhiều so với
+cây nhị phân cân bằng được sử dụng trong tập hợp có thứ tự.
+
+\begin{samepage}
+Mặc định, các phần tử trong C++
+priority queue được sắp xếp theo thứ tự giảm dần,
+và có thể tìm và xóa
+phần tử lớn nhất trong hàng đợi.
+Đoạn code sau minh họa điều này:
+
+\begin{lstlisting}
+priority_queue<int> q;
+q.push(3);
+q.push(5);
+q.push(7);
+q.push(2);
+cout << q.top() << "\n"; // 7
+q.pop();
+cout << q.top() << "\n"; // 5
+q.pop();
+q.push(6);
+cout << q.top() << "\n"; // 6
+q.pop();
+\end{lstlisting}
+\end{samepage}
+
+Nếu chúng ta muốn tạo một priority queue
+hỗ trợ việc tìm và xóa
+phần tử nhỏ nhất,
+ta có thể làm như sau:
+
+\begin{lstlisting}
+priority_queue<int,vector<int>,greater<int>> q;
+\end{lstlisting}
+
+\subsubsection{Cấu trúc dữ liệu dựa trên policy}
+
+Trình biên dịch \texttt{g++} cũng hỗ trợ
+một số cấu trúc dữ liệu không thuộc
+thư viện chuẩn C++.
+Các cấu trúc như vậy được gọi là
+cấu trúc dữ liệu \emph{dựa trên policy}.
+Để sử dụng các cấu trúc này, các dòng sau
+phải được thêm vào code:
+\begin{lstlisting}
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds; 
+\end{lstlisting}
+Sau đó, ta có thể định nghĩa một cấu trúc dữ liệu \texttt{indexed\_set}
+giống như \texttt{set} nhưng có thể được đánh chỉ số như một mảng.
+Định nghĩa cho các giá trị \texttt{int} như sau:
+\begin{lstlisting}
+typedef tree<int,null_type,less<int>,rb_tree_tag,
+             tree_order_statistics_node_update> indexed_set; 
+\end{lstlisting}
+Bây giờ ta có thể tạo một tập hợp như sau:
+\begin{lstlisting}
+indexed_set s;
+s.insert(2);
+s.insert(3);
+s.insert(7);
+s.insert(9);
+\end{lstlisting}
+Điểm đặc biệt của tập hợp này là ta có thể truy cập
+các chỉ số mà các phần tử sẽ có trong một mảng đã sắp xếp.
+Hàm $\texttt{find\_by\_order}$ trả về
+một iterator đến phần tử ở một vị trí cho trước:
+\begin{lstlisting}
+auto x = s.find_by_order(2);
+cout << *x << "\n"; // 7
+\end{lstlisting}
+Và hàm $\texttt{order\_of\_key}$
+trả về vị trí của một phần tử cho trước:
+\begin{lstlisting}
+cout << s.order_of_key(7) << "\n"; // 2
+\end{lstlisting}
+Nếu phần tử không xuất hiện trong tập hợp,
+ta nhận được vị trí mà phần tử sẽ có
+trong tập hợp:
+\begin{lstlisting}
+cout << s.order_of_key(6) << "\n"; // 2
+cout << s.order_of_key(8) << "\n"; // 3
+\end{lstlisting}
+Cả hai hàm đều hoạt động trong thời gian logarithm.
+
+\section{So sánh với sắp xếp}
+
+Thường có thể giải quyết một bài toán
+bằng cách sử dụng cấu trúc dữ liệu hoặc sắp xếp.
+Đôi khi có những khác biệt đáng kể
+về hiệu quả thực tế của các phương pháp này,
+điều mà có thể bị che giấu trong độ phức tạp thời gian của chúng.
+
+Hãy xem xét một bài toán trong đó
+chúng ta được cho hai danh sách $A$ và $B$
+cả hai đều chứa $n$ phần tử.
+Nhiệm vụ của chúng ta là tính toán số lượng phần tử
+thuộc cả hai danh sách.
+Ví dụ, với các danh sách
+\[A = [5,2,8,9] \hspace{10px} \textrm{và} \hspace{10px} B = [3,2,9,5],\]
+câu trả lời là 3 vì các số 2, 5
+và 9 thuộc cả hai danh sách.
+
+Một giải pháp đơn giản cho bài toán là
+duyệt qua tất cả các cặp phần tử trong thời gian $O(n^2)$,
+nhưng tiếp theo chúng ta sẽ tập trung vào
+các thuật toán hiệu quả hơn.
+
+\subsubsection{Thuật toán 1}
+
+Chúng ta xây dựng một tập hợp các phần tử xuất hiện trong $A$,
+và sau đó, chúng ta lặp qua các phần tử
+của $B$ và kiểm tra xem mỗi phần tử có
+thuộc $A$ hay không.
+Điều này hiệu quả vì các phần tử của $A$
+nằm trong một tập hợp.
+Sử dụng cấu trúc \texttt{set},
+độ phức tạp thời gian của thuật toán là $O(n \log n)$.
+
+\subsubsection{Thuật toán 2}
+
+Không cần thiết phải duy trì một tập hợp có thứ tự,
+vì vậy thay vì cấu trúc \texttt{set}
+chúng ta cũng có thể sử dụng cấu trúc \texttt{unordered\_set}.
+Đây là một cách dễ dàng để làm cho thuật toán
+hiệu quả hơn, bởi vì chúng ta chỉ cần thay đổi
+cấu trúc dữ liệu cơ bản.
+Độ phức tạp thời gian của thuật toán mới là $O(n)$.
+
+\subsubsection{Thuật toán 3}
+
+Thay vì cấu trúc dữ liệu, chúng ta có thể sử dụng sắp xếp.
+Đầu tiên, chúng ta sắp xếp cả hai danh sách $A$ và $B$.
+Sau đó, chúng ta lặp qua cả hai danh sách
+cùng một lúc và tìm các phần tử chung.
+Độ phức tạp thời gian của việc sắp xếp là $O(n \log n)$,
+và phần còn lại của thuật toán hoạt động trong thời gian $O(n)$,
+vì vậy tổng độ phức tạp thời gian là $O(n \log n)$.
+
+\subsubsection{So sánh hiệu quả}
+
+Bảng sau đây cho thấy mức độ hiệu quả
+của các thuật toán trên khi $n$ thay đổi và
+các phần tử của danh sách là các số nguyên
+ngẫu nhiên trong khoảng $1 \ldots 10^9$:
+
+\begin{center}
+\begin{tabular}{rrrr}
+$n$ & Thuật toán 1 & Thuật toán 2 & Thuật toán 3 \\
+\hline
+$10^6$ & $1.5$ s & $0.3$ s & $0.2$ s \\
+$2 \cdot 10^6$ & $3.7$ s & $0.8$ s & $0.3$ s \\
+$3 \cdot 10^6$ & $5.7$ s & $1.3$ s & $0.5$ s \\
+$4 \cdot 10^6$ & $7.7$ s & $1.7$ s & $0.7$ s \\
+$5 \cdot 10^6$ & $10.0$ s & $2.3$ s & $0.9$ s \\
+\end{tabular}
+\end{center}
+
+Thuật toán 1 và 2 giống hệt nhau ngoại trừ việc
+chúng sử dụng các cấu trúc tập hợp khác nhau.
+Trong bài toán này, sự lựa chọn này có ảnh hưởng quan trọng đến
+thời gian chạy, bởi vì Thuật toán 2
+nhanh hơn 4–5 lần so với Thuật toán 1.
+
+Tuy nhiên, thuật toán hiệu quả nhất là Thuật toán 3
+sử dụng sắp xếp.
+Nó chỉ sử dụng một nửa thời gian so với Thuật toán 2.
+Điều thú vị là độ phức tạp thời gian của cả
+Thuật toán 1 và Thuật toán 3 đều là $O(n \log n)$,
+nhưng mặc dù vậy, Thuật toán 3 nhanh hơn mười lần.
+Điều này có thể được giải thích bởi thực tế là
+sắp xếp là một thủ tục đơn giản và nó chỉ được thực hiện
+một lần ở đầu Thuật toán 3,
+và phần còn lại của thuật toán hoạt động trong thời gian tuyến tính.
+Mặt khác,
+Thuật toán 1 duy trì một cây nhị phân cân bằng phức tạp
+trong suốt toàn bộ thuật toán.

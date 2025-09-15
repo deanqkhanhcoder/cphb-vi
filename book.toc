@@ -1,0 +1,373 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {chapter}{Lời nói đầu}{ix}{chapter*.2}%
+\contentsline {part}{I\hspace {1em}Basic techniques}{3}{part.1}%
+\contentsline {chapter}{\numberline {1}Giới thiệu}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Ngôn ngữ lập trình}{5}{section.1.1}%
+\contentsline {subsubsection}{Template code C++}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Nhập và xuất}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Làm việc với số}{7}{section.1.3}%
+\contentsline {subsubsection}{Số nguyên}{7}{section.1.3}%
+\contentsline {subsubsection}{Số học modulo}{8}{lstnumber.-14.3}%
+\contentsline {subsubsection}{Số thực dấu phẩy động}{9}{lstnumber.-16.2}%
+\contentsline {section}{\numberline {1.4}Viết code ngắn gọn}{9}{section.1.4}%
+\contentsline {subsubsection}{Tên kiểu dữ liệu}{9}{section.1.4}%
+\contentsline {subsubsection}{Macro}{10}{lstnumber.-23.2}%
+\contentsline {section}{\numberline {1.5}Toán học}{11}{section.1.5}%
+\contentsline {subsubsection}{Các công thức tổng}{11}{section.1.5}%
+\contentsline {subsubsection}{Lý thuyết tập hợp}{13}{section.1.5}%
+\contentsline {subsubsection}{Logic}{13}{section.1.5}%
+\contentsline {subsubsection}{Các hàm}{14}{section.1.5}%
+\contentsline {subsubsection}{Logarit}{15}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Các cuộc thi và tài nguyên}{15}{section.1.6}%
+\contentsline {subsubsection}{IOI}{15}{section.1.6}%
+\contentsline {subsubsection}{ICPC}{16}{section.1.6}%
+\contentsline {subsubsection}{Các cuộc thi trực tuyến}{16}{section.1.6}%
+\contentsline {subsubsection}{Sách}{16}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Độ phức tạp thời gian}{19}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Quy tắc tính toán}{19}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Các lớp độ phức tạp}{21}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Ước tính hiệu quả}{22}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Tổng con lớn nhất}{23}{section.2.4}%
+\contentsline {subsubsection}{Thuật toán 1}{24}{section.2.4}%
+\contentsline {subsubsection}{Thuật toán 2}{24}{lstnumber.-46.11}%
+\contentsline {subsubsection}{Thuật toán 3}{24}{lstnumber.-47.9}%
+\contentsline {subsubsection}{So sánh hiệu quả}{25}{lstnumber.-48.6}%
+\contentsline {chapter}{\numberline {3}Sắp xếp}{27}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Lý thuyết sắp xếp}{27}{section.3.1}%
+\contentsline {subsubsection}{Các thuật toán $O(n^2)$}{27}{section.3.1}%
+\contentsline {subsubsection}{Nghịch thế}{28}{lstnumber.-49.7}%
+\contentsline {subsubsection}{Các thuật toán $O(n \log n)$}{29}{lstnumber.-49.7}%
+\contentsline {subsubsection}{Cận dưới của sắp xếp}{29}{Item.7}%
+\contentsline {subsubsection}{Sắp xếp đếm phân phối}{30}{Item.7}%
+\contentsline {section}{\numberline {3.2}Sắp xếp trong C++}{31}{section.3.2}%
+\contentsline {subsubsection}{Toán tử so sánh}{32}{lstnumber.-53.2}%
+\contentsline {subsubsection}{Struct do người dùng định nghĩa}{32}{lstnumber.-55.5}%
+\contentsline {subsubsection}{Hàm so sánh}{33}{lstnumber.-56.7}%
+\contentsline {section}{\numberline {3.3}Tìm kiếm nhị phân}{33}{section.3.3}%
+\contentsline {subsubsection}{Phương pháp 1}{33}{lstnumber.-59.5}%
+\contentsline {subsubsection}{Phương pháp 2}{34}{lstnumber.-60.9}%
+\contentsline {subsubsection}{Các hàm C++}{34}{lstnumber.-61.7}%
+\contentsline {subsubsection}{Tìm nghiệm nhỏ nhất}{35}{lstnumber.-64.2}%
+\contentsline {subsubsection}{Tìm giá trị lớn nhất}{35}{lstnumber.-65.5}%
+\contentsline {chapter}{\numberline {4}Cấu trúc dữ liệu}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Mảng động}{37}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Cấu trúc tập hợp}{38}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Cấu trúc map}{40}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Iterator và khoảng}{40}{section.4.4}%
+\contentsline {subsubsection}{Làm việc với khoảng}{41}{section.4.4}%
+\contentsline {subsubsection}{Iterator trong tập hợp}{42}{lstnumber.-87.3}%
+\contentsline {section}{\numberline {4.5}Các cấu trúc khác}{43}{section.4.5}%
+\contentsline {subsubsection}{Bitset}{43}{section.4.5}%
+\contentsline {subsubsection}{Deque}{44}{lstnumber.-98.5}%
+\contentsline {subsubsection}{Stack}{44}{lstnumber.-99.6}%
+\contentsline {subsubsection}{Queue}{44}{lstnumber.-100.7}%
+\contentsline {subsubsection}{Priority queue}{45}{lstnumber.-101.7}%
+\contentsline {subsubsection}{Cấu trúc dữ liệu dựa trên policy}{45}{lstnumber.-103.1}%
+\contentsline {section}{\numberline {4.6}So sánh với sắp xếp}{46}{section.4.6}%
+\contentsline {subsubsection}{Thuật toán 1}{46}{section.4.6}%
+\contentsline {subsubsection}{Thuật toán 2}{46}{section.4.6}%
+\contentsline {subsubsection}{Thuật toán 3}{47}{section.4.6}%
+\contentsline {subsubsection}{So sánh hiệu quả}{47}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Tìm kiếm toàn diện}{49}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Tạo tập con}{49}{section.5.1}%
+\contentsline {subsubsection}{Phương pháp 1}{49}{section.5.1}%
+\contentsline {subsubsection}{Phương pháp 2}{50}{lstnumber.-110.10}%
+\contentsline {section}{\numberline {5.2}Tạo hoán vị}{50}{section.5.2}%
+\contentsline {subsubsection}{Phương pháp 1}{51}{section.5.2}%
+\contentsline {subsubsection}{Phương pháp 2}{51}{lstnumber.-113.14}%
+\contentsline {section}{\numberline {5.3}Quay lui}{51}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Cắt tỉa tìm kiếm}{53}{section.5.4}%
+\contentsline {subsubsection}{Thuật toán cơ bản}{54}{section.5.4}%
+\contentsline {subsubsection}{Tối ưu hóa 1}{54}{section.5.4}%
+\contentsline {subsubsection}{Tối ưu hóa 2}{54}{section.5.4}%
+\contentsline {subsubsection}{Tối ưu hóa 3}{55}{section.5.4}%
+\contentsline {subsubsection}{Tối ưu hóa 4}{55}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Gặp nhau ở giữa}{56}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Thuật toán tham lam}{57}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Bài toán đổi tiền}{57}{section.6.1}%
+\contentsline {subsubsection}{Thuật toán tham lam}{57}{section.6.1}%
+\contentsline {subsubsection}{Trường hợp tổng quát}{58}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Lập lịch}{58}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Nhiệm vụ và thời hạn}{60}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Giảm thiểu tổng}{61}{section.6.4}%
+\contentsline {subsubsection}{Trường hợp $c=1$}{61}{section.6.4}%
+\contentsline {subsubsection}{Trường hợp $c=2$}{61}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Nén dữ liệu}{61}{section.6.5}%
+\contentsline {subsubsection}{Mã hóa Huffman}{62}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Quy hoạch động}{65}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Bài toán đồng xu}{65}{section.7.1}%
+\contentsline {subsubsection}{Công thức đệ quy}{65}{section.7.1}%
+\contentsline {subsubsection}{Sử dụng ghi nhớ (memoization)}{67}{lstnumber.-116.9}%
+\contentsline {subsubsection}{Xây dựng một giải pháp}{68}{lstnumber.-119.9}%
+\contentsline {subsubsection}{Đếm số lượng các giải pháp}{68}{lstnumber.-122.4}%
+\contentsline {section}{\numberline {7.2}Dãy con tăng dài nhất}{70}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Đường đi trong lưới}{71}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Bài toán cái túi}{72}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Khoảng cách chỉnh sửa}{73}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Đếm số cách lát gạch}{74}{section.7.6}%
+\contentsline {chapter}{\numberline {8}Phân tích trừ dần}{77}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Phương pháp hai con trỏ}{77}{section.8.1}%
+\contentsline {subsubsection}{Tổng của mảng con}{77}{section.8.1}%
+\contentsline {subsubsection}{Bài toán 2SUM}{78}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Phần tử nhỏ hơn gần nhất}{79}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Giá trị nhỏ nhất trong cửa sổ trượt}{80}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Truy vấn đoạn}{83}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Truy vấn trên mảng tĩnh}{83}{section.9.1}%
+\contentsline {subsubsection}{Truy vấn tổng}{84}{section.9.1}%
+\contentsline {subsubsection}{Truy vấn min}{85}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Cây chỉ số nhị phân (Binary indexed tree)}{86}{section.9.2}%
+\contentsline {subsubsection}{Cấu trúc}{86}{section.9.2}%
+\contentsline {subsubsection}{Cài đặt}{87}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Cây đoạn (Segment tree)}{88}{section.9.3}%
+\contentsline {subsubsection}{Cấu trúc}{88}{section.9.3}%
+\contentsline {subsubsection}{Cài đặt}{90}{section.9.3}%
+\contentsline {subsubsection}{Các truy vấn khác}{91}{lstnumber.-135.7}%
+\contentsline {section}{\numberline {9.4}Các kỹ thuật bổ sung}{92}{section.9.4}%
+\contentsline {subsubsection}{Nén chỉ số}{92}{section.9.4}%
+\contentsline {subsubsection}{Cập nhật đoạn}{92}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Thao tác bit}{95}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Biểu diễn bit}{95}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Các phép toán bit}{96}{section.10.2}%
+\contentsline {subsubsection}{Phép toán And}{96}{section.10.2}%
+\contentsline {subsubsection}{Phép toán Or}{96}{section.10.2}%
+\contentsline {subsubsection}{Phép toán Xor}{96}{section.10.2}%
+\contentsline {subsubsection}{Phép toán Not}{97}{section.10.2}%
+\contentsline {subsubsection}{Phép dịch bit}{97}{section.10.2}%
+\contentsline {subsubsection}{Ứng dụng}{97}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Biểu diễn tập hợp}{98}{section.10.3}%
+\contentsline {subsubsection}{Triển khai tập hợp}{98}{section.10.3}%
+\contentsline {subsubsection}{Các phép toán tập hợp}{98}{lstnumber.-141.4}%
+\contentsline {subsubsection}{Lặp qua các tập hợp con}{99}{lstnumber.-142.4}%
+\contentsline {section}{\numberline {10.4}Tối ưu hóa bit}{99}{section.10.4}%
+\contentsline {subsubsection}{Khoảng cách Hamming}{99}{section.10.4}%
+\contentsline {subsubsection}{Đếm lưới con}{100}{lstnumber.-147.3}%
+\contentsline {section}{\numberline {10.5}Quy hoạch động}{101}{section.10.5}%
+\contentsline {subsubsection}{Lựa chọn tối ưu}{101}{section.10.5}%
+\contentsline {subsubsection}{Từ hoán vị đến tập hợp con}{102}{lstnumber.-152.11}%
+\contentsline {subsubsection}{Đếm tập hợp con}{104}{lstnumber.-155.18}%
+\contentsline {part}{II\hspace {1em}Graph algorithms}{107}{part.2}%
+\contentsline {chapter}{\numberline {11}Những điều cơ bản về đồ thị}{109}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Thuật ngữ đồ thị}{109}{section.11.1}%
+\contentsline {subsubsection}{Tính liên thông}{110}{section.11.1}%
+\contentsline {subsubsection}{Hướng cạnh}{110}{section.11.1}%
+\contentsline {subsubsection}{Trọng số cạnh}{111}{section.11.1}%
+\contentsline {subsubsection}{Hàng xóm và bậc}{111}{section.11.1}%
+\contentsline {subsubsection}{Tô màu}{111}{section.11.1}%
+\contentsline {subsubsection}{Tính đơn giản}{112}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Biểu diễn đồ thị}{112}{section.11.2}%
+\contentsline {subsubsection}{Biểu diễn danh sách kề}{113}{section.11.2}%
+\contentsline {subsubsection}{Biểu diễn ma trận kề}{114}{lstnumber.-163.3}%
+\contentsline {subsubsection}{Biểu diễn danh sách cạnh}{115}{lstnumber.-164.1}%
+\contentsline {chapter}{\numberline {12}Duyệt đồ thị}{117}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Tìm kiếm theo chiều sâu}{117}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Tìm kiếm theo chiều rộng}{118}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Ứng dụng}{120}{section.12.3}%
+\contentsline {subsubsection}{Kiểm tra tính liên thông}{120}{section.12.3}%
+\contentsline {subsubsection}{Tìm chu trình}{121}{section.12.3}%
+\contentsline {subsubsection}{Kiểm tra tính hai phía}{121}{section.12.3}%
+\contentsline {chapter}{\numberline {13}Đường đi ngắn nhất}{123}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Thuật toán Bellman–Ford}{123}{section.13.1}%
+\contentsline {subsubsection}{Ví dụ}{123}{section.13.1}%
+\contentsline {subsubsection}{Cài đặt}{124}{section.13.1}%
+\contentsline {subsubsection}{Chu trình âm}{125}{lstnumber.-174.9}%
+\contentsline {subsubsection}{Thuật toán SPFA}{125}{lstnumber.-174.9}%
+\contentsline {section}{\numberline {13.2}Thuật toán Dijkstra}{126}{section.13.2}%
+\contentsline {subsubsection}{Ví dụ}{126}{section.13.2}%
+\contentsline {subsubsection}{Cạnh âm}{127}{section.13.2}%
+\contentsline {subsubsection}{Cài đặt}{128}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Thuật toán Floyd–Warshall}{128}{section.13.3}%
+\contentsline {subsubsection}{Ví dụ}{129}{section.13.3}%
+\contentsline {subsubsection}{Cài đặt}{130}{section.13.3}%
+\contentsline {chapter}{\numberline {14}Các thuật toán trên cây}{133}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Duyệt cây}{134}{section.14.1}%
+\contentsline {subsubsection}{Quy hoạch động}{134}{lstnumber.-179.1}%
+\contentsline {section}{\numberline {14.2}Đường kính}{135}{section.14.2}%
+\contentsline {subsubsection}{Thuật toán 1}{135}{section.14.2}%
+\contentsline {subsubsection}{Thuật toán 2}{136}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Tất cả các đường đi dài nhất}{136}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Cây nhị phân}{138}{section.14.4}%
+\contentsline {chapter}{\numberline {15}Cây khung}{141}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Thuật toán Kruskal}{142}{section.15.1}%
+\contentsline {subsubsection}{Ví dụ}{142}{section.15.1}%
+\contentsline {subsubsection}{Tại sao thuật toán này hoạt động?}{144}{section.15.1}%
+\contentsline {subsubsection}{Cài đặt}{144}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Cấu trúc Union-find}{145}{section.15.2}%
+\contentsline {subsubsection}{Cấu trúc}{145}{section.15.2}%
+\contentsline {subsubsection}{Cài đặt}{145}{section.15.2}%
+\contentsline {section}{\numberline {15.3}Thuật toán Prim}{146}{section.15.3}%
+\contentsline {subsubsection}{Ví dụ}{147}{section.15.3}%
+\contentsline {subsubsection}{Cài đặt}{148}{section.15.3}%
+\contentsline {chapter}{\numberline {16}Đồ thị có hướng}{149}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Sắp xếp tô pô (Topological sorting)}{149}{section.16.1}%
+\contentsline {subsubsection}{Thuật toán}{150}{section.16.1}%
+\contentsline {subsubsection}{Ví dụ 1}{150}{section.16.1}%
+\contentsline {subsubsection}{Ví dụ 2}{151}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Quy hoạch động (Dynamic programming)}{151}{section.16.2}%
+\contentsline {subsubsection}{Đếm số lượng đường đi}{151}{section.16.2}%
+\contentsline {subsubsection}{Mở rộng thuật toán Dijkstra}{152}{section.16.2}%
+\contentsline {subsubsection}{Biểu diễn bài toán dưới dạng đồ thị}{153}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Đường đi kế tiếp}{153}{section.16.3}%
+\contentsline {section}{\numberline {16.4}Dò tìm chu trình (Cycle detection)}{155}{section.16.4}%
+\contentsline {subsubsection}{Thuật toán Floyd}{155}{section.16.4}%
+\contentsline {chapter}{\numberline {17}Liên thông mạnh (Strong connectivity)}{157}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Thuật toán Kosaraju}{158}{section.17.1}%
+\contentsline {subsubsection}{Tìm kiếm 1}{158}{section.17.1}%
+\contentsline {subsubsection}{Tìm kiếm 2}{159}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Bài toán 2SAT}{160}{section.17.2}%
+\contentsline {chapter}{\numberline {18}Truy vấn trên cây}{163}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Tìm tổ tiên}{163}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Cây con và đường đi}{164}{section.18.2}%
+\contentsline {subsubsection}{Truy vấn cây con}{164}{section.18.2}%
+\contentsline {subsubsection}{Truy vấn đường đi}{165}{section.18.2}%
+\contentsline {section}{\numberline {18.3}Tổ tiên chung thấp nhất}{166}{section.18.3}%
+\contentsline {subsubsection}{Phương pháp 1}{167}{section.18.3}%
+\contentsline {subsubsection}{Phương pháp 2}{168}{section.18.3}%
+\contentsline {subsubsection}{Khoảng cách giữa các đỉnh}{169}{section.18.3}%
+\contentsline {section}{\numberline {18.4}Thuật toán ngoại tuyến}{169}{section.18.4}%
+\contentsline {subsubsection}{Gộp cấu trúc dữ liệu}{170}{section.18.4}%
+\contentsline {chapter}{\numberline {19}Đường đi và chu trình}{173}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Đường đi Euler}{173}{section.19.1}%
+\contentsline {subsubsection}{Sự tồn tại}{174}{section.19.1}%
+\contentsline {subsubsection}{Thuật toán của Hierholzer}{175}{section.19.1}%
+\contentsline {subsubsection}{Ví dụ}{176}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Đường đi Hamilton}{177}{section.19.2}%
+\contentsline {subsubsection}{Sự tồn tại}{177}{section.19.2}%
+\contentsline {subsubsection}{Xây dựng}{178}{section.19.2}%
+\contentsline {section}{\numberline {19.3}Chuỗi De Bruijn}{178}{section.19.3}%
+\contentsline {section}{\numberline {19.4}Hành trình của quân mã}{178}{section.19.4}%
+\contentsline {subsubsection}{Quy tắc của Warnsdorf}{179}{section.19.4}%
+\contentsline {chapter}{\numberline {20}Luồng và lát cắt (Flows and cuts)}{181}{chapter.20}%
+\contentsline {subsubsection}{Maximum flow}{181}{chapter.20}%
+\contentsline {subsubsection}{Minimum cut}{182}{chapter.20}%
+\contentsline {section}{\numberline {20.1}Thuật toán Ford–Fulkerson}{182}{section.20.1}%
+\contentsline {subsubsection}{Mô tả thuật toán}{182}{section.20.1}%
+\contentsline {subsubsection}{Tìm đường đi}{184}{section.20.1}%
+\contentsline {subsubsection}{Minimum cuts}{184}{section.20.1}%
+\contentsline {section}{\numberline {20.2}Đường đi không giao nhau (Disjoint paths)}{185}{section.20.2}%
+\contentsline {subsubsection}{Edge-disjoint paths}{185}{section.20.2}%
+\contentsline {subsubsection}{Node-disjoint paths}{186}{section.20.2}%
+\contentsline {section}{\numberline {20.3}Maximum matchings}{187}{section.20.3}%
+\contentsline {subsubsection}{Tìm ghép cặp cực đại}{187}{section.20.3}%
+\contentsline {subsubsection}{Hall's theorem}{188}{section.20.3}%
+\contentsline {subsubsection}{Kőnig's theorem}{189}{section.20.3}%
+\contentsline {section}{\numberline {20.4}Path covers}{189}{section.20.4}%
+\contentsline {subsubsection}{Node-disjoint path cover}{190}{section.20.4}%
+\contentsline {subsubsection}{General path cover}{191}{section.20.4}%
+\contentsline {subsubsection}{Dilworth's theorem}{192}{section.20.4}%
+\contentsline {part}{III\hspace {1em}Advanced topics}{193}{part.3}%
+\contentsline {chapter}{\numberline {21}Lý thuyết số}{195}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Số nguyên tố và ước số}{195}{section.21.1}%
+\contentsline {subsubsection}{Số lượng các số nguyên tố}{196}{section.21.1}%
+\contentsline {subsubsection}{Mật độ của các số nguyên tố}{196}{section.21.1}%
+\contentsline {subsubsection}{Các giả thuyết}{196}{section.21.1}%
+\contentsline {subsubsection}{Các thuật toán cơ bản}{197}{section.21.1}%
+\contentsline {subsubsection}{Sàng Eratosthenes}{197}{lstnumber.-190.11}%
+\contentsline {subsubsection}{Thuật toán Euclid}{198}{lstnumber.-191.6}%
+\contentsline {subsubsection}{Hàm phi Euler}{199}{lstnumber.-192.4}%
+\contentsline {section}{\numberline {21.2}Số học mô-đun}{199}{section.21.2}%
+\contentsline {subsubsection}{Lũy thừa mô-đun}{199}{section.21.2}%
+\contentsline {subsubsection}{Định lý Fermat và Định lý Euler}{200}{lstnumber.-193.7}%
+\contentsline {subsubsection}{Nghịch đảo mô-đun}{200}{lstnumber.-193.7}%
+\contentsline {subsubsection}{Số học máy tính}{201}{lstnumber.-193.7}%
+\contentsline {section}{\numberline {21.3}Giải phương trình}{201}{section.21.3}%
+\contentsline {subsubsection}{Định lý số dư Trung Hoa}{202}{section.21.3}%
+\contentsline {section}{\numberline {21.4}Các kết quả khác}{203}{section.21.4}%
+\contentsline {subsubsection}{Định lý Lagrange}{203}{section.21.4}%
+\contentsline {subsubsection}{Định lý Zeckendorf}{203}{section.21.4}%
+\contentsline {subsubsection}{Bộ ba Pythagoras}{203}{section.21.4}%
+\contentsline {subsubsection}{Định lý Wilson}{203}{section.21.4}%
+\contentsline {chapter}{\numberline {22}Combinatorics}{205}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Binomial coefficients}{206}{section.22.1}%
+\contentsline {subsubsection}{Formula 1}{206}{section.22.1}%
+\contentsline {subsubsection}{Formula 2}{206}{section.22.1}%
+\contentsline {subsubsection}{Properties}{206}{section.22.1}%
+\contentsline {subsubsection}{Boxes and balls}{207}{section.22.1}%
+\contentsline {subsubsection}{Multinomial coefficients}{208}{section.22.1}%
+\contentsline {section}{\numberline {22.2}Catalan numbers}{208}{section.22.2}%
+\contentsline {subsubsection}{Parenthesis expressions}{208}{section.22.2}%
+\contentsline {subsubsection}{Formula 1}{209}{section.22.2}%
+\contentsline {subsubsection}{Formula 2}{209}{section.22.2}%
+\contentsline {subsubsection}{Counting trees}{209}{section.22.2}%
+\contentsline {section}{\numberline {22.3}Inclusion-exclusion}{210}{section.22.3}%
+\contentsline {subsubsection}{Derangements}{211}{section.22.3}%
+\contentsline {section}{\numberline {22.4}Burnside's lemma}{212}{section.22.4}%
+\contentsline {section}{\numberline {22.5}Cayley's formula}{212}{section.22.5}%
+\contentsline {subsubsection}{Mã Prüfer}{213}{section.22.5}%
+\contentsline {chapter}{\numberline {23}Ma trận}{215}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Các phép toán}{215}{section.23.1}%
+\contentsline {subsubsection}{Phép nhân ma trận}{216}{section.23.1}%
+\contentsline {subsubsection}{Lũy thừa ma trận}{217}{section.23.1}%
+\contentsline {subsubsection}{Định thức}{217}{section.23.1}%
+\contentsline {section}{\numberline {23.2}Hệ thức truy hồi tuyến tính}{218}{section.23.2}%
+\contentsline {subsubsection}{Dãy Fibonacci}{218}{section.23.2}%
+\contentsline {subsubsection}{Trường hợp tổng quát}{219}{section.23.2}%
+\contentsline {section}{\numberline {23.3}Đồ thị và ma trận}{219}{section.23.3}%
+\contentsline {subsubsection}{Đếm đường đi}{219}{section.23.3}%
+\contentsline {subsubsection}{Đường đi ngắn nhất}{220}{section.23.3}%
+\contentsline {subsubsection}{Định lý Kirchhoff}{221}{section.23.3}%
+\contentsline {chapter}{\numberline {24}Xác suất (Probability)}{223}{chapter.24}%
+\contentsline {section}{\numberline {24.1}Tính toán}{223}{section.24.1}%
+\contentsline {section}{\numberline {24.2}Biến cố (Events)}{224}{section.24.2}%
+\contentsline {subsubsection}{Phần bù}{224}{section.24.2}%
+\contentsline {subsubsection}{Hợp}{225}{section.24.2}%
+\contentsline {subsubsection}{Conditional probability}{225}{section.24.2}%
+\contentsline {subsubsection}{Giao}{226}{section.24.2}%
+\contentsline {section}{\numberline {24.3}Biến ngẫu nhiên (Random variables)}{226}{section.24.3}%
+\contentsline {subsubsection}{Giá trị kỳ vọng (Expected value)}{226}{section.24.3}%
+\contentsline {subsubsection}{Phân phối (Distributions)}{227}{section.24.3}%
+\contentsline {section}{\numberline {24.4}Chuỗi Markov (Markov chains)}{228}{section.24.4}%
+\contentsline {section}{\numberline {24.5}Thuật toán ngẫu nhiên (Randomized algorithms)}{229}{section.24.5}%
+\contentsline {subsubsection}{Thống kê thứ tự (Order statistics)}{229}{section.24.5}%
+\contentsline {subsubsection}{Kiểm tra phép nhân ma trận (Verifying matrix multiplication)}{230}{section.24.5}%
+\contentsline {subsubsection}{Tô màu đồ thị (Graph coloring)}{230}{section.24.5}%
+\contentsline {chapter}{\numberline {25}Lý thuyết trò chơi (Game theory)}{233}{chapter.25}%
+\contentsline {section}{\numberline {25.1}Trạng thái trò chơi (Game states)}{233}{section.25.1}%
+\contentsline {subsubsection}{Trạng thái thắng và thua}{233}{section.25.1}%
+\contentsline {subsubsection}{Đồ thị trạng thái (State graph)}{234}{section.25.1}%
+\contentsline {section}{\numberline {25.2}Trò chơi Nim (Nim game)}{235}{section.25.2}%
+\contentsline {subsubsection}{Phân tích}{235}{section.25.2}%
+\contentsline {subsubsection}{Trò chơi Misère}{236}{section.25.2}%
+\contentsline {section}{\numberline {25.3}Định lý Sprague–Grundy (Sprague–Grundy theorem)}{236}{section.25.3}%
+\contentsline {subsubsection}{Số Grundy (Grundy numbers)}{236}{section.25.3}%
+\contentsline {subsubsection}{Trò chơi con (Subgames)}{238}{section.25.3}%
+\contentsline {subsubsection}{Trò chơi của Grundy}{238}{section.25.3}%
+\contentsline {chapter}{\numberline {26}Các thuật toán chuỗi}{241}{chapter.26}%
+\contentsline {section}{\numberline {26.1}Thuật ngữ chuỗi}{241}{section.26.1}%
+\contentsline {section}{\numberline {26.2}Cấu trúc Trie}{242}{section.26.2}%
+\contentsline {section}{\numberline {26.3}Băm chuỗi (String hashing)}{243}{section.26.3}%
+\contentsline {section}{\numberline {26.4}Thuật toán Z (Z-algorithm)}{245}{section.26.4}%
+\contentsline {subsubsection}{Sử dụng mảng Z}{247}{section.26.4}%
+\contentsline {subsubsection}{Cài đặt}{248}{section.26.4}%
+\contentsline {chapter}{\numberline {27}Thuật toán căn bậc hai}{249}{chapter.27}%
+\contentsline {section}{\numberline {27.1}Kết hợp các thuật toán}{250}{section.27.1}%
+\contentsline {subsubsection}{Xử lý theo trường hợp}{250}{section.27.1}%
+\contentsline {subsubsection}{Xử lý theo lô}{251}{section.27.1}%
+\contentsline {section}{\numberline {27.2}Phân hoạch số nguyên}{251}{section.27.2}%
+\contentsline {subsubsection}{Cái túi (Knapsack)}{252}{section.27.2}%
+\contentsline {subsubsection}{Xây dựng chuỗi}{252}{section.27.2}%
+\contentsline {section}{\numberline {27.3}Thuật toán của Mo (Mo's algorithm)}{253}{section.27.3}%
+\contentsline {chapter}{\numberline {28}Cây phân đoạn nâng cao}{255}{chapter.28}%
+\contentsline {section}{\numberline {28.1}Truyền lười (Lazy propagation)}{256}{section.28.1}%
+\contentsline {subsubsection}{Cây phân đoạn lười biếng}{256}{section.28.1}%
+\contentsline {subsubsection}{Cập nhật đa thức}{258}{section.28.1}%
+\contentsline {section}{\numberline {28.2}Cây động}{259}{section.28.2}%
+\contentsline {subsubsection}{Cây phân đoạn thưa}{259}{lstnumber.-201.4}%
+\contentsline {subsubsection}{Cây phân đoạn bền bỉ}{260}{lstnumber.-201.4}%
+\contentsline {section}{\numberline {28.3}Cấu trúc dữ liệu}{261}{section.28.3}%
+\contentsline {section}{\numberline {28.4}Hai chiều}{261}{section.28.4}%
+\contentsline {chapter}{\numberline {29}Hình học}{263}{chapter.29}%
+\contentsline {section}{\numberline {29.1}Số phức}{264}{section.29.1}%
+\contentsline {section}{\numberline {29.2}Điểm và đường thẳng}{265}{section.29.2}%
+\contentsline {subsubsection}{Vị trí điểm}{266}{lstnumber.-207.3}%
+\contentsline {subsubsection}{Giao điểm của đoạn thẳng}{266}{lstnumber.-207.3}%
+\contentsline {subsubsection}{Khoảng cách từ điểm đến đường thẳng}{267}{lstnumber.-207.3}%
+\contentsline {subsubsection}{Điểm trong đa giác}{267}{lstnumber.-207.3}%
+\contentsline {section}{\numberline {29.3}Diện tích đa giác}{268}{section.29.3}%
+\contentsline {subsubsection}{Định lý Pick}{269}{section.29.3}%
+\contentsline {section}{\numberline {29.4}Hàm khoảng cách}{269}{section.29.4}%
+\contentsline {subsubsection}{Xoay tọa độ}{270}{section.29.4}%
+\contentsline {chapter}{\numberline {30}Thuật toán đường quét}{273}{chapter.30}%
+\contentsline {section}{\numberline {30.1}Giao điểm}{274}{section.30.1}%
+\contentsline {section}{\numberline {30.2}Bài toán cặp điểm gần nhất}{275}{section.30.2}%
+\contentsline {section}{\numberline {30.3}Bài toán bao lồi}{276}{section.30.3}%
+\contentsline {chapter}{Tài liệu tham khảo}{279}{section*.3}%

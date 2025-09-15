@@ -1,0 +1,851 @@
+\chapter{Thuật toán đường quét}
+
+\index{sweep line}
+\index{đường quét}
+
+Nhiều bài toán hình học có thể được giải bằng cách sử dụng
+thuật toán \key{đường quét} (sweep line).
+Ý tưởng của những thuật toán này là biểu diễn
+một trường hợp của bài toán dưới dạng một tập các sự kiện tương ứng
+với các điểm trên mặt phẳng.
+Các sự kiện được xử lý theo thứ tự tăng dần
+của tọa độ x hoặc y của chúng.
+
+Ví dụ, xét bài toán sau:
+Có một công ty có $n$ nhân viên,
+và ta biết với mỗi nhân viên thời điểm đến
+và thời điểm rời khỏi văn phòng trong một ngày nhất định.
+Nhiệm vụ của ta là tính số lượng tối đa
+nhân viên có mặt cùng lúc trong văn phòng.
+
+Bài toán có thể được giải bằng cách mô hình hóa tình huống
+sao cho mỗi nhân viên được gán hai sự kiện
+tương ứng với thời điểm đến và rời đi của họ.
+Sau khi sắp xếp các sự kiện, ta đi qua chúng
+và theo dõi số người trong văn phòng.
+Ví dụ, bảng
+\begin{center}
+\begin{tabular}{ccc}
+người & thời điểm đến & thời điểm đi \\
+\hline
+John & 10 & 15 \\
+Maria & 6 & 12 \\
+Peter & 14 & 16 \\
+Lisa & 5 & 13 \\
+\end{tabular}
+\end{center}
+tương ứng với các sự kiện sau:
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw (0,0) rectangle (17,-6.5);
+\path[draw,thick,-] (10,-1) -- (15,-1);
+\path[draw,thick,-] (6,-2.5) -- (12,-2.5);
+\path[draw,thick,-] (14,-4) -- (16,-4);
+\path[draw,thick,-] (5,-5.5) -- (13,-5.5);
+
+\draw[fill] (10,-1) circle [radius=0.05];
+\draw[fill] (15,-1) circle [radius=0.05];
+\draw[fill] (6,-2.5) circle [radius=0.05];
+\draw[fill] (12,-2.5) circle [radius=0.05];
+\draw[fill] (14,-4) circle [radius=0.05];
+\draw[fill] (16,-4) circle [radius=0.05];
+\draw[fill] (5,-5.5) circle [radius=0.05];
+\draw[fill] (13,-5.5) circle [radius=0.05];
+
+\node at (2,-1) {John};
+\node at (2,-2.5) {Maria};
+\node at (2,-4) {Peter};
+\node at (2,-5.5) {Lisa};
+\end{tikzpicture}
+\end{center}
+Ta đi qua các sự kiện từ trái sang phải
+và duy trì một bộ đếm.
+Mỗi khi một người đến, ta tăng
+giá trị của bộ đếm lên một,
+và khi một người rời đi,
+ta giảm giá trị của bộ đếm đi một.
+Câu trả lời của bài toán là giá trị lớn nhất
+của bộ đếm trong quá trình thực hiện thuật toán.
+
+Trong ví dụ này, các sự kiện được xử lý như sau:
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\path[draw,thick,->] (0.5,0.5) -- (16.5,0.5);
+\draw (0,0) rectangle (17,-6.5);
+\path[draw,thick,-] (10,-1) -- (15,-1);
+\path[draw,thick,-] (6,-2.5) -- (12,-2.5);
+\path[draw,thick,-] (14,-4) -- (16,-4);
+\path[draw,thick,-] (5,-5.5) -- (13,-5.5);
+
+\draw[fill] (10,-1) circle [radius=0.05];
+\draw[fill] (15,-1) circle [radius=0.05];
+\draw[fill] (6,-2.5) circle [radius=0.05];
+\draw[fill] (12,-2.5) circle [radius=0.05];
+\draw[fill] (14,-4) circle [radius=0.05];
+\draw[fill] (16,-4) circle [radius=0.05];
+\draw[fill] (5,-5.5) circle [radius=0.05];
+\draw[fill] (13,-5.5) circle [radius=0.05];
+
+\node at (2,-1) {John};
+\node at (2,-2.5) {Maria};
+\node at (2,-4) {Peter};
+\node at (2,-5.5) {Lisa};
+
+\path[draw,dashed] (10,0)--(10,-6.5);
+\path[draw,dashed] (15,0)--(15,-6.5);
+\path[draw,dashed] (6,0)--(6,-6.5);
+\path[draw,dashed] (12,0)--(12,-6.5);
+\path[draw,dashed] (14,0)--(14,-6.5);
+\path[draw,dashed] (16,0)--(16,-6.5);
+\path[draw,dashed] (5,0)--(5,-6.5);
+\path[draw,dashed] (13,0)--(13,-6.5);
+
+\node at (10,-7) {$+$};
+\node at (15,-7) {$-$};
+\node at (6,-7) {$+$};
+\node at (12,-7) {$-$};
+\node at (14,-7) {$+$};
+\node at (16,-7) {$-$};
+\node at (5,-7) {$+$};
+\node at (13,-7) {$-$};
+
+\node at (10,-8) {$3$};
+\node at (15,-8) {$1$};
+\node at (6,-8) {$2$};
+\node at (12,-8) {$2$};
+\node at (14,-8) {$2$};
+\node at (16,-8) {$0$};
+\node at (5,-8) {$1$};
+\node at (13,-8) {$1$};
+\end{tikzpicture}
+\end{center}
+Các ký hiệu $+$ và $-$ chỉ ra liệu
+giá trị của bộ đếm tăng hay giảm,
+và giá trị của bộ đếm được hiển thị bên dưới.
+Giá trị lớn nhất của bộ đếm là 3
+giữa thời điểm John đến và Maria rời đi.
+
+Thời gian chạy của thuật toán là $O(n \log n)$,
+bởi vì việc sắp xếp các sự kiện mất thời gian $O(n \log n)$
+và phần còn lại của thuật toán mất thời gian $O(n)$.
+
+\section{Giao điểm}
+
+\index{intersection point}
+\index{giao điểm}
+
+Cho một tập $n$ đoạn thẳng, mỗi đoạn hoặc là
+nằm ngang hoặc thẳng đứng, xét bài toán
+đếm tổng số giao điểm.
+Ví dụ, khi các đoạn thẳng là
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\path[draw,thick,-] (0,2) -- (5,2);
+\path[draw,thick,-] (1,4) -- (6,4);
+\path[draw,thick,-] (6,3) -- (10,3);
+\path[draw,thick,-] (2,1) -- (2,6);
+\path[draw,thick,-] (8,2) -- (8,5);
+\end{tikzpicture}
+\end{center}
+có ba giao điểm:
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\path[draw,thick,-] (0,2) -- (5,2);
+\path[draw,thick,-] (1,4) -- (6,4);
+\path[draw,thick,-] (6,3) -- (10,3);
+\path[draw,thick,-] (2,1) -- (2,6);
+\path[draw,thick,-] (8,2) -- (8,5);
+
+\draw[fill] (2,2) circle [radius=0.15];
+\draw[fill] (2,4) circle [radius=0.15];
+\draw[fill] (8,3) circle [radius=0.15];
+
+\end{tikzpicture}
+\end{center}
+
+Dễ dàng giải bài toán này trong thời gian $O(n^2)$,
+bởi vì ta có thể đi qua tất cả các cặp đoạn thẳng có thể
+và kiểm tra xem chúng có giao nhau không.
+Tuy nhiên, ta có thể giải bài toán hiệu quả hơn
+trong thời gian $O(n \log n)$ bằng cách sử dụng thuật toán đường quét
+và một cấu trúc dữ liệu truy vấn khoảng.
+
+Ý tưởng là xử lý các điểm cuối của các đoạn
+thẳng từ trái sang phải và
+tập trung vào ba loại sự kiện:
+\begin{enumerate}[noitemsep]
+\item[(1)] đoạn nằm ngang bắt đầu
+\item[(2)] đoạn nằm ngang kết thúc
+\item[(3)] đoạn thẳng đứng
+\end{enumerate}
+
+Các sự kiện sau tương ứng với ví dụ:
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\path[draw,dashed] (0,2) -- (5,2);
+\path[draw,dashed] (1,4) -- (6,4);
+\path[draw,dashed] (6,3) -- (10,3);
+\path[draw,dashed] (2,1) -- (2,6);
+\path[draw,dashed] (8,2) -- (8,5);
+
+\node at (0,2) {$1$};
+\node at (5,2) {$2$};
+\node at (1,4) {$1$};
+\node at (6,4) {$2$};
+\node at (6,3) {$1$};
+\node at (10,3) {$2$};
+
+\node at (2,3.5) {$3$};
+\node at (8,3.5) {$3$};
+\end{tikzpicture}
+\end{center}
+
+Ta đi qua các sự kiện từ trái sang phải
+và sử dụng một cấu trúc dữ liệu duy trì một tập các
+tọa độ y tại đó có một đoạn nằm ngang đang hoạt động.
+Tại sự kiện 1, ta thêm tọa độ y của đoạn
+vào tập, và tại sự kiện 2, ta xóa
+tọa độ y khỏi tập.
+
+Các giao điểm được tính tại sự kiện 3.
+Khi có một đoạn thẳng đứng giữa các điểm
+$y_1$ và $y_2$, ta đếm số lượng các đoạn
+nằm ngang đang hoạt động có tọa độ y nằm giữa
+$y_1$ và $y_2$, và cộng số này vào tổng
+số giao điểm.
+
+Để lưu trữ các tọa độ y của đoạn nằm ngang,
+ta có thể sử dụng cây chỉ số nhị phân hoặc cây phân đoạn,
+có thể kèm theo nén chỉ số.
+Khi sử dụng các cấu trúc như vậy, việc xử lý mỗi sự kiện
+mất thời gian $O(\log n)$, vì vậy tổng thời gian
+chạy của thuật toán là $O(n \log n)$.
+
+\section{Bài toán cặp điểm gần nhất}
+
+\index{closest pair}
+\index{cặp điểm gần nhất}
+
+Cho một tập $n$ điểm, bài toán tiếp theo của ta là
+tìm hai điểm có khoảng cách Euclid nhỏ nhất.
+Ví dụ, nếu các điểm là
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\draw (0,0)--(12,0)--(12,4)--(0,4)--(0,0);
+
+\draw (1,2) circle [radius=0.1];
+\draw (3,1) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5.5,1.5) circle [radius=0.1];
+\draw (6,2.5) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (9,1.5) circle [radius=0.1];
+\draw (10,2) circle [radius=0.1];
+\draw (1.5,3.5) circle [radius=0.1];
+\draw (1.5,1) circle [radius=0.1];
+\draw (2.5,3) circle [radius=0.1];
+\draw (4.5,1.5) circle [radius=0.1];
+\draw (5.25,0.5) circle [radius=0.1];
+\draw (6.5,2) circle [radius=0.1];
+\end{tikzpicture}
+\end{center}
+\begin{samepage}
+ta nên tìm các điểm sau:
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\draw (0,0)--(12,0)--(12,4)--(0,4)--(0,0);
+
+\draw (1,2) circle [radius=0.1];
+\draw (3,1) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5.5,1.5) circle [radius=0.1];
+\draw[fill] (6,2.5) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (9,1.5) circle [radius=0.1];
+\draw (10,2) circle [radius=0.1];
+\draw (1.5,3.5) circle [radius=0.1];
+\draw (1.5,1) circle [radius=0.1];
+\draw (2.5,3) circle [radius=0.1];
+\draw (4.5,1.5) circle [radius=0.1];
+\draw (5.25,0.5) circle [radius=0.1];
+\draw[fill] (6.5,2) circle [radius=0.1];
+\end{tikzpicture}
+\end{center}
+\end{samepage}
+
+Đây là một ví dụ khác về bài toán
+có thể được giải trong thời gian $O(n \log n)$
+bằng cách sử dụng thuật toán đường quét\footnote{Ngoài cách tiếp cận này,
+còn có một
+thuật toán chia để trị thời gian $O(n \log n)$ \cite{sha75}
+chia các điểm thành hai tập và đệ quy
+giải bài toán cho cả hai tập.}.
+Ta đi qua các điểm từ trái sang phải
+và duy trì một giá trị $d$: khoảng cách nhỏ nhất
+giữa hai điểm đã thấy cho tới thời điểm hiện tại.
+Tại mỗi điểm, ta tìm điểm gần nhất về bên trái.
+Nếu khoảng cách nhỏ hơn $d$, đó là
+khoảng cách nhỏ nhất mới và ta cập nhật
+giá trị của $d$.
+
+Nếu điểm hiện tại là $(x,y)$
+và có một điểm ở bên trái
+trong phạm vi khoảng cách nhỏ hơn $d$,
+tọa độ x của điểm đó phải
+nằm trong khoảng $[x-d,x]$ và tọa độ y
+phải nằm trong khoảng $[y-d,y+d]$.
+Vì vậy, chỉ cần xét các điểm
+nằm trong những khoảng đó là đủ,
+điều này làm cho thuật toán hiệu quả.
+
+Ví dụ, trong hình sau, vùng
+được đánh dấu bằng các đường nét đứt chứa
+các điểm có thể nằm trong phạm vi khoảng cách $d$
+từ điểm đang xét:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\draw (0,0)--(12,0)--(12,4)--(0,4)--(0,0);
+
+\draw (1,2) circle [radius=0.1];
+\draw (3,1) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5.5,1.5) circle [radius=0.1];
+\draw (6,2.5) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (9,1.5) circle [radius=0.1];
+\draw (10,2) circle [radius=0.1];
+\draw (1.5,3.5) circle [radius=0.1];
+\draw (1.5,1) circle [radius=0.1];
+\draw (2.5,3) circle [radius=0.1];
+\draw (4.5,1.5) circle [radius=0.1];
+\draw (5.25,0.5) circle [radius=0.1];
+\draw[fill] (6.5,2) circle [radius=0.1];
+
+\draw[dashed] (6.5,0.75)--(6.5,3.25);
+\draw[dashed] (5.25,0.75)--(5.25,3.25);
+\draw[dashed] (5.25,0.75)--(6.5,0.75);
+\draw[dashed] (5.25,3.25)--(6.5,3.25);
+
+\draw [decoration={brace}, decorate, line width=0.3mm] (5.25,3.5) -- (6.5,3.5);
+\node at (5.875,4) {$d$};
+\draw [decoration={brace}, decorate, line width=0.3mm] (6.75,3.25) -- (6.75,2);
+\node at (7.25,2.625) {$d$};
+\end{tikzpicture}
+\end{center}
+
+Hiệu quả của thuật toán dựa trên thực tế
+là vùng này luôn chỉ chứa
+$O(1)$ điểm.
+Ta có thể đi qua các điểm đó trong thời gian $O(\log n)$
+bằng cách duy trì một tập các điểm có tọa độ x
+nằm trong khoảng $[x-d,x]$, theo thứ tự tăng dần
+theo tọa độ y của chúng.
+
+Độ phức tạp thời gian của thuật toán là $O(n \log n)$,
+bởi vì ta đi qua $n$ điểm và
+tìm cho mỗi điểm điểm gần nhất bên trái
+trong thời gian $O(\log n)$.
+
+\section{Bài toán bao lồi}
+
+Một \key{bao lồi} (convex hull) là đa giác lồi nhỏ nhất
+chứa tất cả các điểm của một tập cho trước.
+Tính lồi có nghĩa là một đoạn thẳng giữa
+bất kỳ hai đỉnh nào của đa giác đều nằm hoàn toàn
+bên trong đa giác.
+
+\begin{samepage}
+Ví dụ, với các điểm
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+\end{tikzpicture}
+\end{center}
+\end{samepage}
+bao lồi như sau:
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\draw (0,0)--(4,-1)--(7,1)--(6,3)--(2,4)--(0,2)--(0,0);
+
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+\end{tikzpicture}
+\end{center}
+
+\index{Andrew's algorithm}
+\index{thuật toán Andrew}
+
+\key{Thuật toán Andrew} (Andrew's algorithm) \cite{and79} cung cấp
+một cách đơn giản để
+xây dựng bao lồi cho một tập điểm
+trong thời gian $O(n \log n)$.
+Thuật toán đầu tiên xác định điểm
+trái nhất và phải nhất, và sau đó
+xây dựng bao lồi thành hai phần:
+đầu tiên là phần trên và sau đó là phần dưới.
+Cả hai phần đều tương tự nhau, nên ta có thể tập trung vào
+việc xây dựng phần trên.
+
+Đầu tiên, ta sắp xếp các điểm trước tiên theo
+tọa độ x và sau đó theo tọa độ y.
+Sau đó, ta đi qua các điểm và
+thêm từng điểm vào bao lồi.
+Luôn luôn sau khi thêm một điểm vào bao lồi,
+ta đảm bảo rằng đoạn thẳng cuối cùng
+trong bao lồi không rẽ trái.
+Miễn là nó rẽ trái, ta liên tục loại bỏ
+điểm áp chót khỏi bao lồi.
+
+Các hình sau thể hiện cách
+thuật toán Andrew hoạt động:
+\\
+\begin{tabular}{ccccccc}
+\\
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(1,1);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(1,1)--(2,2);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,2);
+\end{tikzpicture}
+\\
+1 & & 2 & & 3 & & 4 \\
+\end{tabular}
+\\
+\begin{tabular}{ccccccc}
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,2)--(2,4);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(3,2);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(3,2)--(4,-1);
+\end{tikzpicture}
+\\
+5 & & 6 & & 7 & & 8 \\
+\end{tabular}
+\\
+\begin{tabular}{ccccccc}
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(3,2)--(4,-1)--(4,0);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(3,2)--(4,0);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(3,2)--(4,0)--(4,3);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(3,2)--(4,3);
+\end{tikzpicture}
+\\
+9 & & 10 & & 11 & & 12 \\
+\end{tabular}
+\\
+\begin{tabular}{ccccccc}
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(4,3);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(4,3)--(5,2);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(4,3)--(5,2)--(6,1);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(4,3)--(5,2)--(6,1)--(6,3);
+\end{tikzpicture}
+\\
+13 & & 14 & & 15 & & 16 \\
+\end{tabular}
+\\
+\begin{tabular}{ccccccc}
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(4,3)--(5,2)--(6,3);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(4,3)--(6,3);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(6,3);
+\end{tikzpicture}
+& \hspace{0.1cm} &
+\begin{tikzpicture}[scale=0.3]
+\draw (-1,-2)--(8,-2)--(8,5)--(-1,5)--(-1,-2);
+\draw (0,0) circle [radius=0.1];
+\draw (4,-1) circle [radius=0.1];
+\draw (7,1) circle [radius=0.1];
+\draw (6,3) circle [radius=0.1];
+\draw (2,4) circle [radius=0.1];
+\draw (0,2) circle [radius=0.1];
+
+\draw (1,1) circle [radius=0.1];
+\draw (2,2) circle [radius=0.1];
+\draw (3,2) circle [radius=0.1];
+\draw (4,0) circle [radius=0.1];
+\draw (4,3) circle [radius=0.1];
+\draw (5,2) circle [radius=0.1];
+\draw (6,1) circle [radius=0.1];
+
+\draw (0,0)--(0,2)--(2,4)--(6,3)--(7,1);
+\end{tikzpicture}
+\\
+17 & & 18 & & 19 & & 20
+\end{tabular}
+
+
+
+

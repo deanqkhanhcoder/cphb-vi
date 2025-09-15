@@ -1,0 +1,989 @@
+\chapter{Giới thiệu}
+
+Lập trình thi đấu kết hợp hai chủ đề:
+(1) thiết kế thuật toán và (2) cài đặt thuật toán.
+
+\key{Thiết kế thuật toán} bao gồm việc giải quyết vấn đề
+và tư duy toán học.
+Cần có kỹ năng phân tích vấn đề và giải quyết chúng
+một cách sáng tạo.
+Một thuật toán để giải quyết một vấn đề
+phải vừa đúng vừa hiệu quả,
+và trọng tâm của vấn đề thường là
+về việc tìm ra một thuật toán hiệu quả.
+
+Kiến thức lý thuyết về thuật toán
+rất quan trọng đối với các lập trình viên thi đấu.
+Thông thường, lời giải cho một bài toán là
+sự kết hợp của các kỹ thuật đã biết và
+những hiểu biết mới.
+Các kỹ thuật xuất hiện trong lập trình thi đấu
+cũng tạo nên nền tảng cho nghiên cứu khoa học
+về thuật toán.
+
+\key{Cài đặt thuật toán} đòi hỏi kỹ năng
+lập trình tốt.
+Trong lập trình thi đấu, các lời giải
+được chấm điểm bằng cách kiểm tra thuật toán đã cài đặt
+bằng một tập các test case.
+Do đó, không chỉ cần ý tưởng của thuật toán
+đúng, mà việc cài đặt cũng
+phải chính xác.
+
+Một phong cách code tốt trong các cuộc thi là
+đơn giản và súc tích.
+Chương trình cần được viết nhanh,
+vì không có nhiều thời gian.
+Khác với kỹ thuật phần mềm truyền thống,
+các chương trình ngắn gọn (thường nhiều nhất là vài
+trăm dòng code), và không cần phải
+bảo trì sau cuộc thi.
+
+\section{Ngôn ngữ lập trình}
+
+\index{ngôn ngữ lập trình}
+
+Hiện tại, các ngôn ngữ lập trình phổ biến nhất
+được sử dụng trong các cuộc thi là C++, Python và Java.
+Ví dụ, trong Google Code Jam 2017,
+trong số 3.000 người tham gia giỏi nhất,
+79\% sử dụng C++,
+16\% sử dụng Python và
+8\% sử dụng Java \cite{goo17}.
+Một số người tham gia cũng sử dụng nhiều ngôn ngữ.
+
+Nhiều người nghĩ rằng C++ là lựa chọn tốt nhất
+cho một lập trình viên thi đấu,
+và C++ gần như luôn có sẵn trong
+các hệ thống thi.
+Lợi ích của việc sử dụng C++ là
+nó là một ngôn ngữ rất hiệu quả và
+thư viện chuẩn của nó chứa
+một bộ sưu tập lớn
+các cấu trúc dữ liệu và thuật toán.
+
+Mặt khác, việc thành thạo
+nhiều ngôn ngữ và hiểu rõ
+điểm mạnh của chúng là điều tốt.
+Ví dụ, nếu cần xử lý số nguyên lớn
+trong bài toán,
+Python có thể là một lựa chọn tốt, vì nó
+có sẵn các phép toán tích hợp để
+tính toán với số nguyên lớn.
+Tuy nhiên, hầu hết các bài toán trong các cuộc thi lập trình
+được thiết kế sao cho
+việc sử dụng một ngôn ngữ lập trình cụ thể
+không tạo ra lợi thế không công bằng.
+
+Tất cả các chương trình mẫu trong cuốn sách này đều được viết bằng C++,
+và các cấu trúc dữ liệu và thuật toán
+của thư viện chuẩn thường được sử dụng.
+Các chương trình tuân theo chuẩn C++11,
+chuẩn này có thể được sử dụng trong hầu hết các cuộc thi hiện nay.
+Nếu bạn chưa biết lập trình C++,
+bây giờ là thời điểm tốt để bắt đầu học.
+
+\subsubsection{Template code C++}
+
+Một template code C++ điển hình cho lập trình thi đấu
+trông như thế này:
+
+\begin{lstlisting}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    // phan giai bai toan o day
+}
+\end{lstlisting}
+
+Dòng \texttt{\#include} ở đầu
+mã nguồn là một tính năng của trình biên dịch \texttt{g++}
+cho phép chúng ta include toàn bộ thư viện chuẩn.
+Do đó, không cần phải include riêng lẻ
+các thư viện như \texttt{iostream},
+\texttt{vector} và \texttt{algorithm},
+mà chúng được sử dụng tự động.
+
+Dòng \texttt{using} khai báo rằng
+các lớp và hàm
+của thư viện chuẩn có thể được sử dụng trực tiếp
+trong mã nguồn.
+Nếu không có dòng \texttt{using}, chúng ta sẽ phải
+viết, ví dụ, \texttt{std::cout},
+nhưng bây giờ chỉ cần viết \texttt{cout}.
+
+Mã nguồn có thể được biên dịch bằng lệnh sau:
+
+\begin{lstlisting}
+g++ -std=c++11 -O2 -Wall test.cpp -o test
+\end{lstlisting}
+
+Lệnh này tạo ra một file nhị phân \texttt{test}
+từ mã nguồn \texttt{test.cpp}.
+Trình biên dịch tuân theo chuẩn C++11
+(\texttt{-std=c++11}),
+tối ưu hóa mã nguồn (\texttt{-O2})
+và hiển thị cảnh báo về các lỗi có thể xảy ra (\texttt{-Wall}).
+
+\section{Nhập và xuất}
+
+\index{nhập và xuất}
+
+Trong hầu hết các cuộc thi, luồng chuẩn được sử dụng để
+đọc dữ liệu vào và ghi kết quả ra.
+Trong C++, các luồng chuẩn là
+\texttt{cin} cho nhập và \texttt{cout} cho xuất.
+Ngoài ra, các hàm C
+\texttt{scanf} và \texttt{printf} cũng có thể được sử dụng.
+
+Dữ liệu vào cho chương trình thường bao gồm
+các số và chuỗi được phân tách bằng
+khoảng trắng và dòng mới.
+Chúng có thể được đọc từ luồng \texttt{cin}
+như sau:
+
+\begin{lstlisting}
+int a, b;
+string x;
+cin >> a >> b >> x;
+\end{lstlisting}
+
+Kiểu mã nguồn này luôn hoạt động,
+giả sử rằng có ít nhất một khoảng trắng
+hoặc dòng mới giữa các phần tử trong dữ liệu vào.
+Ví dụ, mã nguồn trên có thể đọc
+cả hai dữ liệu vào sau:
+\begin{lstlisting}
+123 456 monkey
+\end{lstlisting}
+\begin{lstlisting}
+123    456
+monkey
+\end{lstlisting}
+Luồng \texttt{cout} được sử dụng cho đầu ra
+như sau:
+\begin{lstlisting}
+int a = 123, b = 456;
+string x = "monkey";
+cout << a << " " << b << " " << x << "\n";
+\end{lstlisting}
+
+Nhập và xuất đôi khi là
+nút thắt cổ chai trong chương trình.
+Các dòng sau đây ở đầu mã nguồn
+giúp việc nhập và xuất hiệu quả hơn:
+
+\begin{lstlisting}
+ios::sync_with_stdio(0);
+cin.tie(0);
+\end{lstlisting}
+
+Lưu ý rằng ký tự xuống dòng \texttt{"\textbackslash n"}
+hoạt động nhanh hơn \texttt{endl},
+vì \texttt{endl} luôn gây ra
+thao tác flush.
+
+Các hàm C \texttt{scanf}
+và \texttt{printf} là một lựa chọn thay thế
+cho các luồng chuẩn C++.
+Chúng thường nhanh hơn một chút,
+nhưng cũng khó sử dụng hơn.
+Mã nguồn sau đây đọc hai số nguyên từ đầu vào:
+\begin{lstlisting}
+int a, b;
+scanf("%d %d", &a, &b);
+\end{lstlisting}
+Mã nguồn sau đây in hai số nguyên:
+\begin{lstlisting}
+int a = 123, b = 456;
+printf("%d %d\n", a, b);
+\end{lstlisting}
+
+Đôi khi chương trình cần đọc cả một dòng
+từ đầu vào, có thể chứa các khoảng trắng.
+Điều này có thể thực hiện được bằng cách sử dụng
+hàm \texttt{getline}:
+
+\begin{lstlisting}
+string s;
+getline(cin, s);
+\end{lstlisting}
+
+Nếu không biết lượng dữ liệu là bao nhiêu, vòng lặp
+sau đây rất hữu ích:
+\begin{lstlisting}
+while (cin >> x) {
+    // source
+}
+\end{lstlisting}
+Vòng lặp này đọc các phần tử từ đầu vào
+lần lượt từng cái một, cho đến khi không còn
+dữ liệu nào trong đầu vào.
+
+Trong một số hệ thống thi, file được sử dụng cho
+đầu vào và đầu ra.
+Một giải pháp đơn giản là viết
+mã nguồn như bình thường sử dụng luồng chuẩn,
+nhưng thêm các dòng sau vào đầu mã nguồn:
+\begin{lstlisting}
+freopen("input.txt", "r", stdin);
+freopen("output.txt", "w", stdout);
+\end{lstlisting}
+Sau đó, chương trình sẽ đọc dữ liệu vào từ file
+''input.txt'' và ghi kết quả ra file
+''output.txt''.
+
+\section{Làm việc với số}
+
+\index{số nguyên}
+
+\subsubsection{Số nguyên}
+
+Kiểu số nguyên được sử dụng nhiều nhất trong lập trình thi đấu
+là \texttt{int}, đây là kiểu 32-bit với
+phạm vi giá trị từ $-2^{31} \ldots 2^{31}-1$
+hoặc khoảng $-2 \cdot 10^9 \ldots 2 \cdot 10^9$.
+Nếu kiểu \texttt{int} không đủ,
+kiểu 64-bit \texttt{long long} có thể được sử dụng.
+Nó có phạm vi giá trị từ $-2^{63} \ldots 2^{63}-1$
+hoặc khoảng $-9 \cdot 10^{18} \ldots 9 \cdot 10^{18}$.
+
+Mã nguồn sau đây định nghĩa một
+biến \texttt{long long}:
+\begin{lstlisting}
+long long x = 123456789123456789LL;
+\end{lstlisting}
+Hậu tố \texttt{LL} có nghĩa là
+kiểu của số là \texttt{long long}.
+
+Một lỗi phổ biến khi sử dụng kiểu \texttt{long long}
+là kiểu \texttt{int} vẫn được sử dụng ở đâu đó
+trong mã nguồn.
+Ví dụ, mã nguồn sau chứa
+một lỗi tinh vi:
+
+\begin{lstlisting}
+int a = 123456789;
+long long b = a*a;
+cout << b << "\n"; // -1757895751
+\end{lstlisting}
+
+Mặc dù biến \texttt{b} có kiểu \texttt{long long},
+cả hai số trong biểu thức \texttt{a*a}
+đều có kiểu \texttt{int} và kết quả cũng
+có kiểu \texttt{int}.
+Vì điều này, biến \texttt{b} sẽ
+chứa một kết quả sai.
+Vấn đề có thể được giải quyết bằng cách thay đổi kiểu
+của \texttt{a} thành \texttt{long long} hoặc
+bằng cách thay đổi biểu thức thành \texttt{(long long)a*a}.
+
+Thông thường các bài toán trong cuộc thi được thiết lập sao cho
+kiểu \texttt{long long} là đủ.
+Tuy nhiên, tốt để biết rằng
+trình biên dịch \texttt{g++} cũng cung cấp
+một kiểu 128-bit \texttt{\_\_int128\_t}
+với phạm vi giá trị từ
+$-2^{127} \ldots 2^{127}-1$ hoặc khoảng $-10^{38} \ldots 10^{38}$.
+Tuy nhiên, kiểu này không có sẵn trong tất cả các hệ thống thi.
+
+\subsubsection{Số học modulo}
+
+\index{phần dư}
+\index{số học modulo}
+
+Chúng ta ký hiệu $x \bmod m$ là phần dư
+khi $x$ được chia cho $m$.
+Ví dụ, $17 \bmod 5 = 2$,
+bởi vì $17 = 3 \cdot 5 + 2$.
+
+Đôi khi, câu trả lời của một bài toán là một
+số rất lớn nhưng chỉ cần
+xuất ra nó ''modulo $m$'', tức là,
+phần dư khi câu trả lời được chia cho $m$
+(ví dụ, ''modulo $10^9+7$'').
+Ý tưởng là kể cả khi câu trả lời thực tế
+rất lớn,
+chỉ cần sử dụng các kiểu
+\texttt{int} và \texttt{long long} là đủ.
+
+Một tính chất quan trọng của phần dư là
+trong phép cộng, trừ và nhân,
+phần dư có thể được lấy trước khi thực hiện phép toán:
+
+\[
+\begin{array}{rcr}
+(a+b) \bmod m & = & (a \bmod m + b \bmod m) \bmod m \\
+(a-b) \bmod m & = & (a \bmod m - b \bmod m) \bmod m \\
+(a \cdot b) \bmod m & = & (a \bmod m \cdot b \bmod m) \bmod m
+\end{array}
+\]
+
+Do đó, chúng ta có thể lấy phần dư sau mỗi phép toán
+và các số sẽ không bao giờ trở nên quá lớn.
+
+Ví dụ, mã nguồn sau tính $n!$,
+giai thừa của $n$, modulo $m$:
+\begin{lstlisting}
+long long x = 1;
+for (int i = 2; i <= n; i++) {
+    x = (x*i)%m;
+}
+cout << x%m << "\n";
+\end{lstlisting}
+
+Thông thường chúng ta muốn phần dư luôn
+nằm trong khoảng $0\ldots m-1$.
+Tuy nhiên, trong C++ và các ngôn ngữ khác,
+phần dư của một số âm
+là 0 hoặc số âm.
+Một cách đơn giản để đảm bảo không có
+phần dư âm là trước tiên tính
+phần dư như bình thường và sau đó cộng thêm $m$
+nếu kết quả là âm:
+\begin{lstlisting}
+x = x%m;
+if (x < 0) x += m;
+\end{lstlisting}
+Tuy nhiên, điều này chỉ cần thiết khi có
+phép trừ trong code và
+phần còn lại có thể trở thành số âm.
+
+\subsubsection{Số thực dấu phẩy động}
+
+\index{số thực dấu phẩy động}
+
+Các kiểu số thực dấu phẩy động thường dùng trong
+lập trình thi đấu là
+kiểu 64-bit \texttt{double}
+và, như một phần mở rộng trong trình biên dịch \texttt{g++},
+kiểu 80-bit \texttt{long double}.
+Trong hầu hết các trường hợp, \texttt{double} là đủ,
+nhưng \texttt{long double} chính xác hơn.
+
+Độ chính xác yêu cầu của câu trả lời
+thường được cho trong đề bài.
+Một cách dễ dàng để xuất câu trả lời là sử dụng
+hàm \texttt{printf}
+và chỉ định số chữ số thập phân
+trong chuỗi định dạng.
+Ví dụ, mã nguồn sau in
+giá trị của $x$ với 9 chữ số thập phân:
+
+\begin{lstlisting}
+printf("%.9f\n", x);
+\end{lstlisting}
+
+Một khó khăn khi sử dụng số thực dấu phẩy động
+là một số giá trị không thể được biểu diễn
+chính xác dưới dạng số thực dấu phẩy động,
+và sẽ có các lỗi làm tròn.
+Ví dụ, kết quả của mã nguồn sau
+khá bất ngờ:
+
+\begin{lstlisting}
+double x = 0.3*3+0.1;
+printf("%.20f\n", x); // 0.99999999999999988898
+\end{lstlisting}
+
+Do lỗi làm tròn,
+giá trị của \texttt{x} nhỏ hơn 1 một chút,
+trong khi giá trị đúng phải là 1.
+
+Việc so sánh các số thực dấu phẩy động
+bằng toán tử \texttt{==} là rất nguy hiểm,
+bởi vì có thể các giá trị đáng lẽ phải
+bằng nhau nhưng lại không bằng do lỗi độ chính xác.
+Một cách tốt hơn để so sánh số thực dấu phẩy động
+là giả định rằng hai số bằng nhau
+nếu hiệu của chúng nhỏ hơn $\varepsilon$,
+trong đó $\varepsilon$ là một số nhỏ.
+
+Trong thực tế, các số có thể được so sánh
+như sau ($\varepsilon=10^{-9}$):
+
+\begin{lstlisting}
+if (abs(a-b) < 1e-9) {
+    // a va b bang nhau
+}
+\end{lstlisting}
+
+Lưu ý rằng mặc dù số thực dấu phẩy động không chính xác,
+các số nguyên cho đến một giới hạn nhất định vẫn có thể
+được biểu diễn chính xác.
+Ví dụ, sử dụng \texttt{double},
+có thể biểu diễn chính xác tất cả
+các số nguyên có giá trị tuyệt đối tối đa là $2^{53}$.
+
+\section{Viết code ngắn gọn}
+
+Code ngắn gọn là lý tưởng trong lập trình thi đấu,
+bởi vì các chương trình cần được viết
+nhanh nhất có thể.
+Vì lý do này, các lập trình viên thi đấu thường định nghĩa
+tên ngắn hơn cho các kiểu dữ liệu và các phần khác của code.
+
+\subsubsection{Tên kiểu dữ liệu}
+\index{tuppdef@\texttt{typedef}}
+Sử dụng lệnh \texttt{typedef}
+có thể đặt một tên ngắn hơn
+cho một kiểu dữ liệu.
+Ví dụ, tên \texttt{long long} khá dài,
+nên ta có thể định nghĩa tên ngắn hơn \texttt{ll}:
+\begin{lstlisting}
+typedef long long ll;
+\end{lstlisting}
+Sau đó, đoạn code
+\begin{lstlisting}
+long long a = 123456789;
+long long b = 987654321;
+cout << a*b << "\n";
+\end{lstlisting}
+có thể được viết ngắn gọn như sau:
+\begin{lstlisting}
+ll a = 123456789;
+ll b = 987654321;
+cout << a*b << "\n";
+\end{lstlisting}
+
+Lệnh \texttt{typedef}
+cũng có thể được sử dụng với các kiểu phức tạp hơn.
+Ví dụ, đoạn code sau đặt
+tên \texttt{vi} cho một vector số nguyên
+và tên \texttt{pi} cho một pair (cặp)
+chứa hai số nguyên.
+\begin{lstlisting}
+typedef vector<int> vi;
+typedef pair<int,int> pi;
+\end{lstlisting}
+
+\subsubsection{Macro}
+\index{macro}
+Một cách khác để viết code ngắn gọn là định nghĩa
+\key{macro}.
+Macro có nghĩa là một số chuỗi trong
+code sẽ được thay đổi trước khi biên dịch.
+Trong C++, macro được định nghĩa bằng từ khóa
+\texttt{\#define}.
+
+Ví dụ, ta có thể định nghĩa các macro sau:
+\begin{lstlisting}
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+\end{lstlisting}
+Sau đó, đoạn code
+\begin{lstlisting}
+v.push_back(make_pair(y1,x1));
+v.push_back(make_pair(y2,x2));
+int d = v[i].first+v[i].second;
+\end{lstlisting}
+có thể được viết ngắn gọn như sau:
+\begin{lstlisting}
+v.PB(MP(y1,x1));
+v.PB(MP(y2,x2));
+int d = v[i].F+v[i].S;
+\end{lstlisting}
+
+Một macro cũng có thể có tham số
+điều này cho phép viết ngắn gọn các vòng lặp và các
+cấu trúc khác.
+Ví dụ, ta có thể định nghĩa macro sau:
+\begin{lstlisting}
+#define REP(i,a,b) for (int i = a; i <= b; i++)
+\end{lstlisting}
+Sau đó, đoạn code
+\begin{lstlisting}
+for (int i = 1; i <= n; i++) {
+    search(i);
+}
+\end{lstlisting}
+có thể được viết ngắn gọn như sau:
+\begin{lstlisting}
+REP(i,1,n) {
+    search(i);
+}
+\end{lstlisting}
+
+Đôi khi macro có thể gây ra lỗi khó
+phát hiện. Ví dụ, xem xét macro sau
+để tính bình phương của một số:
+\begin{lstlisting}
+#define SQ(a) a*a
+\end{lstlisting}
+Macro này \emph{không phải lúc nào} cũng hoạt động như mong đợi.
+Ví dụ, đoạn code
+\begin{lstlisting}
+cout << SQ(3+3) << "\n";
+\end{lstlisting}
+tương ứng với đoạn code
+\begin{lstlisting}
+cout << 3+3*3+3 << "\n"; // 15
+\end{lstlisting}
+
+Một phiên bản tốt hơn của macro là:
+\begin{lstlisting}
+#define SQ(a) (a)*(a)
+\end{lstlisting}
+Bây giờ đoạn code
+\begin{lstlisting}
+cout << SQ(3+3) << "\n";
+\end{lstlisting}
+tương ứng với đoạn code
+\begin{lstlisting}
+cout << (3+3)*(3+3) << "\n"; // 36
+\end{lstlisting}
+
+
+\section{Toán học}
+
+Toán học đóng một vai trò quan trọng trong lập trình
+thi đấu, và không thể trở thành
+một lập trình viên thi đấu thành công mà không
+có kỹ năng toán học tốt.
+Phần này thảo luận về một số khái niệm
+và công thức toán học quan trọng sẽ
+được sử dụng sau này trong cuốn sách.
+
+\subsubsection{Các công thức tổng}
+
+Mỗi tổng có dạng
+\[\sum_{x=1}^n x^k = 1^k+2^k+3^k+\ldots+n^k,\]
+trong đó $k$ là một số nguyên dương,
+đều có một công thức dạng đóng là một
+đa thức bậc $k+1$.
+Ví dụ\footnote{\index{công thức Faulhaber}
+Thậm chí còn có một công thức tổng quát cho các tổng như vậy, gọi là \key{công thức Faulhaber},
+nhưng nó quá phức tạp để trình bày ở đây.},
+\[\sum_{x=1}^n x = 1+2+3+\ldots+n = \frac{n(n+1)}{2}\]
+và
+\[\sum_{x=1}^n x^2 = 1^2+2^2+3^2+\ldots+n^2 = \frac{n(n+1)(2n+1)}{6}.\]
+
+\key{Cấp số cộng} là một \index{cấp số cộng}
+dãy số
+trong đó hiệu giữa hai số liên tiếp bất kỳ
+là một hằng số.
+Ví dụ,
+\[3, 7, 11, 15\]
+là một cấp số cộng với công sai là 4.
+Tổng của một cấp số cộng có thể được tính
+bằng công thức
+\[\underbrace{a + \cdots + b}_{n \,\, \textrm{số}} = \frac{n(a+b)}{2}\]
+trong đó $a$ là số đầu tiên,
+$b$ là số cuối cùng và
+$n$ là số lượng số hạng.
+Ví dụ,
+\[3+7+11+15=\frac{4 \cdot (3+15)}{2} = 36.\]
+Công thức dựa trên thực tế
+rằng tổng bao gồm $n$ số và
+giá trị trung bình của mỗi số là $(a+b)/2$.
+
+\index{cấp số nhân}
+\key{Cấp số nhân} là một dãy số
+trong đó tỷ số giữa hai số liên tiếp bất kỳ
+là một hằng số.
+Ví dụ,
+\[3,6,12,24\]
+là một cấp số nhân với công bội là 2.
+Tổng của một cấp số nhân có thể được tính
+bằng công thức
+\[a + ak + ak^2 + \cdots + b = \frac{bk-a}{k-1}\]
+trong đó $a$ là số đầu tiên,
+$b$ là số cuối cùng và
+tỷ số giữa các số liên tiếp là $k$.
+Ví dụ,
+\[3+6+12+24=\frac{24 \cdot 2 - 3}{2-1} = 45.\]
+
+Công thức này có thể được suy ra như sau. Hãy đặt
+\[ S = a + ak + ak^2 + \cdots + b .\]
+Bằng cách nhân cả hai vế với $k$, ta được
+\[ kS = ak + ak^2 + ak^3 + \cdots + bk,\]
+và giải phương trình
+\[ kS-S = bk-a\]
+ta được công thức trên.
+
+Một trường hợp đặc biệt của tổng cấp số nhân là công thức
+\[1+2+4+8+\ldots+2^{n-1}=2^n-1.\]
+
+\index{tổng điều hòa}
+
+\key{Tổng điều hòa} là một tổng có dạng
+\[ \sum_{x=1}^n \frac{1}{x} = 1+\frac{1}{2}+\frac{1}{3}+\ldots+\frac{1}{n}.\]
+
+Một cận trên của tổng điều hòa là $\log_2(n)+1$.
+Cụ thể, ta có thể
+sửa đổi mỗi số hạng $1/k$ sao cho $k$ trở thành
+lũy thừa của hai gần nhất không vượt quá $k$.
+Ví dụ, khi $n=6$, ta có thể ước lượng
+tổng như sau:
+\[ 1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\frac{1}{5}+\frac{1}{6} \le
+1+\frac{1}{2}+\frac{1}{2}+\frac{1}{4}+\frac{1}{4}+\frac{1}{4}.\]
+Cận trên này bao gồm $\log_2(n)+1$ phần
+($1$, $2 \cdot 1/2$, $4 \cdot 1/4$, v.v.),
+và giá trị của mỗi phần không quá 1.
+
+\subsubsection{Lý thuyết tập hợp}
+
+\index{lý thuyết tập hợp}
+\index{tập hợp}
+\index{giao}
+\index{hợp}
+\index{hiệu}
+\index{tập con}
+\index{tập vũ trụ}
+\index{phần bù}
+
+\key{Tập hợp} là một tập các phần tử.
+Ví dụ, tập hợp
+\[X=\{2,4,7\}\]
+chứa các phần tử 2, 4 và 7.
+Ký hiệu $\emptyset$ biểu thị tập rỗng,
+và $|S|$ biểu thị kích thước của tập hợp $S$,
+tức là số lượng phần tử trong tập hợp.
+Ví dụ, trong tập hợp trên, $|X|=3$.
+
+Nếu tập hợp $S$ chứa một phần tử $x$,
+ta viết $x \in S$,
+và ngược lại ta viết $x \notin S$.
+Ví dụ, trong tập hợp trên
+\[4 \in X \hspace{10px}\textrm{và}\hspace{10px} 5 \notin X.\]
+
+\begin{samepage}
+Các tập hợp mới có thể được xây dựng bằng các phép toán tập hợp:
+\begin{itemize}
+\item \key{Giao} $A \cap B$ bao gồm các phần tử
+có mặt trong cả $A$ và $B$.
+Ví dụ, nếu $A=\{1,2,5\}$ và $B=\{2,4\}$,
+thì $A \cap B = \{2\}$.
+\item \key{Hợp} $A \cup B$ bao gồm các phần tử
+có mặt trong $A$ hoặc $B$ hoặc cả hai.
+Ví dụ, nếu $A=\{3,7\}$ và $B=\{2,3,8\}$,
+thì $A \cup B = \{2,3,7,8\}$.
+\item \key{Phần bù} $\bar A$ bao gồm các phần tử
+không có trong $A$.
+Cách hiểu về phần bù phụ thuộc vào
+\key{tập vũ trụ}, là tập chứa tất cả các phần tử có thể có.
+Ví dụ, nếu $A=\{1,2,5,7\}$ và tập vũ trụ là
+$\{1,2,\ldots,10\}$, thì $\bar A = \{3,4,6,8,9,10\}$.
+\item \key{Hiệu} $A \setminus B = A \cap \bar B$
+bao gồm các phần tử có trong $A$ nhưng không có trong $B$.
+Lưu ý rằng $B$ có thể chứa các phần tử không có trong $A$.
+Ví dụ, nếu $A=\{2,3,7,8\}$ và $B=\{3,5,8\}$,
+thì $A \setminus B = \{2,7\}$.
+\end{itemize}
+\end{samepage}
+
+Nếu mỗi phần tử của $A$ cũng thuộc về $S$,
+ta nói rằng $A$ là một \key{tập con} của $S$,
+ký hiệu là $A \subset S$.
+Một tập hợp $S$ luôn có $2^{|S|}$ tập con,
+bao gồm cả tập rỗng.
+Ví dụ, các tập con của tập hợp $\{2,4,7\}$ là
+\begin{center}
+$\emptyset$,
+$\{2\}$, $\{4\}$, $\{7\}$, $\{2,4\}$, $\{2,7\}$, $\{4,7\}$ và $\{2,4,7\}$.
+\end{center}
+
+Một số tập hợp thường được sử dụng là
+$\mathbb{N}$ (số tự nhiên),
+$\mathbb{Z}$ (số nguyên),
+$\mathbb{Q}$ (số hữu tỷ) và
+$\mathbb{R}$ (số thực).
+Tập hợp $\mathbb{N}$
+có thể được định nghĩa theo hai cách, tùy thuộc
+vào tình huống:
+hoặc là $\mathbb{N}=\{0,1,2,\ldots\}$
+hoặc là $\mathbb{N}=\{1,2,3,\ldots\}$.
+
+Ta cũng có thể xây dựng một tập hợp bằng một quy tắc có dạng
+\[\{f(n) : n \in S\},\]
+trong đó $f(n)$ là một hàm nào đó.
+Tập hợp này chứa tất cả các phần tử có dạng $f(n)$,
+trong đó $n$ là một phần tử trong $S$.
+Ví dụ, tập hợp
+\[X=\{2n : n \in \mathbb{Z}\}\]
+chứa tất cả các số nguyên chẵn.
+
+\subsubsection{Logic}
+
+\index{logic}
+\index{phủ định}
+\index{hội}
+\index{tuyển}
+\index{kéo theo}
+\index{tương đương}
+
+Giá trị của một biểu thức logic là
+\key{đúng} (1) hoặc \key{sai} (0).
+Các toán tử logic quan trọng nhất là
+$\lnot$ (\key{phủ định}),
+$\land$ (\key{hội}),
+$\lor$ (\key{tuyển}),
+$\Rightarrow$ (\key{kéo theo}) và
+$\Leftrightarrow$ (\key{tương đương}).
+Bảng sau thể hiện ý nghĩa của các toán tử này:
+
+\begin{center}
+\begin{tabular}{rr|rrrrrrr}
+$A$ & $B$ & $\lnot A$ & $\lnot B$ & $A \land B$ & $A \lor B$ & $A \Rightarrow B$ & $A \Leftrightarrow B$ \\
+\hline
+0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 \\
+1 & 0 & 0 & 1 & 0 & 1 & 0 & 0 \\
+1 & 1 & 0 & 0 & 1 & 1 & 1 & 1 \\
+\end{tabular}
+\end{center}
+
+Biểu thức $\lnot A$ có giá trị ngược lại với $A$.
+Biểu thức $A \land B$ đúng nếu cả $A$ và $B$
+đều đúng,
+và biểu thức $A \lor B$ đúng nếu $A$ hoặc $B$ hoặc cả hai
+đều đúng.
+Biểu thức $A \Rightarrow B$ đúng
+nếu mỗi khi $A$ đúng thì $B$ cũng đúng.
+Biểu thức $A \Leftrightarrow B$ đúng
+nếu $A$ và $B$ đều đúng hoặc đều sai.
+
+\index{vị từ}
+
+\key{Vị từ} là một biểu thức có giá trị đúng hoặc sai
+phụ thuộc vào các tham số của nó.
+Vị từ thường được ký hiệu bằng các chữ cái in hoa.
+Ví dụ, ta có thể định nghĩa một vị từ $P(x)$
+đúng khi và chỉ khi $x$ là một số nguyên tố.
+Theo định nghĩa này, $P(7)$ đúng nhưng $P(8)$ sai.
+
+\index{lượng từ}
+
+\key{Lượng từ} kết nối một biểu thức logic
+với các phần tử của một tập hợp.
+Các lượng từ quan trọng nhất là
+$\forall$ (\key{với mọi}) và $\exists$ (\key{tồn tại}).
+Ví dụ,
+\[\forall x (\exists y (y < x))\]
+có nghĩa là với mỗi phần tử $x$ trong tập hợp,
+tồn tại một phần tử $y$ trong tập hợp
+sao cho $y$ nhỏ hơn $x$.
+Điều này đúng trong tập số nguyên,
+nhưng sai trong tập số tự nhiên.
+
+Sử dụng ký hiệu đã mô tả ở trên,
+ta có thể biểu diễn nhiều loại mệnh đề logic.
+Ví dụ,
+\[\forall x ((x>1 \land \lnot P(x)) \Rightarrow (\exists a (\exists b (a > 1 \land b > 1 \land x = ab))))\]
+có nghĩa là nếu một số $x$ lớn hơn 1
+và không phải là số nguyên tố,
+thì tồn tại các số $a$ và $b$
+lớn hơn 1 và tích của chúng bằng $x$.
+Mệnh đề này đúng trong tập số nguyên.
+
+\subsubsection{Các hàm}
+
+Hàm $\lfloor x \rfloor$ làm tròn số $x$
+xuống số nguyên gần nhất, và hàm
+$\lceil x \rceil$ làm tròn số $x$
+lên số nguyên gần nhất. Ví dụ,
+\[ \lfloor 3/2 \rfloor = 1 \hspace{10px} \textrm{và} \hspace{10px} \lceil 3/2 \rceil = 2.\]
+
+Các hàm $\min(x_1,x_2,\ldots,x_n)$
+và $\max(x_1,x_2,\ldots,x_n)$
+cho giá trị nhỏ nhất và lớn nhất trong các giá trị
+$x_1,x_2,\ldots,x_n$.
+Ví dụ,
+\[ \min(1,2,3)=1 \hspace{10px} \textrm{và} \hspace{10px} \max(1,2,3)=3.\]
+
+\index{giai thừa}
+
+\key{Giai thừa} $n!$ có thể được định nghĩa
+\[\prod_{x=1}^n x = 1 \cdot 2 \cdot 3 \cdot \ldots \cdot n\]
+hoặc đệ quy
+\[
+\begin{array}{lcl}
+0! & = & 1 \\
+n! & = & n \cdot (n-1)! \\
+\end{array}
+\]
+
+\index{số Fibonacci}
+
+\key{Dãy số Fibonacci}
+%\footnote{Fibonacci (khoảng 1175--1250) là một nhà toán học người Ý.}
+xuất hiện trong nhiều tình huống.
+Chúng có thể được định nghĩa đệ quy như sau:
+\[
+\begin{array}{lcl}
+f(0) & = & 0 \\
+f(1) & = & 1 \\
+f(n) & = & f(n-1)+f(n-2) \\
+\end{array}
+\]
+Các số Fibonacci đầu tiên là
+\[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \ldots\]
+Cũng có một công thức dạng đóng
+để tính các số Fibonacci, đôi khi được gọi là
+\index{công thức Binet} \key{công thức Binet}:
+\[f(n)=\frac{(1 + \sqrt{5})^n - (1-\sqrt{5})^n}{2^n \sqrt{5}}.\]
+
+\subsubsection{Logarit}
+
+\index{logarit}
+
+\key{Logarit} của một số $x$
+được ký hiệu là $\log_k(x)$, trong đó $k$ là cơ số
+của logarit.
+Theo định nghĩa,
+$\log_k(x)=a$ khi và chỉ khi $k^a=x$.
+
+Một tính chất hữu ích của logarit là
+$\log_k(x)$ bằng số lần
+ta phải chia $x$ cho $k$ trước khi đạt được
+số 1.
+Ví dụ, $\log_2(32)=5$
+vì cần 5 lần chia cho 2:
+
+\[32 \rightarrow 16 \rightarrow 8 \rightarrow 4 \rightarrow 2 \rightarrow 1 \]
+
+Logarit thường được sử dụng trong phân tích
+thuật toán, vì nhiều thuật toán hiệu quả
+chia đôi một cái gì đó ở mỗi bước.
+Do đó, ta có thể ước tính hiệu quả của những thuật toán như vậy
+bằng cách sử dụng logarit.
+
+Logarit của một tích là
+\[\log_k(ab) = \log_k(a)+\log_k(b),\]
+và do đó,
+\[\log_k(x^n) = n \cdot \log_k(x).\]
+Ngoài ra, logarit của một thương là
+\[\log_k\Big(\frac{a}{b}\Big) = \log_k(a)-\log_k(b).\]
+Một công thức hữu ích khác là
+\[\log_u(x) = \frac{\log_k(x)}{\log_k(u)},\]
+và sử dụng công thức này, có thể tính
+logarit với bất kỳ cơ số nào nếu có cách để
+tính logarit với một cơ số cố định nào đó.
+
+\index{logarit tự nhiên}
+
+\key{Logarit tự nhiên} $\ln(x)$ của một số $x$
+là logarit có cơ số là $e \approx 2.71828$.
+Một tính chất khác của logarit là
+số chữ số của một số nguyên $x$ trong cơ số $b$ là
+$\lfloor \log_b(x)+1 \rfloor$.
+Ví dụ, biểu diễn của
+$123$ trong cơ số $2$ là 1111011 và
+$\lfloor \log_2(123)+1 \rfloor = 7$.
+
+\section{Các cuộc thi và tài nguyên}
+
+\subsubsection{IOI}
+
+Olympic Tin học Quốc tế (International Olympiad in Informatics - IOI)
+là một cuộc thi lập trình thường niên dành cho
+học sinh trung học.
+Mỗi quốc gia được phép gửi một đội gồm
+bốn học sinh tham gia cuộc thi.
+Thường có khoảng 300 thí sinh
+từ 80 quốc gia.
+
+IOI bao gồm hai kỳ thi kéo dài năm giờ.
+Trong cả hai kỳ thi, thí sinh được yêu cầu
+giải ba bài toán thuật toán với độ khó khác nhau.
+Các bài toán được chia thành các phần nhỏ,
+mỗi phần có một điểm số được ấn định.
+Mặc dù thí sinh được chia thành các đội,
+họ thi đấu với tư cách cá nhân.
+
+Chương trình IOI \cite{iois} quy định các chủ đề
+có thể xuất hiện trong các bài thi IOI.
+Hầu hết các chủ đề trong chương trình IOI
+đều được đề cập trong cuốn sách này.
+
+Thí sinh tham dự IOI được chọn thông qua
+các cuộc thi quốc gia.
+Trước IOI, nhiều cuộc thi khu vực được tổ chức,
+như Olympic Tin học Baltic (BOI),
+Olympic Tin học Trung Âu (CEOI)
+và Olympic Tin học Châu Á - Thái Bình Dương (APIO).
+
+Một số quốc gia tổ chức các cuộc thi luyện tập trực tuyến
+cho các thí sinh dự định tham gia IOI,
+như Cuộc thi Tin học Mở Croatia \cite{coci}
+và Olympic Tin học Hoa Kỳ \cite{usaco}.
+Ngoài ra, một bộ sưu tập lớn các bài toán từ các cuộc thi Ba Lan
+có sẵn trực tuyến \cite{main}.
+
+\subsubsection{ICPC}
+
+Kỳ thi Lập trình Sinh viên Quốc tế (ICPC)
+là một cuộc thi lập trình thường niên dành cho sinh viên đại học.
+Mỗi đội trong cuộc thi bao gồm ba sinh viên,
+và khác với IOI, các sinh viên làm việc cùng nhau;
+chỉ có một máy tính được cung cấp cho mỗi đội.
+
+ICPC bao gồm nhiều vòng, và cuối cùng các
+đội xuất sắc nhất được mời tham dự Chung kết Thế giới.
+Trong khi có hàng chục nghìn thí sinh
+tham gia cuộc thi, chỉ có một số nhỏ\footnote{Số lượng suất tham dự chung kết chính xác
+thay đổi từng năm; năm 2017, có 133 suất chung kết.} suất chung kết,
+vì vậy ngay cả việc vào được chung kết
+cũng là một thành tích lớn ở một số khu vực.
+
+Trong mỗi cuộc thi ICPC, các đội có năm giờ để
+giải khoảng mười bài toán thuật toán.
+Một lời giải chỉ được chấp nhận nếu nó giải
+tất cả các test case một cách hiệu quả.
+Trong cuộc thi, thí sinh có thể xem kết quả của các đội khác,
+nhưng trong giờ cuối cùng bảng điểm bị đóng băng và
+không thể xem kết quả của các lần nộp bài cuối cùng.
+
+Các chủ đề có thể xuất hiện trong ICPC không được
+quy định rõ ràng như trong IOI.
+Trong mọi trường hợp, rõ ràng là cần nhiều kiến thức hơn
+trong ICPC, đặc biệt là kỹ năng toán học.
+
+\subsubsection{Các cuộc thi trực tuyến}
+
+Cũng có nhiều cuộc thi trực tuyến mở cho tất cả mọi người.
+Hiện tại, trang web thi đấu tích cực nhất là Codeforces,
+tổ chức các cuộc thi khoảng hàng tuần.
+Trong Codeforces, thí sinh được chia thành hai bảng:
+người mới bắt đầu thi đấu ở Div2 và lập trình viên có kinh nghiệm hơn ở Div1.
+Các trang web thi đấu khác bao gồm AtCoder, CS Academy, HackerRank và Topcoder.
+
+Một số công ty tổ chức các cuộc thi trực tuyến với vòng chung kết tại chỗ.
+Ví dụ về các cuộc thi như vậy là Facebook Hacker Cup,
+Google Code Jam và Yandex.Algorithm.
+Tất nhiên, các công ty cũng sử dụng những cuộc thi này cho việc tuyển dụng:
+thể hiện tốt trong một cuộc thi là cách tốt để chứng minh kỹ năng của mình.
+
+\subsubsection{Sách}
+
+Đã có một số cuốn sách (ngoài cuốn sách này) tập trung
+vào lập trình thi đấu và giải quyết vấn đề thuật toán:
+
+\begin{itemize}
+\item S. S. Skiena và M. A. Revilla:
+\emph{Programming Challenges: The Programming Contest Training Manual} \cite{ski03}
+\item S. Halim và F. Halim:
+\emph{Competitive Programming 3: The New Lower Bound of Programming Contests} \cite{hal13}
+\item K. Diks và các tác giả khác: \emph{Looking for a Challenge? The Ultimate Problem Set from
+the University of Warsaw Programming Competitions} \cite{dik12}
+\end{itemize}
+
+Hai cuốn sách đầu tiên dành cho người mới bắt đầu,
+trong khi cuốn sách cuối cùng chứa nội dung nâng cao.
+
+Tất nhiên, các sách về thuật toán tổng quát cũng phù hợp cho
+lập trình viên thi đấu.
+Một số cuốn sách phổ biến là:
+
+\begin{itemize}
+\item T. H. Cormen, C. E. Leiserson, R. L. Rivest và C. Stein:
+\emph{Introduction to Algorithms} \cite{cor09}
+\item J. Kleinberg và É. Tardos:
+\emph{Algorithm Design} \cite{kle05}
+\item S. S. Skiena:
+\emph{The Algorithm Design Manual} \cite{ski08}
+\end{itemize}
