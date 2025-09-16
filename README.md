@@ -21,7 +21,6 @@ The CSES Problem Set contains a collection of competitive programming problems.
 You can practice the techniques presented in the book by solving the problems.
 ---
 
-https://cses.fi/problemset/
 ### 🎯 Giới thiệu
 
 ## License
