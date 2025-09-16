@@ -73,9 +73,7 @@ Hãy tạo một **Pull Request** hoặc **Issue** để đóng góp nhé!
 Nếu bạn thấy dự án này hữu ích và muốn ủng hộ công sức của người dịch, bạn có thể mời tôi một ly cà phê qua:
 
 *   **ZaloPay**:
-    <div align="center">
-      <img src="https://raw.githubusercontent.com/deanqkhanhcoder/deanqkhanhcoder/refs/heads/main/zalopayqr.png" alt="ZaloPay QR Code" width="200"/>
-    </div>
+<img src="https://raw.githubusercontent.com/deanqkhanhcoder/deanqkhanhcoder/refs/heads/main/zalopayqr.png" alt="ZaloPay QR Code" width="250"/>
 
 Mọi sự ủng hộ, dù nhỏ, đều là nguồn động viên to lớn để tôi tiếp tục hoàn thiện và duy trì dự án.
 
@@ -85,7 +83,7 @@ Nếu bạn có bất kỳ câu hỏi, góp ý, hoặc muốn trao đổi thêm 
 
 *   **Email**: `deanqkhanh@gmail.com`
 *   **GitHub**: `deanqkhanhcoder`
-*   **Facebook**: `[https://www.facebook.com/deanqkhanhcoder]`
+*   **Facebook**: deanqkhanhcoder
 
 ### 📚 Về cuốn sách gốc
 
