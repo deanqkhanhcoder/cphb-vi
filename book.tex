@@ -67,6 +67,14 @@
 
 \titleformat{\subsubsection}
 {\normalfont\large\bfseries\sffamily}{\thesubsection}{1em}{}
+\usepackage{xspace}
+\newcommand{\code}[1]{\texttt{#1}\xspace}
+\newcommand{\F}{\code{first}\xspace}
+\newcommand{\S}{\code{second}\xspace}
+\newcommand{\PB}{\code{push\_back}\xspace}
+\newcommand{\MP}{\code{make\_pair}\xspace}
+\newcommand{\REP}[3]{\for (int #1 = #2; #1 <= #3; #1++)}
+\newcommand{\key}[1]{\textbf{#1}}
 \begin{document}
 
 %\selectlanguage{finnish}
@@ -84,16 +92,6 @@
 \mainmatter
 \pagenumbering{arabic}
 \setcounter{page}{1}
-
-\usepackage{xspace}
-\newcommand{\code}[1]{\texttt{#1}\xspace}
-\newcommand{\F}{\code{first}\xspace}
-\newcommand{\S}{\code{second}\xspace}
-\newcommand{\PB}{\code{push\_back}\xspace}
-\newcommand{\MP}{\code{make\_pair}\xspace}
-\newcommand{\REP}[3]{\for (int #1 = #2; #1 <= #3; #1++)}
-
-\newcommand{\key}[1] {\textbf{#1}}
 
 \part{Basic techniques}
 \include{chapter01}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.15)  15 SEP 2025 21:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.15)  15 SEP 2025 21:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1295,6 +1295,23 @@ Package: idxlayout 2012/03/30 v0.4d Configurable index layout
 \ila@indentunit=\skip74
 \ila@initsep=\skip75
 )
+(D:\MiKTeX\tex/latex/tools\xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+
+! LaTeX Error: Command \S already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 \newcommand{\S}{\code{second}\xspace}
+                                          
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 (D:\MiKTeX\tex/latex/ragged2e\ragged2e.sty
 Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 \CenteringLeftskip=\skip76
@@ -1312,104 +1329,97 @@ Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 \RaggedRightParindent=\skip88
 \JustifyingParindent=\skip89
 )
-LaTeX Font Info:    Trying to load font information for T1+fnc on input line 69
+LaTeX Font Info:    Trying to load font information for T1+fnc on input line 78
 .
 
 (D:\MiKTeX\tex/latex/fouriernc\t1fnc.fd
 File: t1fnc.fd 2005/12/13 scaled font definitions for T1/fnc.
 )
 LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
-(Font)              scaled to size 11.15991pt on input line 69.
+(Font)              scaled to size 11.15991pt on input line 78.
 
 (D:\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count354
 \l__pdf_internal_box=\box118
-) (book.aux
-LaTeX Font Info:    Trying to load font information for T5+fnc on input line 8.
-
-
-(D:\MiKTeX\tex/latex/vntex\t5fnc.fd
-File: t5fnc.fd 2006/07/24 font definitions for T5/fnc (thanh).
-)
-LaTeX Font Info:    Trying to load font information for T5+unc on input line 8.
-
- (D:\MiKTeX\tex/latex/vntex\t5unc.fd
-File: t5unc.fd 2005/08/24 Fontinst v1.929 font definitions for T5/unc.
-)
-LaTeX Font Info:    Font shape `T5/fnc/m/n' in size <12> not available
-(Font)              Font shape `T5/unc/m/n' tried instead on input line 8.
-
-(preface.aux) (chapter01.aux) (chapter02.aux) (chapter03.aux) (chapter04.aux)
-(chapter05.aux) (chapter06.aux) (chapter07.aux) (chapter08.aux) (chapter09.aux)
-(chapter10.aux) (chapter11.aux) (chapter12.aux) (chapter13.aux) (chapter14.aux)
-(chapter15.aux) (chapter16.aux) (chapter17.aux) (chapter18.aux) (chapter19.aux)
-(chapter20.aux) (chapter21.aux) (chapter22.aux) (chapter23.aux) (chapter24.aux)
-(chapter25.aux) (chapter26.aux) (chapter27.aux) (chapter28.aux) (chapter29.aux)
-(chapter30.aux) (list.aux))
+) (book.aux)
 \openout1 = `book.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for FML/fncmi/m/it on input line 69.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for FML/fncmi/m/it on input line 78.
 LaTeX Font Info:    Trying to load font information for FML+fncmi on input line
- 69.
- (D:\MiKTeX\tex/latex/fouriernc\fmlfncmi.fd
+ 78.
+
+(D:\MiKTeX\tex/latex/fouriernc\fmlfncmi.fd
 File: fmlfncmi.fd 2005/12/20 Fontinst v1.928 font definitions for FML/fncmi.
 )
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for FMS/fncm/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for FMS/fncm/m/n on input line 78.
 LaTeX Font Info:    Trying to load font information for FMS+fncm on input line 
-69.
+78.
 
 (D:\MiKTeX\tex/latex/fouriernc\fmsfncm.fd
 File: fmsfncm.fd 2005/12/20 Fontinst v1.928 font definitions for FMS/fncm.
 )
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 78.
 LaTeX Font Info:    Trying to load font information for FMX+futm on input line 
-69.
+78.
 
 (D:\MiKTeX\tex/latex/fourier\fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for LSB/skaknew/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for LSF/skaknew/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for LSB/skaknew/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for LSF/skaknew/m/n on input line 78.
 LaTeX Font Info:    Trying to load font information for LSF+skaknew on input li
-ne 69.
+ne 78.
 
 (D:\MiKTeX\tex/latex/chessfss\lsfskaknew.fd
 File: lsfskaknew.fd 2006/03/31 v1.0 Chess font definitions
 )
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for LSI/skaknew/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for LSI/skaknew/m/n on input line 78.
 LaTeX Font Info:    Trying to load font information for LSI+skaknew on input li
-ne 69.
+ne 78.
 
 (D:\MiKTeX\tex/latex/chessfss\lsiskaknew.fd
 File: lsiskaknew.fd 2006/03/31 v1.0 Chess font definitions
 )
-LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Trying to load font information for T5+fnc on input line 78
+.
+
+(D:\MiKTeX\tex/latex/vntex\t5fnc.fd
+File: t5fnc.fd 2006/07/24 font definitions for T5/fnc (thanh).
+)
+LaTeX Font Info:    Trying to load font information for T5+unc on input line 78
+.
+ (D:\MiKTeX\tex/latex/vntex\t5unc.fd
+File: t5unc.fd 2005/08/24 Fontinst v1.929 font definitions for T5/unc.
+)
+LaTeX Font Info:    Font shape `T5/fnc/m/n' in size <12> not available
+(Font)              Font shape `T5/unc/m/n' tried instead on input line 78.
 \c@lstlisting=\count355
 
 (D:\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
@@ -1433,18 +1443,18 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (D:\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 69.
+Package hyperref Info: Link coloring OFF on input line 78.
  (book.out) (book.out)
 \@outlinefile=\write5
 \openout5 = `book.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 69.
-Package microtype Info: Applying patch `item' on input line 69.
-Package microtype Info: Applying patch `toc' on input line 69.
-Package microtype Info: Applying patch `eqnum' on input line 69.
-Package microtype Info: Applying patch `footnote' on input line 69.
-Package microtype Info: Applying patch `verbatim' on input line 69.
-LaTeX Info: Redefining \microtypesetup on input line 69.
+LaTeX Info: Redefining \microtypecontext on input line 78.
+Package microtype Info: Applying patch `item' on input line 78.
+Package microtype Info: Applying patch `toc' on input line 78.
+Package microtype Info: Applying patch `eqnum' on input line 78.
+Package microtype Info: Applying patch `footnote' on input line 78.
+Package microtype Info: Applying patch `verbatim' on input line 78.
+LaTeX Info: Redefining \microtypesetup on input line 78.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1459,10 +1469,10 @@ Package microtype Info: No adjustment of character kerning.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/fnc/m/n/12'. Switching off
-(microtype)                protrusion for this font on input line 69.
+(microtype)                protrusion for this font on input line 78.
 
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 69.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 69.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 78.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 78.
 (D:\MiKTeX\tex/latex/upquote\upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
@@ -1502,54 +1512,54 @@ tim
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Font shape `T5/fnc/m/n' in size <20.74> not available
-(Font)              Font shape `T5/unc/m/n' tried instead on input line 78.
+(Font)              Font shape `T5/unc/m/n' tried instead on input line 87.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/unc/m/n/20.74'. Switching off
-(microtype)                protrusion for this font on input line 78.
+(microtype)                protrusion for this font on input line 87.
 
 LaTeX Font Info:    Font shape `T5/fnc/m/n' in size <24.88> not available
-(Font)              Font shape `T5/unc/m/n' tried instead on input line 78.
+(Font)              Font shape `T5/unc/m/n' tried instead on input line 87.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/unc/m/n/24.88'. Switching off
-(microtype)                protrusion for this font on input line 78.
+(microtype)                protrusion for this font on input line 87.
 
 LaTeX Font Info:    Font shape `T5/fnc/m/n' in size <14.4> not available
-(Font)              Font shape `T5/unc/m/n' tried instead on input line 78.
+(Font)              Font shape `T5/unc/m/n' tried instead on input line 87.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/unc/m/n/14.4'. Switching off
-(microtype)                protrusion for this font on input line 78.
+(microtype)                protrusion for this font on input line 87.
 
 LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
-(Font)              scaled to size 13.39188pt on input line 78.
+(Font)              scaled to size 13.39188pt on input line 87.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fnc' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
-(Font)              scaled to size 9.29993pt on input line 78.
+(Font)              scaled to size 9.29993pt on input line 87.
 LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
-(Font)              scaled to size 7.43994pt on input line 78.
+(Font)              scaled to size 7.43994pt on input line 87.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 78.
+(Font)              scaled to size 13.24796pt on input line 87.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 78.
+(Font)              scaled to size 9.19998pt on input line 87.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 78.
+(Font)              scaled to size 7.35999pt on input line 87.
 LaTeX Font Info:    Trying to load font information for FML+fncm on input line 
-78.
+87.
 (D:\MiKTeX\tex/latex/fouriernc\fmlfncm.fd
 File: fmlfncm.fd 2005/12/20 Fontinst v1.928 font definitions for FML/fncm.
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 78.
+(Font)              scaled to size 13.24796pt on input line 87.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 78.
+(Font)              scaled to size 9.19998pt on input line 87.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 78.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 78.
+(Font)              scaled to size 7.35999pt on input line 87.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
 
 
 (D:\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -1558,7 +1568,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (D:\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 78.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
 
 
 (D:\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1568,12 +1578,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T5/fnc/m/n' in size <17.28> not available
-(Font)              Font shape `T5/unc/m/n' tried instead on input line 78.
+(Font)              Font shape `T5/unc/m/n' tried instead on input line 87.
 
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/unc/m/n/17.28'. Switching off
-(microtype)                protrusion for this font on input line 78.
+(microtype)                protrusion for this font on input line 87.
 
 [1
 
@@ -1582,12 +1592,12 @@ Package microtype Warning: I cannot find a protrusion list for font
 {C:/Users/toanpq/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/MiKTeX/fo
 nts/enc/dvips/vntex/t5.enc}]
 LaTeX Font Info:    Font shape `T5/fnc/b/n' in size <24.88> not available
-(Font)              Font shape `T5/unc/b/n' tried instead on input line 79.
+(Font)              Font shape `T5/unc/b/n' tried instead on input line 88.
 
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/unc/b/n/24.88'. Switching off
-(microtype)                protrusion for this font on input line 79.
+(microtype)                protrusion for this font on input line 88.
 
 (book.toc
 LaTeX Font Info:    Font shape `T5/fnc/b/n' in size <12> not available
@@ -1624,363 +1634,353 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 [2
 
 ]
-Overfull \hbox (1.41595pt too wide) detected at line 144
- []\T5/unc/m/n/12 101
- []
-
-
-Overfull \hbox (1.41595pt too wide) detected at line 150
- []\T5/unc/m/n/12 109
- []
-
-
 Overfull \hbox (1.41595pt too wide) detected at line 157
- []\T5/unc/m/n/12 112
+ []\T5/unc/m/n/12 100
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 162
- []\T5/unc/m/n/12 117
+ []\T5/unc/m/n/12 104
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 163
- []\T5/unc/m/n/12 118
+ []\T5/unc/m/n/12 105
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 164
- []\T5/unc/m/n/12 120
+ []\T5/unc/m/n/12 107
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 169
- []\T5/unc/m/n/12 123
+ []\T5/unc/m/n/12 110
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 174
- []\T5/unc/m/n/12 126
+ []\T5/unc/m/n/12 113
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 178
- []\T5/unc/m/n/12 128
+ []\T5/unc/m/n/12 115
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 182
- []\T5/unc/m/n/12 134
+ []\T5/unc/m/n/12 120
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 184
- []\T5/unc/m/n/12 135
+ []\T5/unc/m/n/12 121
  []
 
 [3]
 Overfull \hbox (1.41595pt too wide) detected at line 187
- []\T5/unc/m/n/12 136
+ []\T5/unc/m/n/12 122
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 188
- []\T5/unc/m/n/12 138
+ []\T5/unc/m/n/12 124
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 190
- []\T5/unc/m/n/12 142
+ []\T5/unc/m/n/12 127
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 194
- []\T5/unc/m/n/12 145
+ []\T5/unc/m/n/12 130
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 197
- []\T5/unc/m/n/12 146
+ []\T5/unc/m/n/12 131
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 201
- []\T5/unc/m/n/12 149
+ []\T5/unc/m/n/12 134
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 205
- []\T5/unc/m/n/12 151
+ []\T5/unc/m/n/12 136
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 209
- []\T5/unc/m/n/12 153
+ []\T5/unc/m/n/12 138
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 210
- []\T5/unc/m/n/12 155
+ []\T5/unc/m/n/12 140
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 213
- []\T5/unc/m/n/12 158
+ []\T5/unc/m/n/12 143
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 216
- []\T5/unc/m/n/12 160
+ []\T5/unc/m/n/12 145
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 218
- []\T5/unc/m/n/12 163
+ []\T5/unc/m/n/12 147
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 219
- []\T5/unc/m/n/12 164
+ []\T5/unc/m/n/12 148
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 222
- []\T5/unc/m/n/12 166
+ []\T5/unc/m/n/12 150
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 226
- []\T5/unc/m/n/12 169
+ []\T5/unc/m/n/12 153
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 229
- []\T5/unc/m/n/12 173
+ []\T5/unc/m/n/12 156
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 233
- []\T5/unc/m/n/12 177
+ []\T5/unc/m/n/12 160
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 236
- []\T5/unc/m/n/12 178
+ []\T5/unc/m/n/12 161
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 237
- []\T5/unc/m/n/12 178
+ []\T5/unc/m/n/12 161
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 242
- []\T5/unc/m/n/12 182
+ []\T5/unc/m/n/12 164
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 246
- []\T5/unc/m/n/12 185
+ []\T5/unc/m/n/12 167
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 249
- []\T5/unc/m/n/12 187
+ []\T5/unc/m/n/12 169
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 253
- []\T5/unc/m/n/12 189
+ []\T5/unc/m/n/12 171
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 259
- []\T5/unc/m/n/12 195
+ []\T5/unc/m/n/12 176
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 267
- []\T5/unc/m/n/12 199
+ []\T5/unc/m/n/12 180
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 272
- []\T5/unc/m/n/12 201
+ []\T5/unc/m/n/12 182
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 274
- []\T5/unc/m/n/12 203
+ []\T5/unc/m/n/12 184
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 280
- []\T5/unc/m/n/12 206
+ []\T5/unc/m/n/12 187
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 286
- []\T5/unc/m/n/12 208
+ []\T5/unc/m/n/12 189
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 291
- []\T5/unc/m/n/12 210
+ []\T5/unc/m/n/12 191
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 293
- []\T5/unc/m/n/12 212
+ []\T5/unc/m/n/12 193
  []
 
 [4]
 Overfull \hbox (1.41595pt too wide) detected at line 294
- []\T5/unc/m/n/12 212
+ []\T5/unc/m/n/12 193
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 297
- []\T5/unc/m/n/12 215
+ []\T5/unc/m/n/12 196
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 301
- []\T5/unc/m/n/12 218
+ []\T5/unc/m/n/12 199
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 304
- []\T5/unc/m/n/12 219
+ []\T5/unc/m/n/12 200
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 309
- []\T5/unc/m/n/12 223
+ []\T5/unc/m/n/12 203
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 310
- []\T5/unc/m/n/12 224
+ []\T5/unc/m/n/12 204
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 315
- []\T5/unc/m/n/12 226
+ []\T5/unc/m/n/12 206
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 318
- []\T5/unc/m/n/12 228
+ []\T5/unc/m/n/12 208
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 319
- []\T5/unc/m/n/12 229
+ []\T5/unc/m/n/12 209
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 324
- []\T5/unc/m/n/12 233
+ []\T5/unc/m/n/12 212
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 327
- []\T5/unc/m/n/12 235
+ []\T5/unc/m/n/12 214
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 330
- []\T5/unc/m/n/12 236
+ []\T5/unc/m/n/12 215
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 335
- []\T5/unc/m/n/12 241
+ []\T5/unc/m/n/12 219
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 336
- []\T5/unc/m/n/12 242
+ []\T5/unc/m/n/12 220
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 337
- []\T5/unc/m/n/12 243
+ []\T5/unc/m/n/12 221
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 338
- []\T5/unc/m/n/12 245
+ []\T5/unc/m/n/12 223
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 342
- []\T5/unc/m/n/12 250
+ []\T5/unc/m/n/12 228
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 345
- []\T5/unc/m/n/12 251
+ []\T5/unc/m/n/12 229
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 348
- []\T5/unc/m/n/12 253
+ []\T5/unc/m/n/12 231
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 350
- []\T5/unc/m/n/12 256
+ []\T5/unc/m/n/12 234
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 353
- []\T5/unc/m/n/12 259
+ []\T5/unc/m/n/12 237
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 356
- []\T5/unc/m/n/12 261
+ []\T5/unc/m/n/12 239
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 357
- []\T5/unc/m/n/12 261
+ []\T5/unc/m/n/12 239
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 359
- []\T5/unc/m/n/12 264
+ []\T5/unc/m/n/12 242
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 360
- []\T5/unc/m/n/12 265
+ []\T5/unc/m/n/12 243
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 365
- []\T5/unc/m/n/12 268
+ []\T5/unc/m/n/12 246
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 367
- []\T5/unc/m/n/12 269
+ []\T5/unc/m/n/12 247
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 370
- []\T5/unc/m/n/12 274
+ []\T5/unc/m/n/12 251
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 371
- []\T5/unc/m/n/12 275
+ []\T5/unc/m/n/12 252
  []
 
 
 Overfull \hbox (1.41595pt too wide) detected at line 372
- []\T5/unc/m/n/12 276
+ []\T5/unc/m/n/12 253
  []
 
 [5])
@@ -2009,35 +2009,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 
 
 
-]
-
-! LaTeX Error: Can be used only in preamble.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.87 \usepackage
-                {xspace}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: Command \S already defined.
-               Or name \end... illegal, see p.192 of the manual.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.90 \newcommand{\S}{\code{second}\xspace}
-                                          
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[1] [2
+] [1
 
 ]
 \openout2 = `chapter01.aux'.
@@ -2051,6 +2023,9 @@ Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/unc/b/n/17.28'. Switching off
 (microtype)                protrusion for this font on input line 42.
 
+
+LaTeX Warning: Citation `goo17' on page 2 undefined on input line 52.
+
 LaTeX Font Info:    Trying to load font information for T5+cmss on input line 8
 6.
 (D:\MiKTeX\tex/latex/vntex\t5cmss.fd
@@ -2061,7 +2036,7 @@ Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/cmss/bx/n/14.4'. Switching off
 (microtype)                protrusion for this font on input line 86.
 
-[3
+[2
 
 
 ]
@@ -2082,7 +2057,7 @@ Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/unc/m/n/10.95'. Switching off
 (microtype)                protrusion for this font on input line 171.
 
-[4] [5{D:/MiKTeX/fonts/enc/dvips/base/8r.enc}] [6] [7] [8]
+[3] [4{D:/MiKTeX/fonts/enc/dvips/base/8r.enc}] [5] [6] [7]
 LaTeX Font Info:    Font shape `T5/fnc/m/it' in size <12> not available
 (Font)              Font shape `T5/unc/m/it' tried instead on input line 517.
 
@@ -2135,7 +2110,7 @@ Package microtype Warning: I cannot find a protrusion list for font
 Overfull \vbox (1.42667pt too high) has occurred while \output is active []
 
 
-[9]
+[8]
 LaTeX Font Info:    Font shape `T5/fnc/m/n' in size <7> not available
 (Font)              Font shape `T5/unc/m/n' tried instead on input line 574.
 
@@ -2144,7 +2119,7 @@ Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/unc/m/n/7'. Switching off
 (microtype)                protrusion for this font on input line 574.
 
-[10]
+[9]
 LaTeX Font Info:    Trying to load font information for TS1+fnc on input line 6
 57.
  (D:\MiKTeX\tex/latex/fouriernc\ts1fnc.fd
@@ -2156,13 +2131,45 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fnc' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [11] [12] [13] [14]) [15]
+ [10] [11]
+
+LaTeX Warning: Citation `iois' on page 12 undefined on input line 898.
+
+[12]
+
+LaTeX Warning: Citation `coci' on page 13 undefined on input line 912.
+
+
+LaTeX Warning: Citation `usaco' on page 13 undefined on input line 913.
+
+
+LaTeX Warning: Citation `main' on page 13 undefined on input line 915.
+
+
+LaTeX Warning: Citation `ski03' on page 13 undefined on input line 968.
+
+
+LaTeX Warning: Citation `hal13' on page 13 undefined on input line 970.
+
+
+LaTeX Warning: Citation `dik12' on page 13 undefined on input line 972.
+
+[13]
+
+LaTeX Warning: Citation `cor09' on page 14 undefined on input line 984.
+
+
+LaTeX Warning: Citation `kle05' on page 14 undefined on input line 986.
+
+
+LaTeX Warning: Citation `ski08' on page 14 undefined on input line 988.
+
+) [14]
 \openout2 = `chapter02.aux'.
 
-
-(chapter02.tex
+ (chapter02.tex
 Ch\uhorn \ohorn ng 2.
-[16
+[15
 
 
 
@@ -2170,8 +2177,8 @@ Ch\uhorn \ohorn ng 2.
 ]
 Underfull \vbox (badness 7397) has occurred while \output is active []
 
- [17]
-[18]
+ [16]
+[17]
 LaTeX Font Info:    Font shape `T5/fnc/m/it' in size <10> not available
 (Font)              Font shape `T5/unc/m/it' tried instead on input line 290.
 
@@ -2180,17 +2187,32 @@ Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/unc/m/it/10'. Switching off
 (microtype)                protrusion for this font on input line 290.
 
-[19] [20] [21]) [22]
+
+LaTeX Warning: Citation `gar79' on page 18 undefined on input line 290.
+
+[18]
+
+LaTeX Warning: Citation `ben86' on page 19 undefined on input line 365.
+
+[19]
+
+LaTeX Warning: Citation `ben86' on page 20 undefined on input line 462.
+
+[20]) [21]
 \openout2 = `chapter03.aux'.
 
  (chapter03.tex
 Ch\uhorn \ohorn ng 3.
-[23
+[22
 
 
 
 
-] [24] [25] [26] [27]
+]
+
+LaTeX Warning: Citation `knu983' on page 23 undefined on input line 247.
+
+[23] [24] [25] [26]
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/zi4/m/n/10'. Switching off
@@ -2199,31 +2221,31 @@ Package microtype Warning: I cannot find a protrusion list for font
 
 Underfull \vbox (badness 2980) has occurred while \output is active []
 
- [28]
-[29] [30]) [31]
+ [27]
+[28] [29]) [30]
 \openout2 = `chapter04.aux'.
 
  (chapter04.tex
 Ch\uhorn \ohorn ng 4.
-[32
+[31
 
 
 
 
-] [33] [34] [35] [36] [37]
+] [32] [33] [34] [35] [36]
 Underfull \vbox (badness 3375) has occurred while \output is active []
 
- [38]
-[39]
+ [37]
+[38]
 Underfull \vbox (badness 2057) has occurred while \output is active []
 
- [40])
-[41] [42]
+ [39])
+[40] [41]
 \openout2 = `chapter05.aux'.
 
  (chapter05.tex
 Ch\uhorn \ohorn ng 5.
-[43
+[42
 
 
 
@@ -2256,65 +2278,121 @@ Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/unc/m/n/6'. Switching off
 (microtype)                protrusion for this font on input line 76.
 
-[44] [45] [46] [47] [48] [49]) [50]
+[43] [44] [45]
+
+LaTeX Warning: Citation `q27' on page 46 undefined on input line 459.
+
+[46] [47] [48]
+
+LaTeX Warning: Citation `hor74' on page 49 undefined on input line 724.
+
+) [49]
 \openout2 = `chapter06.aux'.
 
  (chapter06.tex
 Ch\uhorn \ohorn ng 6.
-[51
+[50
 
 
 
 
-] [52] [53] [54] [55] [56]) [57]
+]
+
+LaTeX Warning: Citation `pea05' on page 51 undefined on input line 109.
+
+[51] [52] [53] [54]
+
+LaTeX Warning: Citation `huf52' on page 55 undefined on input line 538.
+
+[55]) [56]
 \openout2 = `chapter07.aux'.
 
  (chapter07.tex
 Ch\uhorn \ohorn ng 7.
-[58
+[57
 
 
 
 
-] [59] [60] [61]
+] [58] [59] [60]
 Underfull \vbox (badness 1117) has occurred while \output is active []
 
- [62]
-[63] [64] [65] [66] [67]) [68]
+ [61]
+[62] [63] [64]
+
+LaTeX Warning: Citation `lev66' on page 65 undefined on input line 760.
+
+[65] [66]
+
+LaTeX Warning: Citation `kas61' on page 67 undefined on input line 1036.
+
+
+LaTeX Warning: Citation `tem61' on page 67 undefined on input line 1036.
+
+) [67]
 \openout2 = `chapter08.aux'.
 
  (chapter08.tex
 Ch\uhorn \ohorn ng 8.
-[69
+[68
 
 
 
 
-] [70] [71] [72]) [73]
+] [69]
+
+LaTeX Warning: Citation `gro14' on page 70 undefined on input line 322.
+
+[70] [71]) [72]
 \openout2 = `chapter09.aux'.
 
  (chapter09.tex
 Ch\uhorn \ohorn ng 9.
-[74
+[73
 
 
 
 
-] [75] [76] [77] [78] [79]
+]
+
+LaTeX Warning: Citation `ben00' on page 74 undefined on input line 256.
+
+
+LaTeX Warning: Citation `fis06' on page 74 undefined on input line 256.
+
+[74] [75]
+
+LaTeX Warning: Citation `fen94' on page 76 undefined on input line 449.
+
+[76] [77]
+
+LaTeX Warning: Citation `sta06' on page 78 undefined on input line 733.
+
+
+LaTeX Warning: Citation `ben80' on page 78 undefined on input line 733.
+
+
+LaTeX Warning: Citation `dim15' on page 78 undefined on input line 747.
+
+[78]
 Underfull \vbox (badness 2608) has occurred while \output is active []
 
- [80]
-[81] [82] [83]) [84]
+ [79]
+[80] [81] [82]) [83]
 \openout2 = `chapter10.aux'.
 
  (chapter10.tex
 Ch\uhorn \ohorn ng 10.
-[85
+[84
 
 
 
 
-] [86] [87] [88] [89] [90] [91] [92] [93] [94]) [95] [96
+] [85] [86] [87] [88] [89] [90]
+
+LaTeX Warning: Citation `hel62' on page 91 undefined on input line 652.
+
+[91] [92] [93]) [94] [95
 
 
 
@@ -2323,78 +2401,132 @@ Ch\uhorn \ohorn ng 10.
 
  (chapter11.tex
 Ch\uhorn \ohorn ng 11.
-[97
+[96
 
 
-] [98] [99] [100] [101] [102]) [103]
+] [97] [98] [99] [100] [101]) [102]
 \openout2 = `chapter12.aux'.
 
  (chapter12.tex
 Ch\uhorn \ohorn ng 12.
-[104
+[103
 
 
 
 
-] [105] [106]
+] [104] [105]
 Underfull \vbox (badness 4144) has occurred while \output is active []
 
- [107]
-[108]) [109]
+ [106]
+[107]) [108]
 \openout2 = `chapter13.aux'.
 
  (chapter13.tex
 Ch\uhorn \ohorn ng 13.
-[110
+
+LaTeX Warning: Citation `bel58' on page 109 undefined on input line 28.
+
+
+LaTeX Warning: Citation `for56a' on page 109 undefined on input line 28.
+
+[109
 
 
 
 
-] [111] [112] [113] [114] [115] [116] [117]) [118]
+] [110]
+
+LaTeX Warning: Citation `fan94' on page 111 undefined on input line 282.
+
+[111]
+
+LaTeX Warning: Citation `dij59' on page 112 undefined on input line 334.
+
+[112] [113]
+
+LaTeX Warning: Citation `flo62' on page 114 undefined on input line 606.
+
+
+LaTeX Warning: Citation `war62' on page 114 undefined on input line 606.
+
+[114] [115] [116]) [117]
 \openout2 = `chapter14.aux'.
 
  (chapter14.tex
 Ch\uhorn \ohorn ng 14.
-[119
+[118
 
 
 
 
-] [120] [121] [122] [123] [124]) [125]
+] [119] [120] [121] [122] [123]) [124]
 \openout2 = `chapter15.aux'.
 
  (chapter15.tex
 Ch\uhorn \ohorn ng 15.
-[126
+[125
 
 
 
 
-] [127] [128] [129] [130]
+]
+
+LaTeX Warning: Citation `kru56' on page 126 undefined on input line 121.
+
+[126] [127]
+
+LaTeX Warning: Citation `hop71' on page 128 undefined on input line 412.
+
+
+LaTeX Warning: Citation `tar75' on page 128 undefined on input line 412.
+
+[128] [129]
+
+LaTeX Warning: Citation `pri57' on page 130 undefined on input line 574.
+
+
 Underfull \vbox (badness 2376) has occurred while \output is active []
 
- [131])
-[132] [133]
+ [130])
+[131] [132]
 \openout2 = `chapter16.aux'.
 
  (chapter16.tex
 Ch\uhorn \ohorn ng 16.
-[134
+[133
 
 
 
 
-] [135] [136] [137] [138] [139] [140]) [141]
+] [134] [135] [136] [137] [138]
+
+LaTeX Warning: Citation `knu982' on page 139 undefined on input line 664.
+
+[139]) [140]
 \openout2 = `chapter17.aux'.
 
  (chapter17.tex
 Ch\uhorn \ohorn ng 17.
-[142
+[141
 
 
 
 
-] [143] [144]
+]
+
+LaTeX Warning: Citation `aho83' on page 142 undefined on input line 141.
+
+
+LaTeX Warning: Citation `sha81' on page 142 undefined on input line 141.
+
+[142]
+
+LaTeX Warning: Citation `asp79' on page 143 undefined on input line 367.
+
+
+LaTeX Warning: Citation `eve75' on page 143 undefined on input line 367.
+
+[143]
 Underfull \hbox (badness 10000) in paragraph at lines 428--430
 
  []
@@ -2404,43 +2536,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 453--455
 
  []
 
-[145]) [146]
+[144]) [145]
 \openout2 = `chapter18.aux'.
 
  (chapter18.tex
 Ch\uhorn \ohorn ng 18.
-[147
+[146
 
 
 
 
-] [148] [149]
+] [147] [148]
 Underfull \vbox (badness 3108) has occurred while \output is active []
 
- [150]
+ [149]
 Underfull \vbox (badness 1515) has occurred while \output is active []
 
- [151]
-[152] [153] [154]) [155]
+ [150]
+
+LaTeX Warning: Citation `ben00' on page 151 undefined on input line 684.
+
+
+LaTeX Warning: Citation `tar84' on page 151 undefined on input line 684.
+
+[151] [152] [153]) [154]
 \openout2 = `chapter19.aux'.
 
  (chapter19.tex
 Ch\uhorn \ohorn ng 19.
-[156
+[155
 
 
 
 
-] [157]
+] [156]
+
+LaTeX Warning: Citation `hie73' on page 157 undefined on input line 240.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [158]
-[159] [160] [161]) [162]
+ [157]
+[158] [159] [160]
+
+LaTeX Warning: Citation `war23' on page 161 undefined on input line 666.
+
+
+LaTeX Warning: Citation `par97' on page 161 undefined on input line 666.
+
+) [161]
 \openout2 = `chapter20.aux'.
 
  (chapter20.tex
 Ch\uhorn \ohorn ng 20.
-[163
+[162
 
 
 
@@ -2450,7 +2599,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--150
 
  []
 
-[164] [165] [166] [167] [168] [169]
+
+LaTeX Warning: Citation `for56' on page 163 undefined on input line 161.
+
+[163] [164]
+
+LaTeX Warning: Citation `edm72' on page 165 undefined on input line 434.
+
+
+LaTeX Warning: Citation `ahu91' on page 165 undefined on input line 445.
+
+[165] [166] [167]
+
+LaTeX Warning: Citation `edm65' on page 168 undefined on input line 781.
+
+[168]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -2467,12 +2630,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fnc' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-[170]
+[169]
 
 LaTeX Font Warning: Font shape `OT1/fnc/m/n' undefined
 (Font)              using `OT1/cmr/m/n' instead on input line 1052.
 
-[171] [172] [173]) [174] [175
+[170] [171] [172]) [173] [174
 
 
 
@@ -2481,10 +2644,13 @@ LaTeX Font Warning: Font shape `OT1/fnc/m/n' undefined
 
  (chapter21.tex
 Ch\uhorn \ohorn ng 21.
-[176
+
+LaTeX Warning: Citation `bec07' on page 175 undefined on input line 27.
+
+[175
 
 
-] [177] [178] [179] [180] [181] [182] [183] [184]) [185]
+] [176] [177] [178] [179] [180] [181] [182] [183]) [184]
 \openout2 = `chapter22.aux'.
 
  (chapter22.tex
@@ -2494,16 +2660,16 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 79.
 
-[186
+[185
 
 
 
 
-] [187]
+] [186]
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 9 in font nullfont!
-[188] [189] [190]
+[187] [188] [189]
 LaTeX Font Info:    Font shape `T5/fnc/m/n' in size <8> not available
 (Font)              Font shape `T5/unc/m/n' tried instead on input line 597.
 
@@ -2512,90 +2678,139 @@ Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `T5/unc/m/n/8'. Switching off
 (microtype)                protrusion for this font on input line 597.
 
-[191] [192] [193]) [194] [195]
+[190] [191] [192]) [193] [194]
 \openout2 = `chapter23.aux'.
 
  (chapter23.tex
 Ch\uhorn \ohorn ng 23.
-[196
+[195
 
 
 
 
-] [197] [198] [199] [200] [201]) [202]
+]
+
+LaTeX Warning: Citation `str69' on page 196 undefined on input line 258.
+
+
+LaTeX Warning: Citation `gal14' on page 196 undefined on input line 258.
+
+[196] [197] [198] [199] [200]) [201]
 \openout2 = `chapter24.aux'.
 
  (chapter24.tex
 Ch\uhorn \ohorn ng 24.
-[203
+[202
 
 
 
 
-] [204] [205] [206] [207] [208]
+] [203] [204] [205] [206] [207]
 Overfull \hbox (1.87071pt too wide) in paragraph at lines 475--475
 |[]\T5/unc/b/n/17.28 Thuªt to¡n ng¨u nhi¶n (Ran-dom-ized al-go-rithms)| 
  []
 
-[209] [210]) [211]
+
+LaTeX Warning: Citation `hoa61a' on page 208 undefined on input line 520.
+
+
+LaTeX Warning: Citation `hoa61b' on page 208 undefined on input line 520.
+
+[208]
+
+LaTeX Warning: Citation `fre77' on page 209 undefined on input line 568.
+
+[209]) [210]
 \openout2 = `chapter25.aux'.
 
  (chapter25.tex
 Ch\uhorn \ohorn ng 25.
-[212
+[211
 
 
 
 
-] [213] [214] [215] [216] [217]) [218]
+] [212]
+
+LaTeX Warning: Citation `bou01' on page 213 undefined on input line 252.
+
+[213]
+
+LaTeX Warning: Citation `spr35' on page 214 undefined on input line 365.
+
+
+LaTeX Warning: Citation `gru39' on page 214 undefined on input line 365.
+
+[214] [215] [216]) [217]
 \openout2 = `chapter26.aux'.
 
  (chapter26.tex
 Ch\uhorn \ohorn ng 26.
-[219
+[218
 
 
 
 
-] [220] [221] [222] [223] [224] [225]) [226]
+]
+
+LaTeX Warning: Citation `kar87' on page 219 undefined on input line 206.
+
+[219] [220] [221]
+
+LaTeX Warning: Citation `pac13' on page 222 undefined on input line 423.
+
+
+LaTeX Warning: Citation `gus97' on page 222 undefined on input line 513.
+
+
+LaTeX Warning: Citation `mai84' on page 222 undefined on input line 513.
+
+[222] [223] [224]) [225]
 \openout2 = `chapter27.aux'.
 
  (chapter27.tex
 Ch\uhorn \ohorn ng 27.
-[227
+[226
 
 
 
 
-] [228] [229] [230] [231]) [232]
+] [227] [228]
+
+LaTeX Warning: Citation `cod15' on page 229 undefined on input line 443.
+
+
+LaTeX Warning: Citation `ken06' on page 229 undefined on input line 443.
+
+[229] [230]) [231]
 \openout2 = `chapter28.aux'.
 
  (chapter28.tex
 Ch\uhorn \ohorn ng 28.
-[233
+[232
 
 
 
 
-] [234]
+] [233]
 Underfull \vbox (badness 4556) has occurred while \output is active []
 
- [235]
-[236]
+ [234]
+[235]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [237]
-[238] [239]) [240]
+ [236]
+[237] [238]) [239]
 \openout2 = `chapter29.aux'.
 
  (chapter29.tex
 Ch\uhorn \ohorn ng 29.
-[241
+[240
 
 
 
 
-] [242] [243] [244] [245] [246] [247] [248]) [249]
+] [241] [242] [243] [244] [245] [246] [247]) [248]
 \openout2 = `chapter30.aux'.
 
  (chapter30.tex
@@ -2603,13 +2818,21 @@ Ch\uhorn \ohorn ng 30.
 
 Underfull \vbox (badness 2922) has occurred while \output is active []
 
- [250
+ [249
 
 
 
 
 ]
-[251] [252] [253]) [254]
+[250]
+
+LaTeX Warning: Citation `sha75' on page 251 undefined on input line 282.
+
+[251]
+
+LaTeX Warning: Citation `and79' on page 252 undefined on input line 404.
+
+[252]) [253]
 \openout2 = `list.aux'.
 
  (list.tex
@@ -2618,19 +2841,23 @@ Underfull \hbox (badness 1297) in paragraph at lines 95--98
  Cana-dian Jour-nal of Math-e-mat-ics\T5/unc/m/n/12 (+20) ,
  []
 
-[255
+[254
 
 
 
 
 
-] [256] [257]
+] [255] [256]
 Underfull \hbox (badness 1292) in paragraph at lines 346--349
 []\T5/unc/m/n/12 (+20) V. Strassen. Gaus-sian elim-i-na-tion is not op-ti-mal. 
 \T5/unc/m/it/12 Nu-merische Math-e-matik\T5/unc/m/n/12 (+20) ,
  []
 
-) [258]
+) [257] [258
+
+
+
+]
 No file book.ind.
 (book.aux (preface.aux) (chapter01.aux) (chapter02.aux) (chapter03.aux)
 (chapter04.aux) (chapter05.aux) (chapter06.aux) (chapter07.aux) (chapter08.aux)
@@ -2647,17 +2874,23 @@ L3 programming layer <2024-01-04>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `book.out' has not changed.
 (rerunfilecheck)             Checksum: 47BB61858552EBF4F1B260B4B68A92FB;25758.
  ) 
 Here is how much of TeX's memory you used:
- 38096 strings out of 474485
- 671203 string characters out of 5760146
+ 38034 strings out of 474485
+ 669670 string characters out of 5760146
  2010542 words of memory out of 5000000
  57535 multiletter control sequences out of 15000+600000
  700746 words of font info for 392 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,18n,107p,1003b,2038s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,18n,107p,1003b,2039s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <D:/MiKTeX/fonts/type1/public/skaknew/SkakNew-Figurine.pfb><D:/MiKTeX/fonts/t
 ype1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX/fonts/type1/public/amsfonts/cm/cms
 sbx10.pfb><D:/MiKTeX/fonts/type1/public/fourier/fourier-bb.pfb><D:/MiKTeX/fonts
@@ -2670,9 +2903,9 @@ v.pfb><D:/MiKTeX/fonts/type1/urw/ncntrsbk/uncri8a.pfb><D:/MiKTeX/fonts/type1/vn
 tex/urwvn/uncri8v.pfb><D:/MiKTeX/fonts/type1/vntex/vnr/vnr10.pfb><D:/MiKTeX/fon
 ts/type1/vntex/vnr/vnr12.pfb><D:/MiKTeX/fonts/type1/vntex/vnr/vnr9.pfb><D:/MiKT
 eX/fonts/type1/vntex/vnr/vnssbx10.pfb>
-Output written on book.pdf (266 pages, 1614748 bytes).
+Output written on book.pdf (266 pages, 1602802 bytes).
 PDF statistics:
- 3696 PDF objects out of 4296 (max. 8388607)
+ 3625 PDF objects out of 4296 (max. 8388607)
  1669 named destinations out of 1728 (max. 500000)
  52949 words of extra memory for PDF output out of 61914 (max. 10000000)
 
