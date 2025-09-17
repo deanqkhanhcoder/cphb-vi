@@ -1,19 +1,18 @@
-\chapter{Combinatorics}
+\chapter{Tổ hợp}
 
 \index{combinatorics}
-\index{tổ hợp}
 
-\key{Combinatorics} (Tổ hợp) nghiên cứu các phương pháp để đếm
-các cách kết hợp các đối tượng.
-Thông thường, mục tiêu là tìm cách
+\key{Tổ hợp (Combinatorics)} nghiên cứu các phương pháp đếm
+các kết hợp của các đối tượng.
+Thông thường, mục tiêu là tìm ra một cách để
 đếm các kết hợp một cách hiệu quả
-mà không phải tạo ra từng kết hợp riêng lẻ.
+mà không cần tạo ra từng kết hợp riêng lẻ.
 
-Ví dụ, xét bài toán
-đếm số cách
-biểu diễn một số nguyên $n$ dưới dạng tổng các số nguyên dương.
+Ví dụ, hãy xem xét bài toán
+đếm số cách để
+biểu diễn một số nguyên $n$ dưới dạng tổng của các số nguyên dương.
 Ví dụ, có 8 cách biểu diễn
-cho $4$:
+cho số 4:
 \begin{multicols}{2}
 \begin{itemize}
 \item $1+1+1+1$
@@ -27,10 +26,10 @@ cho $4$:
 \end{itemize}
 \end{multicols}
 
-Một bài toán tổ hợp thường có thể được giải
-bằng cách sử dụng hàm đệ quy.
+Một bài toán tổ hợp thường có thể được giải quyết
+bằng một hàm đệ quy.
 Trong bài toán này, chúng ta có thể định nghĩa một hàm $f(n)$
-trả về số cách biểu diễn cho $n$.
+cho ra số cách biểu diễn của $n$.
 Ví dụ, $f(4)=8$ theo ví dụ trên.
 Các giá trị của hàm
 có thể được tính đệ quy như sau:
@@ -42,13 +41,13 @@ có thể được tính đệ quy như sau:
 \end{equation*}
 Trường hợp cơ sở là $f(0)=1$,
 bởi vì tổng rỗng biểu diễn số 0.
-Sau đó, nếu $n>0$, ta xét tất cả các cách
+Sau đó, nếu $n>0$, chúng ta xem xét tất cả các cách để
 chọn số đầu tiên của tổng.
 Nếu số đầu tiên là $k$,
 có $f(n-k)$ cách biểu diễn
 cho phần còn lại của tổng.
-Do đó, ta tính tổng của tất cả các giá trị
-có dạng $f(n-k)$ với $k<n$.
+Do đó, chúng ta tính tổng của tất cả các giá trị
+có dạng $f(n-k)$ trong đó $k<n$.
 
 Các giá trị đầu tiên của hàm là:
 \[
@@ -62,86 +61,85 @@ f(4) & = & 8 \\
 \]
 
 Đôi khi, một công thức đệ quy có thể được thay thế
-bằng một công thức dạng đóng (closed-form).
+bằng một công thức dạng đóng.
 Trong bài toán này,
 \[
 f(n)=2^{n-1},
 \]
 dựa trên thực tế là có $n-1$
-vị trí có thể đặt dấu + trong tổng
-và ta có thể chọn bất kỳ tập con nào của chúng.
+vị trí có thể cho các dấu +- trong tổng
+và chúng ta có thể chọn bất kỳ tập hợp con nào trong số chúng.
 
-\section{Binomial coefficients}
+\section{Tổ hợp chập (Binomial coefficients)}
 
 \index{binomial coefficient}
-\index{hệ số nhị thức}
 
-The \key{binomial coefficient} (hệ số nhị thức) ${n \choose k}$
-bằng số cách chọn một tập con
-gồm $k$ phần tử từ một tập $n$ phần tử.
+\key{Tổ hợp chập (Binomial coefficient)} ${n \choose k}$
+bằng số cách chúng ta có thể chọn một tập hợp con
+gồm $k$ phần tử từ một tập hợp gồm $n$ phần tử.
 Ví dụ, ${5 \choose 3}=10$,
-bởi vì tập $\{1,2,3,4,5\}$
-có 10 tập con gồm 3 phần tử:
+bởi vì tập hợp $\{1,2,3,4,5\}$
+có 10 tập hợp con gồm 3 phần tử:
 \[ \{1,2,3\}, \{1,2,4\}, \{1,2,5\}, \{1,3,4\}, \{1,3,5\}, 
 \{1,4,5\}, \{2,3,4\}, \{2,3,5\}, \{2,4,5\}, \{3,4,5\} \]
 
-\subsubsection{Formula 1}
+\subsubsection{Công thức 1}
 
-Các hệ số nhị thức có thể được
+Tổ hợp chập có thể được
 tính đệ quy như sau:
 
 \[
 {n \choose k}  =  {n-1 \choose k-1} + {n-1 \choose k}
 \]
 
-Ý tưởng là cố định một phần tử $x$ trong tập.
-Nếu $x$ được chọn vào tập con,
-ta phải chọn $k-1$
-phần tử từ $n-1$ phần tử còn lại,
-và nếu $x$ không được chọn vào tập con,
-ta phải chọn $k$ phần tử từ $n-1$ phần tử còn lại.
+Ý tưởng là cố định một phần tử $x$ trong tập hợp.
+Nếu $x$ được bao gồm trong tập hợp con,
+chúng ta phải chọn $k-1$
+phần tử từ $n-1$ phần tử,
+và nếu $x$ không được bao gồm trong tập hợp con,
+chúng ta phải chọn $k$ phần tử từ $n-1$ phần tử.
 
 Các trường hợp cơ sở cho đệ quy là
 \[
 {n \choose 0}  =  {n \choose n} = 1,
 \]
-bởi vì luôn luôn chỉ có
-một cách để tạo ra một tập con rỗng
-và một tập con chứa tất cả các phần tử.
+bởi vì luôn có chính xác
+một cách để xây dựng một tập hợp con rỗng
+và một tập hợp con chứa tất cả các phần tử.
 
-\subsubsection{Formula 2}
+\subsubsection{Công thức 2}
 
-Một cách khác để tính hệ số nhị thức như sau:
+Một cách khác để tính tổ hợp chập như sau:
 \[
 {n \choose k}  =  \frac{n!}{k!(n-k)!}.
 \]
 
 Có $n!$ hoán vị của $n$ phần tử.
-Ta duyệt qua tất cả các hoán vị và luôn
-chọn $k$ phần tử đầu tiên của hoán vị
-vào tập con.
-Vì thứ tự của các phần tử trong tập con
-và ngoài tập con không quan trọng,
+Chúng ta duyệt qua tất cả các hoán vị và luôn
+bao gồm $k$ phần tử đầu tiên của hoán vị
+trong tập hợp con.
+Vì thứ tự của các phần tử trong tập hợp con
+và bên ngoài tập hợp con không quan trọng,
 kết quả được chia cho $k!$ và $(n-k)!$
 
-\subsubsection{Properties}
+\subsubsection{Các thuộc tính}
 
-Đối với hệ số nhị thức,
+Đối với tổ hợp chập,
 \[
 {n \choose k}  =  {n \choose n-k},
 \]
-bởi vì thực tế chúng ta chia một tập $n$ phần tử thành
-hai tập con: tập thứ nhất chứa $k$ phần tử
-và tập thứ hai chứa $n-k$ phần tử.
+bởi vì thực tế chúng ta chia một tập hợp gồm $n$ phần tử thành
+hai tập hợp con: tập hợp thứ nhất chứa $k$ phần tử
+và tập hợp thứ hai chứa $n-k$ phần tử.
 
-Tổng các hệ số nhị thức là
+Tổng của các tổ hợp chập là
 \[
 {n \choose 0}+{n \choose 1}+{n \choose 2}+\ldots+{n \choose n}=2^n.
 \]
 
-Lý do cho tên gọi ''hệ số nhị thức''
-có thể thấy khi nhị thức $(a+b)$ được lũy thừa
-lên mũ thứ $n$:
+Lý do cho tên "tổ hợp chập"
+có thể được nhìn thấy khi nhị thức $(a+b)$ được nâng lên
+lũy thừa thứ $n$:
 
 \[ (a+b)^n =
 {n \choose 0} a^n b^0 + 
@@ -151,10 +149,9 @@ lên mũ thứ $n$:
 {n \choose n} a^0 b^n. \]
 
 \index{Pascal's triangle}
-\index{tam giác Pascal}
 
-Hệ số nhị thức cũng xuất hiện trong
-\key{Pascal's triangle} (tam giác Pascal)
+Tổ hợp chập cũng xuất hiện trong
+\key{tam giác Pascal (Pascal's triangle)}
 trong đó mỗi giá trị bằng tổng của hai
 giá trị phía trên:
 \begin{center}
@@ -182,17 +179,17 @@ giá trị phía trên:
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{Boxes and balls}
+\subsubsection{Hộp và bóng}
 
-''Boxes and balls'' (Hộp và bi) là một mô hình hữu ích,
-trong đó ta đếm số cách để
-đặt $k$ quả bi vào $n$ hộp.
-Hãy xét ba kịch bản:
+"Hộp và bóng" là một mô hình hữu ích,
+trong đó chúng ta đếm số cách để
+đặt $k$ quả bóng vào $n$ hộp.
+Hãy xem xét ba kịch bản:
 
-\textit{Scenario 1}: Mỗi hộp có thể chứa
-tối đa một quả bi.
+\textit{Kịch bản 1}: Mỗi hộp có thể chứa
+nhiều nhất một quả bóng.
 Ví dụ, khi $n=5$ và $k=2$,
-có 10 cách giải:
+có 10 giải pháp:
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
@@ -225,12 +222,12 @@ có 10 cách giải:
 \end{tikzpicture}
 \end{center}
 
-Trong kịch bản này, kết quả chính là
-hệ số nhị thức ${n \choose k}$.
+Trong kịch bản này, câu trả lời trực tiếp là
+tổ hợp chập ${n \choose k}$.
 
-\textit{Scenario 2}: Một hộp có thể chứa nhiều quả bi.
+\textit{Kịch bản 2}: Một hộp có thể chứa nhiều quả bóng.
 Ví dụ, khi $n=5$ và $k=2$,
-có 15 cách giải:
+có 15 giải pháp:
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
@@ -268,29 +265,29 @@ có 15 cách giải:
 \end{tikzpicture}
 \end{center}
 
-Quá trình đặt các quả bi vào các hộp
-có thể được biểu diễn bằng một chuỗi
-gồm các ký hiệu
-''o'' và ''$\rightarrow$''.
-Ban đầu, giả sử ta đang đứng ở hộp ngoài cùng bên trái.
-Ký hiệu ''o'' có nghĩa là ta đặt một quả bi
+Quá trình đặt các quả bóng vào các hộp
+có thể được biểu diễn dưới dạng một chuỗi
+bao gồm các ký hiệu
+"o" và "$\rightarrow$".
+Ban đầu, giả sử rằng chúng ta đang đứng ở hộp ngoài cùng bên trái.
+Ký hiệu "o" có nghĩa là chúng ta đặt một quả bóng
 vào hộp hiện tại, và ký hiệu
-''$\rightarrow$'' có nghĩa là ta di chuyển đến
+"$\rightarrow$" có nghĩa là chúng ta di chuyển đến
 hộp tiếp theo bên phải.
 
-Sử dụng ký hiệu này, mỗi cách giải là một chuỗi
-chứa $k$ lần ký hiệu ''o'' và
-$n-1$ lần ký hiệu ''$\rightarrow$''.
-Ví dụ, cách giải ở góc trên bên phải
+Sử dụng ký hiệu này, mỗi giải pháp là một chuỗi
+chứa $k$ lần ký hiệu "o" và
+$n-1$ lần ký hiệu "$\rightarrow$".
+Ví dụ, giải pháp trên cùng bên phải
 trong hình trên tương ứng với chuỗi
-''$\rightarrow$ $\rightarrow$ o $\rightarrow$ o $\rightarrow$''.
-Do đó, số cách giải là
+"$\rightarrow$ $\rightarrow$ o $\rightarrow$ o $\rightarrow$".
+Do đó, số lượng các giải pháp là
 ${k+n-1 \choose k}$.
 
-\textit{Scenario 3}: Mỗi hộp có thể chứa nhiều nhất một quả bi,
-và thêm nữa, không có hai hộp liền kề nào đều chứa bi.
+\textit{Kịch bản 3}: Mỗi hộp có thể chứa nhiều nhất một quả bóng,
+và ngoài ra, không có hai hộp liền kề nào có thể cùng chứa một quả bóng.
 Ví dụ, khi $n=5$ và $k=2$,
-có 6 cách giải:
+có 6 giải pháp:
 
 
 \begin{center}
@@ -319,48 +316,46 @@ có 6 cách giải:
 \end{tikzpicture}
 \end{center}
 
-Trong kịch bản này, ta có thể giả sử rằng
-$k$ quả bi được đặt vào các hộp ban đầu
+Trong kịch bản này, chúng ta có thể giả sử rằng
+$k$ quả bóng ban đầu được đặt trong các hộp
 và có một hộp trống giữa mỗi
-cặp hộp liền kề.
-Nhiệm vụ còn lại là chọn
+hai hộp liền kề.
+Nhiệm vụ còn lại là chọn các
 vị trí cho các hộp trống còn lại.
 Có $n-2k+1$ hộp như vậy và
 $k+1$ vị trí cho chúng.
 Do đó, sử dụng công thức của kịch bản 2,
-số cách giải là
+số lượng các giải pháp là
 ${n-k+1 \choose n-2k+1}$.
 
-\subsubsection{Multinomial coefficients}
+\subsubsection{Hệ số đa thức}
 
 \index{multinomial coefficient}
-\index{hệ số đa thức}
 
-The \key{multinomial coefficient} (hệ số đa thức)
+\key{Hệ số đa thức (multinomial coefficient)}
 \[ {n \choose k_1,k_2,\ldots,k_m} = \frac{n!}{k_1! k_2! \cdots k_m!}, \]
 bằng số cách
-chúng ta có thể chia $n$ phần tử thành các tập con
+chúng ta có thể chia $n$ phần tử thành các tập hợp con
 có kích thước $k_1,k_2,\ldots,k_m$,
 trong đó $k_1+k_2+\cdots+k_m=n$.
-Hệ số đa thức có thể được xem như một
-tổng quát hóa của hệ số nhị thức;
+Hệ số đa thức có thể được coi là một
+sự tổng quát hóa của tổ hợp chập;
 nếu $m=2$, công thức trên
-tương ứng với công thức hệ số nhị thức.
+tương ứng với công thức tổ hợp chập.
 
-\section{Catalan numbers}
+\section{Số Catalan}
 
 \index{Catalan number}
-\index{số Catalan}
 
-The \key{Catalan number} (Số Catalan)
-%\footnote{E. C. Catalan (1814--1894) was a Belgian mathematician.}
+\key{Số Catalan (Catalan number)}
 $C_n$ bằng
-số biểu thức dấu ngoặc hợp lệ
-gồm $n$ dấu ngoặc trái và $n$ dấu ngoặc phải.
+số lượng các biểu thức
+ngoặc hợp lệ bao gồm
+$n$ dấu ngoặc trái và $n$ dấu ngoặc phải.
 
 Ví dụ, $C_3=5$, bởi vì
-chúng ta có thể tạo ra các biểu thức
-dấu ngoặc sau sử dụng ba
+chúng ta có thể xây dựng các biểu thức ngoặc
+sau đây bằng cách sử dụng ba
 dấu ngoặc trái và phải:
 
 \begin{itemize}[noitemsep]
@@ -371,99 +366,98 @@ dấu ngoặc trái và phải:
 \item \texttt{(()())}
 \end{itemize}
 
-\subsubsection{Parenthesis expressions}
+\subsubsection{Biểu thức ngoặc}
 
 \index{parenthesis expression}
-\index{biểu thức dấu ngoặc}
 
-\emph{Biểu thức dấu ngoặc hợp lệ} là gì?
-Các quy tắc sau xác định chính xác tất cả
-biểu thức dấu ngoặc hợp lệ:
+Chính xác thì \emph{biểu thức ngoặc hợp lệ} là gì?
+Các quy tắc sau đây định nghĩa chính xác tất cả
+các biểu thức ngoặc hợp lệ:
 
 \begin{itemize}
-\item Biểu thức dấu ngoặc rỗng là hợp lệ.
-\item Nếu biểu thức $A$ hợp lệ,
+\item Một biểu thức ngoặc rỗng là hợp lệ.
+\item Nếu một biểu thức $A$ là hợp lệ,
 thì biểu thức
-\texttt{(}$A$\texttt{)} cũng hợp lệ.
-\item Nếu biểu thức $A$ và $B$ hợp lệ,
-thì biểu thức $AB$ cũng hợp lệ.
+\texttt{(}$A$\texttt{)} cũng là hợp lệ.
+\item Nếu các biểu thức $A$ và $B$ là hợp lệ,
+thì biểu thức $AB$ cũng là hợp lệ.
 \end{itemize}
 
-Một cách khác để mô tả biểu thức
-dấu ngoặc hợp lệ là nếu
-chúng ta chọn bất kỳ tiền tố nào của biểu thức đó,
-nó phải chứa ít nhất bằng nhiều dấu ngoặc
-trái như dấu ngoặc phải.
+Một cách khác để mô tả các
+biểu thức ngoặc hợp lệ là nếu
+chúng ta chọn bất kỳ tiền tố nào của một biểu thức như vậy,
+nó phải chứa ít nhất số dấu ngoặc trái
+bằng số dấu ngoặc phải.
 Ngoài ra, biểu thức hoàn chỉnh phải
-chứa số lượng dấu ngoặc trái và phải bằng nhau.
+chứa một số lượng bằng nhau các dấu ngoặc trái và phải.
 
-\subsubsection{Formula 1}
+\subsubsection{Công thức 1}
 
-Số Catalan có thể được tính bằng công thức
+Các số Catalan có thể được tính bằng công thức
 \[ C_n = \sum_{i=0}^{n-1} C_{i} C_{n-i-1}.\]
 
-Tổng này duyệt qua các cách để chia
+Tổng duyệt qua các cách để chia
 biểu thức thành hai phần
 sao cho cả hai phần đều là các biểu thức
-hợp lệ và phần đầu tiên ngắn nhất có thể
+hợp lệ và phần đầu tiên càng ngắn càng tốt
 nhưng không rỗng.
-Với mọi $i$, phần đầu tiên chứa $i+1$ cặp
-dấu ngoặc và số lượng biểu thức
+Với bất kỳ $i$ nào, phần đầu tiên chứa $i+1$ cặp
+dấu ngoặc và số lượng các biểu thức
 là tích của các giá trị sau:
 
 \begin{itemize}
-\item $C_{i}$: số cách để tạo một biểu thức
+\item $C_{i}$: số cách để xây dựng một biểu thức
 sử dụng các dấu ngoặc của phần đầu tiên,
-không tính cặp ngoặc ngoài cùng
-\item $C_{n-i-1}$: số cách để tạo một
+không tính các dấu ngoặc ngoài cùng
+\item $C_{n-i-1}$: số cách để xây dựng một
 biểu thức sử dụng các dấu ngoặc của phần thứ hai
 \end{itemize}
 
 Trường hợp cơ sở là $C_0=1$,
-bởi vì ta có thể tạo một biểu thức
-dấu ngoặc rỗng sử dụng không cặp dấu ngoặc nào.
+bởi vì chúng ta có thể xây dựng một biểu thức ngoặc
+rỗng bằng cách sử dụng không cặp dấu ngoặc.
 
-\subsubsection{Formula 2}
+\subsubsection{Công thức 2}
 
-Số Catalan cũng có thể được tính
-sử dụng hệ số nhị thức:
+Các số Catalan cũng có thể được tính
+bằng tổ hợp chập:
 \[ C_n = \frac{1}{n+1} {2n \choose n}\]
 Công thức có thể được giải thích như sau:
 
 Có tổng cộng ${2n \choose n}$ cách
-để tạo một biểu thức dấu ngoặc (không nhất thiết hợp lệ)
-chứa $n$ dấu ngoặc trái và
-$n$ dấu ngoặc phải.
-Hãy tính số lượng biểu thức như vậy
-mà \emph{không} hợp lệ.
+để xây dựng một biểu thức ngoặc (không nhất thiết phải hợp lệ)
+chứa $n$ dấu ngoặc trái
+và $n$ dấu ngoặc phải.
+Chúng ta hãy tính số lượng các
+biểu thức như vậy \emph{không} hợp lệ.
 
-Nếu một biểu thức dấu ngoặc không hợp lệ,
+Nếu một biểu thức ngoặc không hợp lệ,
 nó phải chứa một tiền tố trong đó
-số dấu ngoặc phải nhiều hơn
-số dấu ngoặc trái.
+số lượng dấu ngoặc phải vượt quá
+số lượng dấu ngoặc trái.
 Ý tưởng là đảo ngược mỗi dấu ngoặc
-thuộc tiền tố đó.
+thuộc về một tiền tố như vậy.
 Ví dụ, biểu thức
-\texttt{())()(} chứa tiền tố \texttt{())},
+\texttt{())()(} chứa một tiền tố \texttt{())},
 và sau khi đảo ngược tiền tố,
 biểu thức trở thành \texttt{)((()(}.
 
-Biểu thức kết quả gồm $n+1$
+Biểu thức kết quả bao gồm $n+1$
 dấu ngoặc trái và $n-1$ dấu ngoặc phải.
-Số lượng biểu thức như vậy là ${2n \choose n+1}$,
-bằng số lượng biểu thức dấu ngoặc
-không hợp lệ.
-Do đó, số lượng biểu thức dấu ngoặc
+Số lượng các biểu thức như vậy là ${2n \choose n+1}$,
+bằng số lượng các biểu thức
+ngoặc không hợp lệ.
+Do đó, số lượng các biểu thức ngoặc
 hợp lệ có thể được tính bằng công thức
 \[{2n \choose n}-{2n \choose n+1} = {2n \choose n} - \frac{n}{n+1} {2n \choose n} = \frac{1}{n+1} {2n \choose n}.\]
 
-\subsubsection{Counting trees}
+\subsubsection{Đếm cây}
 
-Số Catalan cũng liên quan đến cây:
+Các số Catalan cũng liên quan đến cây:
 
 \begin{itemize}
-\item có $C_n$ cây nhị phân với $n$ nút
-\item có $C_{n-1}$ cây có gốc với $n$ nút
+\item có $C_n$ cây nhị phân gồm $n$ nút
+\item có $C_{n-1}$ cây có gốc gồm $n$ nút
 \end{itemize}
 \noindent
 Ví dụ, với $C_3=5$, các cây nhị phân là
@@ -497,7 +491,7 @@ Ví dụ, với $C_3=5$, các cây nhị phân là
 \draw[fill=white] (11.5+1.5,-2) circle (0.3);
 \end{tikzpicture}
 \end{center}
-and the rooted trees are
+và các cây có gốc là
 \begin{center}
 \begin{tikzpicture}[scale=0.7]
 \path[draw,thick,-] (0,0) -- (-1,-1);
@@ -538,19 +532,18 @@ and the rooted trees are
 \end{tikzpicture}
 \end{center}
 
-\section{Inclusion-exclusion}
+\section{Bao hàm - loại trừ}
 
 \index{inclusion-exclusion}
-\index{nguyên lý bao hàm-loại trừ}
 
-\key{Inclusion-exclusion} (Nguyên lý bao hàm-loại trừ) là một kỹ thuật
+\key{Bao hàm - loại trừ (Inclusion-exclusion)} là một kỹ thuật
 có thể được sử dụng để đếm kích thước
-của hợp các tập khi kích thước của
-các giao đã biết, và ngược lại.
+của một hợp các tập hợp khi kích thước của
+các giao được biết, và ngược lại.
 Một ví dụ đơn giản của kỹ thuật này là công thức
 \[ |A \cup B| = |A| + |B| - |A \cap B|,\]
-trong đó $A$ và $B$ là các tập và $|X|$
-ký hiệu kích thước của $X$.
+trong đó $A$ và $B$ là các tập hợp và $|X|$
+biểu thị kích thước của $X$.
 Công thức có thể được minh họa như sau:
 
 \begin{center}
@@ -569,17 +562,17 @@ Công thức có thể được minh họa như sau:
 Mục tiêu của chúng ta là tính
 kích thước của hợp $A \cup B$
 tương ứng với diện tích của vùng
-thuộc ít nhất một vòng tròn.
-Hình vẽ cho thấy chúng ta có thể tính
+thuộc về ít nhất một vòng tròn.
+Hình ảnh cho thấy chúng ta có thể tính
 diện tích của $A \cup B$ bằng cách đầu tiên cộng
 diện tích của $A$ và $B$ và sau đó trừ đi
 diện tích của $A \cap B$.
 
-Cùng một ý tưởng có thể áp dụng khi số lượng
-tập hợp lớn hơn.
-Khi có ba tập, công thức bao hàm-loại trừ là
+Ý tưởng tương tự có thể được áp dụng khi số lượng
+các tập hợp lớn hơn.
+Khi có ba tập hợp, công thức bao hàm-loại trừ là
 \[ |A \cup B \cup C| = |A| + |B| + |C| - |A \cap B|  - |A \cap C|  - |B \cap C| + |A \cap B \cap C| \]
-và hình vẽ tương ứng là
+và hình ảnh tương ứng là
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
@@ -599,38 +592,37 @@ và hình vẽ tương ứng là
 \end{tikzpicture}
 \end{center}
 
-Trong trường hợp tổng quát, kích thước của 
+Trong trường hợp tổng quát, kích thước của
 hợp $X_1 \cup X_2 \cup \cdots \cup X_n$
-có thể được tính bằng cách xét tất cả các
-giao có thể chứa một số tập trong $X_1,X_2,\ldots,X_n$.
-Nếu giao chứa một số lẻ tập,
-kích thước của nó được cộng vào kết quả,
-và ngược lại kích thước của nó được trừ khỏi kết quả.
+có thể được tính bằng cách duyệt qua tất cả các
+giao có thể có chứa một số các tập hợp $X_1,X_2,\ldots,X_n$.
+Nếu giao chứa một số lẻ các tập hợp,
+kích thước của nó được cộng vào câu trả lời,
+và ngược lại, kích thước của nó được trừ khỏi câu trả lời.
 
-Chú ý rằng có những công thức tương tự
+Lưu ý rằng có các công thức tương tự
 để tính
-kích thước của giao từ kích thước của
+kích thước của một giao từ kích thước của
 các hợp. Ví dụ,
 \[ |A \cap B| = |A| + |B| - |A \cup B|\]
 và
 \[ |A \cap B \cap C| = |A| + |B| + |C| - |A \cup B|  - |A \cup C|  - |B \cup C| + |A \cup B \cup C| .\]
 
-\subsubsection{Derangements}
+\subsubsection{Hoán vị mất chỗ}
 
 \index{derangement}
-\index{hoán vị tráo trộn}
 
-Để ví dụ, hãy đếm số \key{derangements} (hoán vị tráo trộn)
-của các phần tử $\{1,2,\ldots,n\}$, tức là các hoán vị
-trong đó không có phần tử nào giữ vị trí ban đầu của nó.
+Ví dụ, chúng ta hãy đếm số lượng các \key{hoán vị mất chỗ (derangements)}
+của các phần tử $\{1,2,\ldots,n\}$, tức là, các hoán vị
+trong đó không có phần tử nào ở vị trí ban đầu của nó.
 Ví dụ, khi $n=3$, có
-hai hoán vị tráo trộn: $(2,3,1)$ và $(3,1,2)$.
+hai hoán vị mất chỗ: $(2,3,1)$ và $(3,1,2)$.
 
-Một cách tiếp cận để giải bài toán là sử dụng
-nguyên lý bao hàm-loại trừ.
-Gọi $X_k$ là tập các hoán vị
-chứa phần tử $k$ tại vị trí $k$.
-Ví dụ, khi $n=3$, các tập như sau:
+Một cách tiếp cận để giải quyết bài toán là sử dụng
+bao hàm-loại trừ.
+Gọi $X_k$ là tập hợp các hoán vị
+chứa phần tử $k$ ở vị trí $k$.
+Ví dụ, khi $n=3$, các tập hợp như sau:
 \[
 \begin{array}{lcl}
 X_1 & = & \{(1,2,3),(1,3,2)\} \\
@@ -638,12 +630,12 @@ X_2 & = & \{(1,2,3),(3,2,1)\} \\
 X_3 & = & \{(1,2,3),(2,1,3)\} \\
 \end{array}
 \]
-Sử dụng các tập này, số hoán vị tráo trộn bằng
+Sử dụng các tập hợp này, số lượng các hoán vị mất chỗ bằng
 \[ n! - |X_1 \cup X_2 \cup \cdots \cup X_n|, \]
-vậy chỉ cần tính kích thước của hợp.
-Sử dụng nguyên lý bao hàm-loại trừ, điều này quy về
+vì vậy chỉ cần tính kích thước của hợp.
+Sử dụng bao hàm-loại trừ, điều này quy về
 việc tính kích thước của các giao có thể được
-thực hiện hiệu quả.
+thực hiện một cách hiệu quả.
 Ví dụ, khi $n=3$, kích thước của
 $|X_1 \cup X_2 \cup X_3|$ là
 \[
@@ -653,12 +645,12 @@ $|X_1 \cup X_2 \cup X_3|$ là
  & = & 4, \\
 \end{array}
 \]
-vậy số nghiệm là $3!-4=2$.
+vì vậy số lượng các giải pháp là $3!-4=2$.
 
-Hóa ra bài toán cũng có thể được giải
-mà không cần sử dụng nguyên lý bao hàm-loại trừ.
-Gọi $f(n)$ là số hoán vị tráo trộn
-cho $\{1,2,\ldots,n\}$. Ta có thể sử dụng
+Hóa ra bài toán cũng có thể được giải quyết
+mà không cần sử dụng bao hàm-loại trừ.
+Gọi $f(n)$ là số lượng các hoán vị mất chỗ
+cho $\{1,2,\ldots,n\}$. Chúng ta có thể sử dụng
 công thức đệ quy sau:
 
 \begin{equation*}
@@ -669,50 +661,48 @@ công thức đệ quy sau:
            \end{cases}
 \end{equation*}
 
-Công thức có thể được suy ra bằng cách xét
-các khả năng phần tử 1 thay đổi
-trong hoán vị tráo trộn.
+Công thức có thể được suy ra bằng cách xem xét
+các khả năng cách phần tử 1 thay đổi
+trong hoán vị mất chỗ.
 Có $n-1$ cách để chọn một phần tử $x$
-thay thế cho phần tử 1.
-Trong mỗi lựa chọn như vậy, có hai phương án:
+thay thế phần tử 1.
+Trong mỗi lựa chọn như vậy, có hai tùy chọn:
 
-\textit{Option 1:} Ta cũng thay thế phần tử $x$
+\textit{Tùy chọn 1:} Chúng ta cũng thay thế phần tử $x$
 bằng phần tử 1.
 Sau đó, nhiệm vụ còn lại là xây dựng
-một hoán vị tráo trộn của $n-2$ phần tử.
+một hoán vị mất chỗ của $n-2$ phần tử.
 
-\textit{Option 2:} Ta thay thế phần tử $x$
+\textit{Tùy chọn 2:} Chúng ta thay thế phần tử $x$
 bằng một phần tử khác 1.
-Bây giờ ta phải xây dựng một hoán vị tráo trộn
-của $n-1$ phần tử, bởi vì ta không thể thay thế
-phần tử $x$ bằng phần tử $1$, và tất cả các phần tử khác
-phải được thay đổi.
+Bây giờ chúng ta phải xây dựng một hoán vị mất chỗ
+của $n-1$ phần tử, bởi vì chúng ta không thể thay thế
+phần tử $x$ bằng phần tử 1, và tất cả các
+phần tử khác phải được thay đổi.
 
-\section{Burnside's lemma}
+\section{Bổ đề Burnside}
 
 \index{Burnside's lemma}
-\index{bổ đề Burnside}
 
-\key{Burnside's lemma} (Bổ đề Burnside)
-%\footnote{Actually, Burnside did not discover this lemma; he only mentioned it in his book \cite{bur97}.}
+\key{Bổ đề Burnside (Burnside's lemma)}
 có thể được sử dụng để đếm
-số lượng tổ hợp sao cho
-chỉ đếm một đại diện
-cho mỗi nhóm các tổ hợp đối xứng.
-Bổ đề Burnside phát biểu rằng số lượng
-tổ hợp là
+số lượng các kết hợp sao cho
+chỉ có một đại diện được đếm
+cho mỗi nhóm các kết hợp đối xứng.
+Bổ đề Burnside phát biểu rằng số lượng các
+kết hợp là
 \[\sum_{k=1}^n \frac{c(k)}{n},\]
 trong đó có $n$ cách để thay đổi
-vị trí của một tổ hợp,
-và có $c(k)$ tổ hợp
-không thay đổi khi áp dụng cách thứ $k$.
+vị trí của một kết hợp,
+và có $c(k)$ kết hợp
+vẫn không thay đổi khi cách thứ $k$ được áp dụng.
 
-Để ví dụ, hãy tính số lượng
-vòng cổ gồm $n$ hạt ngọc,
-trong đó mỗi hạt ngọc có $m$ màu có thể.
-Hai vòng cổ được gọi là đối xứng nếu chúng
-giống nhau sau khi xoay.
-For example, the necklace
+Ví dụ, chúng ta hãy tính số lượng
+các vòng cổ gồm $n$ hạt,
+trong đó mỗi hạt có $m$ màu có thể.
+Hai vòng cổ là đối xứng nếu chúng
+giống nhau sau khi xoay chúng.
+Ví dụ, vòng cổ
 \begin{center}
 \begin{tikzpicture}[scale=0.7]
 \draw[fill=white] (0,0) circle (1);
@@ -722,7 +712,7 @@ For example, the necklace
 \draw[fill=green] (-1,0) circle (0.3);
 \end{tikzpicture}
 \end{center}
-has the following symmetric necklaces:
+có các vòng cổ đối xứng sau:
 \begin{center}
 \begin{tikzpicture}[scale=0.7]
 \draw[fill=white] (0,0) circle (1);
@@ -752,49 +742,46 @@ has the following symmetric necklaces:
 \end{center}
 Có $n$ cách để thay đổi vị trí
 của một vòng cổ,
-bởi vì ta có thể xoay nó
+bởi vì chúng ta có thể xoay nó
 $0,1,\ldots,n-1$ bước theo chiều kim đồng hồ.
 Nếu số bước là 0,
 tất cả $m^n$ vòng cổ vẫn giữ nguyên,
 và nếu số bước là 1,
-chỉ có $m$ vòng cổ mà mỗi
-hạt ngọc có cùng màu vẫn giữ nguyên.
+chỉ có $m$ vòng cổ trong đó mỗi
+hạt có cùng một màu vẫn giữ nguyên.
 
 Tổng quát hơn, khi số bước là $k$,
 tổng cộng
 \[m^{\textrm{gcd}(k,n)}\]
 vòng cổ vẫn giữ nguyên,
-trong đó $\textrm{gcd}(k,n)$ là ước số chung
-lớn nhất của $k$ và $n$.
-Lý do là các khối
-hạt ngọc có kích thước $\textrm{gcd}(k,n)$
-sẽ thay thế lẫn nhau.
+trong đó $\textrm{gcd}(k,n)$ là ước chung lớn nhất
+của $k$ và $n$.
+Lý do cho điều này là các khối
+hạt có kích thước $\textrm{gcd}(k,n)$
+sẽ thay thế cho nhau.
 Do đó, theo bổ đề Burnside,
-số lượng vòng cổ là
+số lượng các vòng cổ là
 \[\sum_{i=0}^{n-1} \frac{m^{\textrm{gcd}(i,n)}}{n}. \]
-Ví dụ, số lượng vòng cổ độ dài 4
+Ví dụ, số lượng các vòng cổ có độ dài 4
 với 3 màu là
 \[\frac{3^4+3+3^2+3}{4} = 24. \]
 
-\section{Cayley's formula}
+\section{Công thức Cayley}
 
 \index{Cayley's formula}
-\index{công thức Cayley}
 
-\key{Cayley's formula} (Công thức Cayley)
-% \footnote{While the formula is named after A. Cayley,
-% who studied it in 1889, it was discovered earlier by C. W. Borchardt in 1860.}
+\key{Công thức Cayley (Cayley's formula)}
 phát biểu rằng
-có $n^{n-2}$ cây có gán nhãn
+có $n^{n-2}$ cây có nhãn
 chứa $n$ nút.
-Các nút được gán nhãn $1,2,\ldots,n$,
-và hai cây được coi là khác nhau
-nếu cấu trúc hoặc
-cách gán nhãn của chúng khác nhau.
+Các nút được dán nhãn $1,2,\ldots,n$,
+và hai cây là khác nhau
+nếu cấu trúc của chúng hoặc
+nhãn của chúng khác nhau.
 
 \begin{samepage}
-Ví dụ, khi $n=4$, số lượng cây có gán nhãn
-là $4^{4-2}=16$:
+Ví dụ, khi $n=4$, số lượng các cây
+có nhãn là $4^{4-2}=16$:
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
@@ -840,24 +827,22 @@ là $4^{4-2}=16$:
 \end{center}
 \end{samepage}
 
-Tiếp theo chúng ta sẽ thấy cách chứng minh công thức Cayley
-bằng cách sử dụng mã Prüfer (Prüfer codes).
+Tiếp theo chúng ta sẽ xem làm thế nào công thức Cayley có thể được
+suy ra bằng cách sử dụng mã Prüfer.
 
 \subsubsection{Mã Prüfer}
 
 \index{Prüfer code}
-\index{mã Prüfer}
 
-\key{Mã Prüfer} (Prüfer code)
-%\footnote{In 1918, H. Prüfer proved Cayley's theorem using Prüfer codes \cite{pru18}.}
-là một dãy gồm
-$n-2$ số mô tả một cây có gán nhãn.
-Mã này được tạo ra bằng cách thực hiện một quá trình
+Một \key{mã Prüfer (Prüfer code)}
+là một dãy
+$n-2$ số mô tả một cây có nhãn.
+Mã được xây dựng bằng cách tuân theo một quy trình
 loại bỏ $n-2$ lá khỏi cây.
-Ở mỗi bước, lá có nhãn nhỏ nhất sẽ bị loại bỏ,
-và nhãn của nút kề duy nhất của nó được thêm vào mã.
+Ở mỗi bước, lá có nhãn nhỏ nhất bị loại bỏ,
+và nhãn của hàng xóm duy nhất của nó được thêm vào mã.
 
-Ví dụ, hãy tính mã Prüfer
+Ví dụ, chúng ta hãy tính mã Prüfer
 của đồ thị sau:
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -874,61 +859,49 @@ của đồ thị sau:
 \end{tikzpicture}
 \end{center}
 
-Đầu tiên ta loại bỏ nút 1 và thêm nút 4 vào mã:
+Đầu tiên chúng ta loại bỏ nút 1 và thêm nút 4 vào mã:
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
-%\node[draw, circle] (1) at (2,3) {$1$};
 \node[draw, circle] (2) at (4,3) {$2$};
 \node[draw, circle] (3) at (2,1) {$3$};
 \node[draw, circle] (4) at (4,1) {$4$};
 \node[draw, circle] (5) at (5.5,2) {$5$};
 
-%\path[draw,thick,-] (1) -- (4);
 \path[draw,thick,-] (3) -- (4);
 \path[draw,thick,-] (2) -- (4);
 \path[draw,thick,-] (2) -- (5);
 \end{tikzpicture}
 \end{center}
 
-Sau đó ta loại bỏ nút 3 và thêm nút 4 vào mã:
+Sau đó chúng ta loại bỏ nút 3 và thêm nút 4 vào mã:
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
-%\node[draw, circle] (1) at (2,3) {$1$};
 \node[draw, circle] (2) at (4,3) {$2$};
-%\node[draw, circle] (3) at (2,1) {$3$};
 \node[draw, circle] (4) at (4,1) {$4$};
 \node[draw, circle] (5) at (5.5,2) {$5$};
 
-%\path[draw,thick,-] (1) -- (4);
-%\path[draw,thick,-] (3) -- (4);
 \path[draw,thick,-] (2) -- (4);
 \path[draw,thick,-] (2) -- (5);
 \end{tikzpicture}
 \end{center}
 
-Cuối cùng ta loại bỏ nút 4 và thêm nút 2 vào mã:
+Cuối cùng chúng ta loại bỏ nút 4 và thêm nút 2 vào mã:
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
-%\node[draw, circle] (1) at (2,3) {$1$};
 \node[draw, circle] (2) at (4,3) {$2$};
-%\node[draw, circle] (3) at (2,1) {$3$};
-%\node[draw, circle] (4) at (4,1) {$4$};
 \node[draw, circle] (5) at (5.5,2) {$5$};
 
-%\path[draw,thick,-] (1) -- (4);
-%\path[draw,thick,-] (3) -- (4);
-%\path[draw,thick,-] (2) -- (4);
 \path[draw,thick,-] (2) -- (5);
 \end{tikzpicture}
 \end{center}
 
-Vậy mã Prüfer của đồ thị là $[4,4,2]$.
+Do đó, mã Prüfer của đồ thị là $[4,4,2]$.
 
-Ta có thể xây dựng một mã Prüfer cho bất kỳ cây nào,
+Chúng ta có thể xây dựng một mã Prüfer cho bất kỳ cây nào,
 và quan trọng hơn,
-cây ban đầu có thể được tái tạo lại
+cây ban đầu có thể được tái tạo
 từ một mã Prüfer.
-Do đó, số lượng cây gán nhãn
-có $n$ nút bằng
-$n^{n-2}$, số lượng mã Prüfer
+Do đó, số lượng các cây có nhãn
+gồm $n$ nút bằng
+$n^{n-2}$, số lượng các mã Prüfer
 có kích thước $n$.

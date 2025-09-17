@@ -276,22 +276,22 @@
 \contentsline {subsubsection}{Định lý Zeckendorf}{183}{section.21.4}%
 \contentsline {subsubsection}{Bộ ba Pythagoras}{183}{section.21.4}%
 \contentsline {subsubsection}{Định lý Wilson}{183}{section.21.4}%
-\contentsline {chapter}{\numberline {22}Combinatorics}{185}{chapter.22}%
-\contentsline {section}{\numberline {22.1}Binomial coefficients}{186}{section.22.1}%
-\contentsline {subsubsection}{Formula 1}{186}{section.22.1}%
-\contentsline {subsubsection}{Formula 2}{186}{section.22.1}%
-\contentsline {subsubsection}{Properties}{186}{section.22.1}%
-\contentsline {subsubsection}{Boxes and balls}{187}{section.22.1}%
-\contentsline {subsubsection}{Multinomial coefficients}{188}{section.22.1}%
-\contentsline {section}{\numberline {22.2}Catalan numbers}{188}{section.22.2}%
-\contentsline {subsubsection}{Parenthesis expressions}{188}{section.22.2}%
-\contentsline {subsubsection}{Formula 1}{189}{section.22.2}%
-\contentsline {subsubsection}{Formula 2}{189}{section.22.2}%
-\contentsline {subsubsection}{Counting trees}{189}{section.22.2}%
-\contentsline {section}{\numberline {22.3}Inclusion-exclusion}{190}{section.22.3}%
-\contentsline {subsubsection}{Derangements}{191}{section.22.3}%
-\contentsline {section}{\numberline {22.4}Burnside's lemma}{192}{section.22.4}%
-\contentsline {section}{\numberline {22.5}Cayley's formula}{192}{section.22.5}%
+\contentsline {chapter}{\numberline {22}Tổ hợp}{185}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Tổ hợp chập (Binomial coefficients)}{186}{section.22.1}%
+\contentsline {subsubsection}{Công thức 1}{186}{section.22.1}%
+\contentsline {subsubsection}{Công thức 2}{186}{section.22.1}%
+\contentsline {subsubsection}{Các thuộc tính}{186}{section.22.1}%
+\contentsline {subsubsection}{Hộp và bóng}{187}{section.22.1}%
+\contentsline {subsubsection}{Hệ số đa thức}{188}{section.22.1}%
+\contentsline {section}{\numberline {22.2}Số Catalan}{188}{section.22.2}%
+\contentsline {subsubsection}{Biểu thức ngoặc}{188}{section.22.2}%
+\contentsline {subsubsection}{Công thức 1}{189}{section.22.2}%
+\contentsline {subsubsection}{Công thức 2}{189}{section.22.2}%
+\contentsline {subsubsection}{Đếm cây}{189}{section.22.2}%
+\contentsline {section}{\numberline {22.3}Bao hàm - loại trừ}{190}{section.22.3}%
+\contentsline {subsubsection}{Hoán vị mất chỗ}{191}{section.22.3}%
+\contentsline {section}{\numberline {22.4}Bổ đề Burnside}{192}{section.22.4}%
+\contentsline {section}{\numberline {22.5}Công thức Cayley}{192}{section.22.5}%
 \contentsline {subsubsection}{Mã Prüfer}{193}{section.22.5}%
 \contentsline {chapter}{\numberline {23}Ma trận}{195}{chapter.23}%
 \contentsline {section}{\numberline {23.1}Các phép toán}{195}{section.23.1}%
